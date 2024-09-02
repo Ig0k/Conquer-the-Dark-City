@@ -7,6 +7,11 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private GameObject[] _virtualCameras;
     [SerializeField] private Transform _mouseTransform;
 
+    private void Start()
+    {
+        _virtualCameras[0].SetActive(true);
+    }
+
     private void Update()
     {
         if (Input.GetKey(KeyCode.LeftShift))
