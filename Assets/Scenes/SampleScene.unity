@@ -186,7 +186,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -270,7 +270,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -806,11 +806,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -18.87505, y: 15.1085205}
+    - - {x: -19.123798, y: 21.9491}
       - {x: -19.081253, y: 1.5477521}
       - {x: -18.917816, y: -13.508978}
-      - {x: 19.787664, y: -13.70618}
-      - {x: 19.577822, y: 14.567264}
+      - {x: 39.563156, y: -13.581806}
+      - {x: 39.97518, y: 21.90534}
   m_UseDelaunayMesh: 0
 --- !u!4 &1115307974
 Transform:
@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_Follow: {fileID: 589733987}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 7
+    OrthographicSize: 10
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -1142,7 +1142,7 @@ MonoBehaviour:
   m_Follow: {fileID: 471181883}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 7
+    OrthographicSize: 10
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
