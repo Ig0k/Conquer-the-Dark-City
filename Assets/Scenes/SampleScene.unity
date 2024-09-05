@@ -446,6 +446,7 @@ GameObject:
   - component: {fileID: 589733989}
   - component: {fileID: 589733988}
   - component: {fileID: 589733990}
+  - component: {fileID: 589733991}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -577,6 +578,51 @@ MonoBehaviour:
   - {fileID: 1496263745}
   - {fileID: 1509164407}
   _mouseTransform: {fileID: 471181883}
+--- !u!61 &589733991
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589733985}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.21133333}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.28866667}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &863450439
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,11 +852,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -19.123798, y: 21.9491}
+    - - {x: -18.929722, y: 12.461728}
       - {x: -19.081253, y: 1.5477521}
       - {x: -18.917816, y: -13.508978}
-      - {x: 39.563156, y: -13.581806}
-      - {x: 39.97518, y: 21.90534}
+      - {x: 22.997053, y: -13.464146}
+      - {x: 23.049501, y: 12.255168}
   m_UseDelaunayMesh: 0
 --- !u!4 &1115307974
 Transform:

@@ -23,10 +23,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Walk()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
-        _rb.velocity = ((transform.up * vertical + transform.right * horizontal) * _walkSpeed);
+        Vector2 move = (transform.up * vertical + transform.right * horizontal).normalized;
+        _rb.velocity = move * _walkSpeed;
 
     }
 }
