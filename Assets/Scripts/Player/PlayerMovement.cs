@@ -8,11 +8,26 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
 
     [SerializeField] private float _walkSpeed = 5;
-
-
+   
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        if(GameManager.currentCharacter == 1)
+        {
+            _walkSpeed = 6;
+
+            //Distintas stats segun personaje... Desarrollar qué tiene de diferente cada uno (también en otros scripts)
+        }
+        else if(GameManager.currentCharacter == 2)
+        {
+            _walkSpeed = 8; //Velocidad original con que entregamos la build es 8.
+
+            //Distintas stats segun personaje... Desarrollar qué tiene de diferente cada uno (también en otros scripts)
+        }
     }
 
     private void FixedUpdate()

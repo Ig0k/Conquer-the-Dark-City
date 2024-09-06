@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CharacterData _characterData;
 
     [SerializeField] private int _currentCharacter;
+    public static int currentCharacter;
 
     private void Awake()
     {
@@ -20,7 +21,8 @@ public class GameManager : MonoBehaviour
     {
         if(_characterData != null)
         {
-            _currentCharacter = CharacterData._character;
+            currentCharacter = CharacterData._character;
+            _currentCharacter = currentCharacter;
         }
     }
 }
