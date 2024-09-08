@@ -36,7 +36,12 @@ public class Bullet : MonoBehaviour
         }
         else
         {
-
+            if (hit.collider != null && hit.collider.TryGetComponent<PlayerLife>(out PlayerLife playerLife))
+            {
+                playerLife.Life -= _damage;
+                playerLife.ShowParticles();
+                Destroy(gameObject);
+            }
         }
 
     }
