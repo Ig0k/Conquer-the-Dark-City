@@ -38,8 +38,16 @@ public class Bullet : MonoBehaviour
         {
             if (hit.collider != null && hit.collider.TryGetComponent<PlayerLife>(out PlayerLife playerLife))
             {
-                playerLife.Life -= _damage;
+                if(playerLife.parpadeo) playerLife.Life -= _damage;
+
                 playerLife.ShowParticles();
+
+                if (playerLife.parpadeo)
+                {
+                    playerLife.StartCoroutine("Parpadeo");
+                    Debug.Log("1");
+                }         
+
                 Destroy(gameObject);
             }
         }
