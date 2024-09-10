@@ -12,9 +12,14 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private Animator _animator;
     public bool parpadeo = true;
 
+    [SerializeField] private SpriteRenderer _sprite;
+    [SerializeField] private PlayerMovement _movement;
+
     private void Awake()
     {
         if(_animator == null) _animator = GetComponent<Animator>();
+        if(_sprite == null) _sprite = GetComponent<SpriteRenderer>();
+        if(_movement == null) _movement = GetComponent<PlayerMovement>();
     }
 
     public int Life
@@ -57,7 +62,11 @@ public class PlayerLife : MonoBehaviour
 
     private void Update()
     {
-        //if(Life <= 0) Destroy(gameObject, 2f);
+        if(Life <= 0)
+        {
+            _sprite.enabled = false;
+            _movement.WalkSpeed = 0;
+        }
         
     }
 }

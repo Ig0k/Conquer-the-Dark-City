@@ -8,6 +8,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D _rb;
 
     [SerializeField] private float _walkSpeed = 5;
+
+    public float WalkSpeed
+    {
+        set { _walkSpeed = value; }
+    }
    
     private void Awake()
     {
@@ -45,4 +50,5 @@ public class PlayerMovement : MonoBehaviour
         _rb.velocity = move * _walkSpeed;
 
     }
+
 }

@@ -24,15 +24,17 @@ public class GameManager : MonoBehaviour
         {
             _playerLife = FindObjectOfType<PlayerLife>();   
         }
-    }
 
-    private void Start()
-    {
-        if(_characterData != null)
+        if (_characterData != null)
         {
             currentCharacter = CharacterData._character;
             _currentCharacter = currentCharacter;
         }
+    }
+
+    private void Start()
+    {
+        
     }
 
     private void Update()
