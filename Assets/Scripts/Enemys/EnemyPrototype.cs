@@ -14,8 +14,9 @@ public class EnemyPrototype : MonoBehaviour
 
     [SerializeField] private Transform[] _wayPoints;
     [SerializeField] private float _minDistanceForWps = 0.2f;
-    [SerializeField] private float _minDistanceToFollowPlayer = 2.5f;
-    [SerializeField] private float _minDistanceToShootPlayer = 2.5f;
+    [SerializeField] private float _minDistanceToFollowPlayer = 15f;
+    [SerializeField] private float _minDistanceToShootPlayer = 15f;
+    [SerializeField] private float _minDistanceToStop;
 
     [SerializeField] private bool _isFollowingPlayer = false;
 
@@ -59,13 +60,27 @@ public class EnemyPrototype : MonoBehaviour
 
         if (gameObject != null)
         {
-            if (_isFollowingPlayer) FollowPlayer(_playerTransform);
-            else Patroll();
+            if (_isFollowingPlayer && _distanceFromPlayer >= _minDistanceToStop)
+            {
+                _agent.isStopped = false;
+                FollowPlayer(_playerTransform);
+            }
+            else if (_isFollowingPlayer && _distanceFromPlayer < _minDistanceToStop)
+                {
+                _agent.isStopped = true;
+
+                }
+            else if (_isFollowingPlayer == false && _agent.isStopped == false)
+            {
+                Patroll();
+            }
 
             //SHOOT
             if (_distanceFromPlayer <= _minDistanceToShootPlayer && _canShoot)
             {
+               
                 StartCoroutine(Shoot());
+                
             }
 
             //FOLLOW PLAYER
