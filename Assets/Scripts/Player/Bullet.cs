@@ -33,13 +33,20 @@ public class Bullet : MonoBehaviour
                 enemy1.TakeDamage(_damage);
                 Destroy(gameObject);
             }
+            if (hit.collider != null && hit.collider.TryGetComponent<Enemy2>(out Enemy2 enemy2))
+            {
+                enemy2.TakeDamage(_damage);
+                Destroy(gameObject);
+            }
         }
+
         else
         {
             if (hit.collider != null && hit.collider.TryGetComponent<PlayerLife>(out PlayerLife playerLife))
             {
-                if(playerLife.parpadeo) playerLife.Life -= _damage;
+                //if(playerLife.parpadeo) playerLife.Life -= _damage;
 
+                playerLife.Life -= _damage;
                 playerLife.ShowParticles();
 
                 if (playerLife.parpadeo)

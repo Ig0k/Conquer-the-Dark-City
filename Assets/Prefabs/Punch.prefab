@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5954846737323949077}
   - component: {fileID: 2323464140959381739}
   - component: {fileID: 2659542595687954415}
-  - component: {fileID: -3073586749443019761}
+  - component: {fileID: 3247903630939633656}
   m_Layer: 0
   m_Name: Punch
   m_TagString: Untagged
@@ -99,12 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fe854eb7fa4ed44999d2b9ae7729da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0
-  _destroyTime: 0.1
+  _speed: 1
+  _destroyTime: 0.5
   _damage: 2
   _layerMask:
     serializedVersion: 2
     m_Bits: 128
+  _rayDistance: 3
   _isPlayer: 0
 --- !u!50 &2659542595687954415
 Rigidbody2D:
@@ -133,8 +134,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &-3073586749443019761
-PolygonCollider2D:
+--- !u!61 &3247903630939633656
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -149,7 +150,7 @@ PolygonCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 1
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -165,7 +166,7 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.21133333}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.28866667}
@@ -175,9 +176,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 0.5773587}
-      - {x: -0.5, y: -0.28866667}
-      - {x: 0.5, y: -0.28866667}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

@@ -60,35 +60,41 @@ public class EnemyPrototype : MonoBehaviour
 
         if (gameObject != null)
         {
-            if (_isFollowingPlayer && _distanceFromPlayer >= _minDistanceToStop)
+            if (_agent.isOnNavMesh)
             {
-                _agent.isStopped = false;
-                FollowPlayer(_playerTransform);
-            }
-            else if (_isFollowingPlayer && _distanceFromPlayer < _minDistanceToStop)
+
+
+                if (_isFollowingPlayer && _distanceFromPlayer >= _minDistanceToStop)
                 {
-                _agent.isStopped = true;
+                    _agent.isStopped = false;
+                    FollowPlayer(_playerTransform);
+                }
+                else if (_isFollowingPlayer && _distanceFromPlayer < _minDistanceToStop)
+                {
+                    _agent.isStopped = true;
 
                 }
-            else if (_isFollowingPlayer == false && _agent.isStopped == false)
-            {
-                Patroll();
-            }
+                else if (_isFollowingPlayer == false && _agent.isStopped == false)
+                {
+                    Patroll();
+                }
 
-            //SHOOT
-            if (_distanceFromPlayer <= _minDistanceToShootPlayer && _canShoot)
-            {
-               
-                StartCoroutine(Shoot());
-                
-            }
+                //SHOOT
+                if (_distanceFromPlayer <= _minDistanceToShootPlayer && _canShoot)
+                {
 
-            //FOLLOW PLAYER
-            if (_distanceFromPlayer <= _minDistanceToFollowPlayer)
-            {
-                _isFollowingPlayer = true;
+                    StartCoroutine(Shoot());
+
+                }
+
+                //FOLLOW PLAYER
+                if (_distanceFromPlayer <= _minDistanceToFollowPlayer)
+                {
+                    _isFollowingPlayer = true;
+                }
+                else _isFollowingPlayer = false;
+
             }
-            else _isFollowingPlayer = false;
         }
 
     }

@@ -16,6 +16,7 @@ public class Enemy2 : MonoBehaviour
     [SerializeField] private float _minDistanceForWps = 0.2f;
     [SerializeField] private float _minDistanceToFollowPlayer = 4f;
     [SerializeField] private float _minDistanceToPunchPlayer = 2f;
+    [SerializeField] private float _minDistanceToStop;
 
     [SerializeField] private bool _isFollowingPlayer = false;
 
@@ -59,21 +60,39 @@ public class Enemy2 : MonoBehaviour
 
         if (gameObject != null)
         {
-            if (_isFollowingPlayer) FollowPlayer(_playerTransform);
-            else Patroll();
-
-            //SHOOT
-            if (_distanceFromPlayer <= _minDistanceToPunchPlayer && _canPunch)
+            if (_agent.isOnNavMesh)
             {
-                StartCoroutine(Punch());
-            }
+                if (_isFollowingPlayer && _distanceFromPlayer >= _minDistanceToStop)
+                {
+                    _agent.isStopped = false;
+                    FollowPlayer(_playerTransform);
+                }
+                else if (_isFollowingPlayer && _distanceFromPlayer < _minDistanceToStop)
+                {
+                    _agent.isStopped = true;
 
-            //FOLLOW PLAYER
-            if (_distanceFromPlayer <= _minDistanceToFollowPlayer)
-            {
-                _isFollowingPlayer = true;
+                }
+                else if (_isFollowingPlayer == false && _agent.isStopped == false)
+                {
+                    Patroll();
+                }
+
+                //SHOOT
+                if (_distanceFromPlayer <= _minDistanceToPunchPlayer && _canPunch)
+                {
+
+                    StartCoroutine(Punch());
+
+                }
+
+                //FOLLOW PLAYER
+                if (_distanceFromPlayer <= _minDistanceToFollowPlayer)
+                {
+                    _isFollowingPlayer = true;
+                }
+                else _isFollowingPlayer = false;
             }
-            else _isFollowingPlayer = false;
+            
         }
 
     }
