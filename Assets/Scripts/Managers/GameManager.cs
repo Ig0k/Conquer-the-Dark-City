@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private CharacterData _characterData;
     [SerializeField] private PlayerLife _playerLife;
-    [SerializeField] private string _currentSceneName;
+    [SerializeField] private string _sceneName, _mapScene;
 
     [SerializeField] private Animator _animator;
 
@@ -32,25 +32,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void WinLevel(int currentZoneNumb)
     {
-        
+        _characterData.CompletedZones(currentZoneNumb);
+        StartCoroutine(LoadScene(_mapScene));
     }
 
     private void Update()
     {
         if (_playerLife.Life <= 0)
         {
-            StartCoroutine(LoadCurrentScene());
+            StartCoroutine(LoadScene(_sceneName));
         }
     }
 
-    private IEnumerator LoadCurrentScene()
+    private IEnumerator LoadScene(string sceneName)
     {
         _animator.Play("Fade In");
 
         yield return new WaitForSeconds(1f);
 
-        SceneManager.LoadScene(_currentSceneName);
+        SceneManager.LoadScene(sceneName);
     }
 }
