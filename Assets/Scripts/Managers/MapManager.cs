@@ -11,6 +11,9 @@ public class MapManager : MonoBehaviour
 
     [SerializeField] private GameObject _charSelectionUI;
 
+    [SerializeField] private int _chancesToConfrontation = 0;
+    [SerializeField] private GameObject _confrontationWarning;
+
     public void SaveSceneString(string zone)
     {
         _zone = zone;
@@ -18,11 +21,30 @@ public class MapManager : MonoBehaviour
 
     public void GoToScene()
     {
-        SceneManager.LoadScene(_zone);
+        _chancesToConfrontation = Random.Range(0, 11);
+        if (_chancesToConfrontation <= 3)
+        {
+            StartCoroutine(GoToConfrontation());
+        }
+        else
+        {
+            SceneManager.LoadScene(_zone);
+        }
+        
     }
 
     public void ShowCharacterSelection()
     {
         _charSelectionUI.SetActive(true);
+    }
+
+
+    private IEnumerator GoToConfrontation()
+    {
+        _confrontationWarning.SetActive(true);
+
+        yield return new WaitForSeconds(6f);
+
+        SceneManager.LoadScene("Confrontation1");
     }
 }

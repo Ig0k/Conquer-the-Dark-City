@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Character Seletion.unity
     guid: 7d2bb47458519004f85366d49f0801e7
+  - enabled: 1
+    path: Assets/Scenes/Zone Scenes/Confrontation1.unity
+    guid: ed8d5810ddecc1d45af56efa3d015e60
   m_configObjects: {}
