@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float _walkSpeed = 5;
 
+    [SerializeField] private ParticleSystem _Particle;
     public float WalkSpeed
     {
         set { _walkSpeed = value; }
@@ -38,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Walk();
+        
     }
 
 
@@ -48,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 move = (transform.up * vertical + transform.right * horizontal).normalized;
         _rb.velocity = move * _walkSpeed;
+        _Particle.Play();
 
     }
 
