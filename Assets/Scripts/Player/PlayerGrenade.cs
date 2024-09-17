@@ -5,24 +5,13 @@ using UnityEngine;
 public class PlayerGrenade : MonoBehaviour
 {
 
-
-
-
-
         [SerializeField]
         private int grenadeAvailable;
-
-
-     
-
 
         public void AddGrenades(int amount)
         {
             grenadeAvailable += amount;
-
-
         }
-
 
         public void RemoveGrenades(int amount)
         {
@@ -30,14 +19,11 @@ public class PlayerGrenade : MonoBehaviour
             {
                 grenadeAvailable -= amount;
 
-               Debug.Log("tire una granada");
-            
-
+                Debug.Log("tire una granada");
             }
             else
             {
                 Debug.Log("no tengo granadas");
-
             }
         }
 }

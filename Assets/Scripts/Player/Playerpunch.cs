@@ -7,9 +7,6 @@ public class Playerpunch : MonoBehaviour
     [SerializeField] private GameObject _punch;
     [SerializeField] private Bullet _bulletScript;
 
-
-
-
     [SerializeField] private int _damage = 1, _damage2 = 2;
     [SerializeField] private float _destroyTime = 3f;
     [SerializeField] private float _speed = 40f, _speed2 = 15f;
@@ -18,8 +15,6 @@ public class Playerpunch : MonoBehaviour
 
     [SerializeField] private float _PunchCD = .7f, _PunchCD2 = 1.3f;
     private bool _canPunch = true;
-
-
 
     public float PunchCD
     {
