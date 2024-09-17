@@ -6,9 +6,7 @@ public class PlayerWeapon : MonoBehaviour
 {
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Bullet _bulletScript;
-
-
-
+    [SerializeField] private PlayerUpgrades _upgrades;
 
     [SerializeField] private int _damage = 1, _damage2 = 2;
     [SerializeField] private float _destroyTime = 3f;
@@ -19,8 +17,6 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private float _shootCD = .7f, _shootCD2 = 1.3f;
     private bool _canShoot = true;
 
-
-
     public float ShootCD
     {
         set { _shootCD = value; }
@@ -28,17 +24,36 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Start()
     {
-        if (GameManager.currentCharacter == 1)
+        if (GameManager.currentCharacter == 1 && _upgrades.level == 1)
         {
-            _bulletScript.SetProperties(_speed, _destroyTime, _damage);
+            //_speed = _upgrades._bulletSpeedCh1Lvl1;
+            //_damage = _upgrades._bulletDamageCh1Lvl1;
+
+            _bulletScript.SetProperties(50f, _destroyTime, 2);
             ShootCD = _shootCD;
         }
-        else if (GameManager.currentCharacter == 2)
+        else if (GameManager.currentCharacter == 2 && _upgrades.level == 1)
         {
-            _bulletScript.SetProperties(_speed2, _destroyTime, _damage2);
+            //_speed = _upgrades._bulletSpeedCh2Lvl1;
+            //_damage = _upgrades._bulletDamageCh2Lvl1;
+
+            _bulletScript.SetProperties(35, _destroyTime, 3);
+            ShootCD = _shootCD;
+        }
+
+        else if(GameManager.currentCharacter == 1 && _upgrades.level == 0)
+        {
+            _bulletScript.SetProperties(40, _destroyTime, 1);
+            ShootCD = _shootCD2;
+        }
+        else if ( GameManager.currentCharacter == 2 && _upgrades.level == 0)
+        {
+            _bulletScript.SetProperties(27, _destroyTime, 2);
             ShootCD = _shootCD2;
         }
     }
+
+    
 
     private void Update()
     {

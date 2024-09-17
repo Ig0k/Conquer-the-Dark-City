@@ -10,7 +10,12 @@ public class CharacterData : MonoBehaviour
     [SerializeField] private int _characterVisualization = 1;
 
     public bool _zone1CH1 = false, _zone2CH1 = false, _zone3CH1 = false;
-    public bool _zone1CH2 = false, _zone2CH2 = false, _zone3CH2 = false; //Zonas completadas o no completadas
+    public bool _zone1CH2 = false, _zone2CH2 = false, _zone3CH2 = false;//Zonas completadas o no completadas
+
+    public bool confrontationWinned = false;
+
+    public static int character1Level = 0;
+    public static int character2Level = 0;
 
     private void Awake()
     {
@@ -23,6 +28,8 @@ public class CharacterData : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Debug.Log(character1Level + " + " + character2Level);
     }
 
     public void ActiveCharacter(int character)

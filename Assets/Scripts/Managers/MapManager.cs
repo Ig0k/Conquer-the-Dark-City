@@ -11,7 +11,7 @@ public class MapManager : MonoBehaviour
 
     [SerializeField] private GameObject _charSelectionUI;
 
-    [SerializeField] private int _chancesToConfrontation = 0;
+    public int chancesToConfrontation = 0;
     [SerializeField] private GameObject _confrontationWarning;
 
     public void SaveSceneString(string zone)
@@ -21,8 +21,8 @@ public class MapManager : MonoBehaviour
 
     public void GoToScene()
     {
-        _chancesToConfrontation = Random.Range(0, 11);
-        if (_chancesToConfrontation <= 3)
+        chancesToConfrontation = Random.Range(0, 12);
+        if (chancesToConfrontation <= 3)
         {
             StartCoroutine(GoToConfrontation());
         }

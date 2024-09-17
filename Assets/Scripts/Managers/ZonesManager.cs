@@ -16,10 +16,22 @@ public class ZonesManager : MonoBehaviour
 
     [SerializeField] private CharacterData _characterData;
 
+    [SerializeField] private GameObject _winnedConfrontationUI;
+
+    [SerializeField] private PlayerUpgrades _upgrades;
+
 
     private void Awake()
     {
         if(_characterData == null) _characterData = FindObjectOfType<CharacterData>();
+
+        if (_characterData.confrontationWinned == true)
+        {
+            _upgrades.level = 1; //el nivel inicial es 0. Si ganamos un enfrentamiento, sube a 1
+            CharacterData.character1Level = 1;
+            CharacterData.character2Level = 1;
+            _winnedConfrontationUI.SetActive(true);
+        }
     }
 
 
@@ -34,6 +46,11 @@ public class ZonesManager : MonoBehaviour
 
         if (_characterData._zone1CH1 == true) _zone1Percentaje = 100;
         else if (_characterData._zone1CH2 == true) _zone1Percentaje = 100;
+    }
+
+    public void CloseConfrontationWindow()
+    {
+        _winnedConfrontationUI.SetActive(false);
     }
 
     private void ChangeCharacterTo1()

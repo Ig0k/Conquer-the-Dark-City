@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7feb81bd001b44bb92f60a48de221a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 8
+  _life: 5
   _maxLife: 20
   _agent: {fileID: 0}
   _playerTransform: {fileID: 7695173927375124351}
@@ -3350,7 +3350,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.7217274, y: -3.1557, z: -10}
+  m_LocalPosition: {x: -3.7277365, y: -2.6018999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8137,6 +8137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bullet: {fileID: 6996412163210009648, guid: 8d1d838707a65ba4c85dccba4e4774f3, type: 3}
   _bulletScript: {fileID: 5184648691491419368, guid: 8d1d838707a65ba4c85dccba4e4774f3, type: 3}
+  _upgrades: {fileID: 8216170215829476363}
   _damage: 1
   _damage2: 2
   _destroyTime: 3
@@ -8822,6 +8823,7 @@ MonoBehaviour:
   _enemy1: {fileID: 394160889851022936}
   _enemy2: {fileID: 13829614}
   _enemy3: {fileID: 4527701486017498661}
+  _characterData: {fileID: 0}
 --- !u!1 &1785441801
 GameObject:
   m_ObjectHideFlags: 0
@@ -15173,6 +15175,7 @@ GameObject:
   - component: {fileID: 3752614554607507814}
   - component: {fileID: 8216170215829476361}
   - component: {fileID: 8216170215829476362}
+  - component: {fileID: 8216170215829476363}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -19957,7 +19960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7feb81bd001b44bb92f60a48de221a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 7
+  _life: 5
   _maxLife: 20
   _agent: {fileID: 0}
   _playerTransform: {fileID: 7695173927375124351}
@@ -20020,7 +20023,7 @@ Transform:
   m_GameObject: {fileID: 2321410873426081345}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.66, y: -3.1864, z: -10}
+  m_LocalPosition: {x: -11.91, y: -2.63, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25491,7 +25494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7391bb261443b49a9bd4f75f1c4946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _life: 5
+  _life: 3
   _maxLife: 20
   _agent: {fileID: 0}
   _playerTransform: {fileID: 7695173927375124351}
@@ -25693,7 +25696,7 @@ Transform:
   m_GameObject: {fileID: 1278398248855385425}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.66, y: -3.1864, z: 0}
+  m_LocalPosition: {x: -11.91, y: -2.63, z: 0}
   m_LocalScale: {x: 2.3046384, y: 2.7054152, z: 1.4749686}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25755,6 +25758,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8216170215829476363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278398248855385425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab44c3c8228fc4aabb5fc6e4cb26b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  _bulletScript: {fileID: 5184648691491419368, guid: 8d1d838707a65ba4c85dccba4e4774f3, type: 3}
+  _bulletSpeedCh1Lvl0: 40
+  _bulletDamageCh1Lvl0: 1
+  _bulletSpeedCh2Lvl0: 27
+  _bulletDamageCh2Lvl0: 2
+  _bulletSpeedCh1Lvl1: 50
+  _bulletDamageCh1Lvl1: 2
+  _bulletSpeedCh2Lvl1: 35
+  _bulletDamageCh2Lvl1: 3
 --- !u!114 &8244715956638746587
 MonoBehaviour:
   m_ObjectHideFlags: 3

@@ -7741,6 +7741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bullet: {fileID: 6996412163210009648, guid: 8d1d838707a65ba4c85dccba4e4774f3, type: 3}
   _bulletScript: {fileID: 5184648691491419368, guid: 8d1d838707a65ba4c85dccba4e4774f3, type: 3}
+  _upgrades: {fileID: 8216170215829476363}
   _damage: 1
   _damage2: 2
   _destroyTime: 3
@@ -14697,6 +14698,7 @@ GameObject:
   - component: {fileID: 3752614554607507814}
   - component: {fileID: 8216170215829476361}
   - component: {fileID: 8216170215829476362}
+  - component: {fileID: 8216170215829476363}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -25312,6 +25314,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8216170215829476363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278398248855385425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab44c3c8228fc4aabb5fc6e4cb26b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  _bulletScript: {fileID: 5184648691491419368, guid: 8d1d838707a65ba4c85dccba4e4774f3, type: 3}
+  _bulletSpeedCh1Lvl0: 40
+  _bulletDamageCh1Lvl0: 1
+  _bulletSpeedCh2Lvl0: 40
+  _bulletDamageCh2Lvl0: 1
+  _bulletSpeedCh1Lvl1: 50
+  _bulletDamageCh1Lvl1: 2
+  _bulletSpeedCh2Lvl1: 35
+  _bulletDamageCh2Lvl1: 3
 --- !u!114 &8244715956638746587
 MonoBehaviour:
   m_ObjectHideFlags: 3
