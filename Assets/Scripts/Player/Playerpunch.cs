@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerWeapon : MonoBehaviour
+public class Playerpunch : MonoBehaviour
 {
-    [SerializeField] private GameObject _bullet;
+    [SerializeField] private GameObject _punch;
     [SerializeField] private Bullet _bulletScript;
 
 
@@ -16,14 +16,14 @@ public class PlayerWeapon : MonoBehaviour
 
     [SerializeField] private Transform _mousePoint, _player;
 
-    [SerializeField] private float _shootCD = .7f, _shootCD2 = 1.3f;
-    private bool _canShoot = true;
+    [SerializeField] private float _PunchCD = .7f, _PunchCD2 = 1.3f;
+    private bool _canPunch = true;
 
 
 
-    public float ShootCD
+    public float PunchCD
     {
-        set { _shootCD = value; }
+        set { _PunchCD = value; }
     }
 
     private void Start()
@@ -31,18 +31,18 @@ public class PlayerWeapon : MonoBehaviour
         if (GameManager.currentCharacter == 1)
         {
             _bulletScript.SetProperties(_speed, _destroyTime, _damage);
-            ShootCD = _shootCD;
+            PunchCD = _PunchCD;
         }
         else if (GameManager.currentCharacter == 2)
         {
             _bulletScript.SetProperties(_speed2, _destroyTime, _damage2);
-            ShootCD = _shootCD2;
+            PunchCD = _PunchCD2;
         }
     }
 
     private void Update()
     {
-        if(Input.GetMouseButton(0) && _canShoot) StartCoroutine(Shoot());
+        if (Input.GetMouseButton(1) && _canPunch) StartCoroutine(Shoot());
 
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -54,9 +54,9 @@ public class PlayerWeapon : MonoBehaviour
 
     private IEnumerator Shoot()
     {
-        _canShoot = false;
-        Instantiate(_bullet, transform.position, transform.rotation);
-        yield return new WaitForSeconds(_shootCD);
-        _canShoot = true;
+        _canPunch = false;
+        Instantiate(_punch, transform.position, transform.rotation);
+        yield return new WaitForSeconds(_PunchCD);
+        _canPunch = true;
     }
 }
