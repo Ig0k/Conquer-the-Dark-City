@@ -5,25 +5,37 @@ using UnityEngine;
 public class PlayerGrenade : MonoBehaviour
 {
 
-        [SerializeField]
-        private int grenadeAvailable;
+    [SerializeField]
+    private int grenadeAvailable;
 
-        public void AddGrenades(int amount)
+    public void AddGrenades(int amount)
+    {
+        grenadeAvailable += amount;
+    }
+
+    
+
+    public void RemoveGrenades()
+    {
+        if (Input.GetKeyDown(KeyCode.G)   &&grenadeAvailable > 0)
         {
-            grenadeAvailable += amount;
-        }
+            grenadeAvailable -= 1;
 
-        public void RemoveGrenades(int amount)
+
+
+
+            Debug.Log("tire una granada");
+        }
+        else if (Input.GetKeyDown(KeyCode.G) && grenadeAvailable <= 0)
         {
-            if (Input.GetKeyDown(KeyCode.G)   &&grenadeAvailable > 0)
-            {
-                grenadeAvailable -= amount;
-
-                Debug.Log("tire una granada");
-            }
-            else
-            {
-                Debug.Log("no tengo granadas");
-            }
+            Debug.Log("no tengo granadas");
         }
+    }
+
+
+    
+    private void Update()
+    {
+        RemoveGrenades();
+    }
 }

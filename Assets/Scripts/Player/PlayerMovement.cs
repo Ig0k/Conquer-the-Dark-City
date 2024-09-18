@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _walkSpeed = 5;
 
     [SerializeField] private ParticleSystem _Particle;
+
+
+    [Header("Animacion")]
+    private Animator _Animator;
     public float WalkSpeed
     {
         set { _walkSpeed = value; }
@@ -22,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        _Animator = GetComponent<Animator>();
+
+
         if(GameManager.currentCharacter == 1)
         {
             _walkSpeed = 6;
@@ -51,6 +59,10 @@ public class PlayerMovement : MonoBehaviour
         Vector2 move = (transform.up * vertical + transform.right * horizontal).normalized;
         _rb.velocity = move * _walkSpeed;
         _Particle.Play();
+
+        float suma = horizontal + vertical;
+
+        _Animator.SetFloat("movimiento", MathF.Abs(suma));
 
     }
 

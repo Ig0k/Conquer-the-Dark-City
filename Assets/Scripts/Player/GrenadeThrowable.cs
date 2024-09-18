@@ -2,45 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Punch : MonoBehaviour
+public class GrenadeThrowable : MonoBehaviour
 {
+    // Start is called before the first frame update
     [SerializeField] private float _speed;
     [SerializeField] private float _destroyTime;
     [SerializeField] private int _damage;
     [SerializeField] private LayerMask _layerMask;
-    [SerializeField] private float _rayDistance;
+
     [SerializeField] private bool _isPlayer = false;
 
-    public void SetProperties( float destroyTime, int damage)
+    public void SetProperties(float speed, float destroyTime, int damage)
     {
-        
+        _speed = speed;
         _destroyTime = destroyTime;
         _damage = damage;
     }
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == 7)
-        {
-            collision.TryGetComponent<PlayerLife>(out PlayerLife playerLife);
-            if (playerLife.parpadeo)
-            {
-                playerLife.StartCoroutine("Parpadeo");
-            }
-
-            playerLife.Life -= _damage;
-        }
-    }
-
-
     private void Update()
     {
-     
+        transform.position += transform.up * _speed * Time.deltaTime;
 
         Destroy(gameObject, _destroyTime);
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.forward, _rayDistance, _layerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.forward, 0.5f, _layerMask);
 
         if (_isPlayer)
         {
@@ -49,22 +34,20 @@ public class Punch : MonoBehaviour
                 enemy1.TakeDamage(_damage);
                 Destroy(gameObject);
             }
-
-            else if (hit.collider != null && hit.collider.TryGetComponent<Enemy2>(out Enemy2 enemy2))
+            if (hit.collider != null && hit.collider.TryGetComponent<Enemy2>(out Enemy2 enemy2))
             {
                 enemy2.TakeDamage(_damage);
                 Destroy(gameObject);
-
             }
         }
-        
-        /*
+
         else
         {
             if (hit.collider != null && hit.collider.TryGetComponent<PlayerLife>(out PlayerLife playerLife))
             {
-                if (playerLife.parpadeo) playerLife.Life -= _damage;
+                //if(playerLife.parpadeo) playerLife.Life -= _damage;
 
+                playerLife.Life -= _damage;
                 playerLife.ShowParticles();
 
                 if (playerLife.parpadeo)
@@ -76,7 +59,10 @@ public class Punch : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        */
+
+
+
 
     }
+
 }
