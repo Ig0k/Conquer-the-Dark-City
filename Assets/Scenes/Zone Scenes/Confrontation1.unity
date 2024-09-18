@@ -227,7 +227,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 5
-  m_Acceleration: 8
+  m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -259,7 +259,7 @@ MonoBehaviour:
   - {fileID: 1200716381}
   - {fileID: 1939966777}
   _minDistanceForWps: 0.2
-  _minDistanceToFollowPlayer: 30
+  _minDistanceToFollowPlayer: 50
   _minDistanceToShootPlayer: 10
   _minDistanceToStop: 6.5
   _isFollowingPlayer: 0
@@ -19880,7 +19880,7 @@ MonoBehaviour:
   - {fileID: 1200716381}
   - {fileID: 1939966777}
   _minDistanceForWps: 0.2
-  _minDistanceToFollowPlayer: 30
+  _minDistanceToFollowPlayer: 50
   _minDistanceToShootPlayer: 14
   _minDistanceToStop: 10
   _isFollowingPlayer: 0
@@ -24987,7 +24987,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 5
-  m_Acceleration: 8
+  m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -25414,7 +25414,7 @@ MonoBehaviour:
   - {fileID: 2018682762}
   - {fileID: 438172729}
   _minDistanceForWps: 1.4
-  _minDistanceToFollowPlayer: 30
+  _minDistanceToFollowPlayer: 50
   _minDistanceToPunchPlayer: 4.46
   _minDistanceToStop: 3.58
   _isFollowingPlayer: 0
