@@ -44,7 +44,7 @@ public class Playerpunch : MonoBehaviour
         Vector2 dir = (mousePos - (Vector2)transform.position).normalized;
         transform.up = dir;
 
-        transform.position = _player.position + new Vector3(0, 1.5f, 0);
+        transform.position = _player.position;/* + new Vector3(0, 1.5f, 0);*/
     }
 
     private IEnumerator Shoot()

@@ -11,7 +11,12 @@ public class Prefabpunch : MonoBehaviour
     [SerializeField] private int _damage;
     [SerializeField] private LayerMask _layerMask;
 
-    [SerializeField] private bool _isPlayer = false;
+    //[SerializeField] private bool _isPlayer = false;
+
+    private void Start()
+    {
+        Destroy(gameObject, 0.2f);
+    }
 
     public void SetProperties(float speed, float destroyTime, int damage)
     {
@@ -20,46 +25,63 @@ public class Prefabpunch : MonoBehaviour
         _damage = damage;
     }
 
-    private void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        transform.position += transform.up * _speed * Time.deltaTime;
-
-        Destroy(gameObject, _destroyTime);
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.forward, 0.5f, _layerMask);
-
-        if (_isPlayer)
+        if (collision.gameObject.layer == 6)
         {
-            if (hit.collider != null && hit.collider.TryGetComponent<EnemyPrototype>(out EnemyPrototype enemy1))
+            if(collision.TryGetComponent<EnemyPrototype>(out EnemyPrototype enemy1))
             {
                 enemy1.TakeDamage(_damage);
                 Destroy(gameObject);
             }
-            else if (hit.collider != null && hit.collider.TryGetComponent<Enemy2>(out Enemy2 enemy2))
+            else if(collision.TryGetComponent<Enemy2>(out Enemy2 enemy2))
             {
                 enemy2.TakeDamage(_damage);
                 Destroy(gameObject);
-            }
+            }  
         }
+    }
 
-        else
-        {
-            if (hit.collider != null && hit.collider.TryGetComponent<PlayerLife>(out PlayerLife playerLife))
-            {
-                //if(playerLife.parpadeo) playerLife.Life -= _damage;
+    private void Update()
+    {
+        transform.position += transform.up * _speed * Time.deltaTime;
 
-                playerLife.Life -= _damage;
-                playerLife.ShowParticles();
+    //    Destroy(gameObject, _destroyTime);
 
-                if (playerLife.parpadeo)
-                {
-                    playerLife.StartCoroutine("Parpadeo");
-                    Debug.Log("1");
-                }
+    //    RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.forward, 5.5f, _layerMask);
 
-                Destroy(gameObject);
-            }
-        }
+    //    if (_isPlayer)
+    //    {
+    //        if (hit.collider != null && hit.collider.TryGetComponent<EnemyPrototype>(out EnemyPrototype enemy1))
+    //        {
+    //            enemy1.TakeDamage(_damage);
+    //            Destroy(gameObject);
+    //        }
+    //        else if (hit.collider != null && hit.collider.TryGetComponent<Enemy2>(out Enemy2 enemy2))
+    //        {
+    //            enemy2.TakeDamage(_damage);
+    //            Destroy(gameObject);
+    //        }
+    //    }
+
+    //    else
+    //    {
+    //        if (hit.collider != null && hit.collider.TryGetComponent<PlayerLife>(out PlayerLife playerLife))
+    //        {
+    //            //if(playerLife.parpadeo) playerLife.Life -= _damage;
+
+    //            playerLife.Life -= _damage;
+    //            playerLife.ShowParticles();
+
+    //            if (playerLife.parpadeo)
+    //            {
+    //                playerLife.StartCoroutine("Parpadeo");
+    //                Debug.Log("1");
+    //            }
+
+    //            Destroy(gameObject);
+    //        }
+    //    }
 
     }
 

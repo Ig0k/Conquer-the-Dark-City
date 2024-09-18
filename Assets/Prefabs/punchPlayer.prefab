@@ -99,13 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459be5faf03b9f94082d56a7879c4ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
+  _speed: 0
   _destroyTime: 0.33
-  _damage: 14
+  _damage: 1
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
-  _isPlayer: 0
 --- !u!50 &5029066666302536517
 Rigidbody2D:
   serializedVersion: 4

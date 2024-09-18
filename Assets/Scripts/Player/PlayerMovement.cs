@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Animacion")]
     private Animator _Animator;
+
+    [SerializeField] private PlayerAnimations _playerAnimations;
+
     public float WalkSpeed
     {
         set { _walkSpeed = value; }
@@ -23,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        if(_playerAnimations == null) _playerAnimations = GetComponentInChildren<PlayerAnimations>();
     }
 
     private void Start()
@@ -47,9 +51,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Walk();
-        
     }
-
 
     private void Walk()
     {
@@ -60,10 +62,18 @@ public class PlayerMovement : MonoBehaviour
         _rb.velocity = move * _walkSpeed;
         _Particle.Play();
 
+        //ANIMATOR MANAGEMENT
+
         float suma = horizontal + vertical;
 
-        _Animator.SetFloat("movimiento", MathF.Abs(suma));
-
+        if(horizontal != 0 || vertical != 0)
+        {
+            _playerAnimations.PlayWalk(suma);
+        }
+        else
+        {
+            _playerAnimations.StopWalk();
+        }     
     }
 
 }

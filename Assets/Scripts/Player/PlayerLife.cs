@@ -11,6 +11,7 @@ public class PlayerLife : MonoBehaviour
 
     [SerializeField] private Animator _animator;
     public bool parpadeo = true;
+    [SerializeField] private PlayerAnimations _playerAnimations;
 
     [SerializeField] private SpriteRenderer _sprite;
     [SerializeField] private PlayerMovement _movement;
@@ -20,6 +21,7 @@ public class PlayerLife : MonoBehaviour
         if(_animator == null) _animator = GetComponent<Animator>();
         if(_sprite == null) _sprite = GetComponent<SpriteRenderer>();
         if(_movement == null) _movement = GetComponent<PlayerMovement>();
+        if(_playerAnimations == null) _playerAnimations = GetComponentInChildren<PlayerAnimations>();
     }
 
     public int Life
@@ -46,11 +48,9 @@ public class PlayerLife : MonoBehaviour
     public IEnumerator Parpadeo()
     {
         parpadeo = false;
-
-        _animator.SetBool("Parpadeo", true);
-        yield return new WaitForSeconds(0.5f);
-        _animator.SetBool("Parpadeo", false);
-
+        //_animator.SetBool("Parpadeo", true);
+        yield return new WaitForSeconds(.5f);
+        //_animator.SetBool("Parpadeo", false);
         parpadeo = true;
     }
 
