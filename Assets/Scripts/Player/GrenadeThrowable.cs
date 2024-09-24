@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class GrenadeThrowable : MonoBehaviour
 {
+
+    [SerializeField] private float tiempo = 4f;
+    [SerializeField] private float explosionTime;
+
+
+
     // Start is called before the first frame update
     [SerializeField] private float _speed;
     [SerializeField] private float _destroyTime;
@@ -11,6 +17,20 @@ public class GrenadeThrowable : MonoBehaviour
     [SerializeField] private LayerMask _layerMask;
 
     [SerializeField] private bool _isPlayer = false;
+
+
+
+    private void Start()
+    {
+        explosionTime = Time.time;
+    }
+
+
+
+
+
+
+
 
     public void SetProperties(float speed, float destroyTime, int damage)
     {
@@ -21,7 +41,7 @@ public class GrenadeThrowable : MonoBehaviour
 
     private void Update()
     {
-        transform.position += transform.up * _speed * Time.deltaTime;
+        
 
         Destroy(gameObject, _destroyTime);
 
