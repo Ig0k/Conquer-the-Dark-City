@@ -5,10 +5,12 @@ using UnityEngine;
 public class GrenadeThrowable : MonoBehaviour
 {
 
-    [SerializeField] private float tiempo = 4f;
-    [SerializeField] private float explosionTime;
+    public float tiempo = 4f;
+    [SerializeField] public float explosionTime;
 
+    [SerializeField] private float explosionratio;
 
+    [SerializeField] GameObject prefabExplo;
 
     // Start is called before the first frame update
     [SerializeField] private float _speed;
@@ -22,7 +24,7 @@ public class GrenadeThrowable : MonoBehaviour
 
     private void Start()
     {
-        explosionTime = Time.time;
+        explosionTime += Time.time+ tiempo;
     }
 
 
@@ -43,26 +45,13 @@ public class GrenadeThrowable : MonoBehaviour
     {
         
 
-        Destroy(gameObject, _destroyTime);
+        
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.forward, 0.5f, _layerMask);
 
-        if (_isPlayer)
-        {
-            if (hit.collider != null && hit.collider.TryGetComponent<EnemyPrototype>(out EnemyPrototype enemy1))
-            {
-                enemy1.TakeDamage(_damage);
-                Destroy(gameObject);
-            }
-            if (hit.collider != null && hit.collider.TryGetComponent<Enemy2>(out Enemy2 enemy2))
-            {
-                enemy2.TakeDamage(_damage);
-                Destroy(gameObject);
-            }
-        }
+     
 
-        else
-        {
+        
             if (hit.collider != null && hit.collider.TryGetComponent<PlayerLife>(out PlayerLife playerLife))
             {
                 //if(playerLife.parpadeo) playerLife.Life -= _damage;
@@ -78,9 +67,36 @@ public class GrenadeThrowable : MonoBehaviour
 
                 Destroy(gameObject);
             }
+        
+
+
+
+        if (Time.time > explosionTime)  { Explosion(); }
+
+
+
+        void Explosion()
+        {
+
+
+
+            Destroy(gameObject);
+
+            Instantiate(prefabExplo, transform.position, transform.rotation);
+
+
+            Collider2D[] allEnemies = Physics2D.OverlapCircleAll(transform.position, explosionratio);
+
+            foreach (Collider2D item in allEnemies)
+            {
+                if (item.gameObject.name.Contains("Enemy Prototype") || item.gameObject.name.Contains("Enemy Prototype (1)")) 
+                {
+
+                   Destroy(item.gameObject);
+                }
+            }
+
         }
-
-
 
 
     }

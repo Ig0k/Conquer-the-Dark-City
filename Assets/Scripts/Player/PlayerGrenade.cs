@@ -54,19 +54,7 @@ public class PlayerGrenade : MonoBehaviour
         set { _grenadeCD = value; }
     }
 
-    private void Start()
-    {
-        if (GameManager.currentCharacter == 1)
-        {
-            _bulletScript.SetProperties(_speed, _destroyTime, _damage);
-            GrenadeCD = _grenadeCD;
-        }
-        else if (GameManager.currentCharacter == 2)
-        {
-            _bulletScript.SetProperties(_speed2, _destroyTime, _damage2);
-            GrenadeCD = _PunchCD2;
-        }
-    }
+    
 
     private void Update()
     {
@@ -84,12 +72,23 @@ public class PlayerGrenade : MonoBehaviour
     private void GrenadeAction()
     {
         _canGrenade = false;
-        Instantiate(_grenade, transform.position, transform.rotation);
+
+        
+        GameObject nuevaGranada = Instantiate(_grenade, transform.position, transform.rotation);
 
         Vector2 dir = (_mousePoint.position - transform.position).normalized;
 
-        _grenade.GetComponent<Rigidbody2D>().AddForce(_speed * dir, ForceMode2D.Impulse);
        
+        Rigidbody2D rb = nuevaGranada.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            
+            rb.AddForce(_speed * dir, ForceMode2D.Impulse);
+        }
+
+        
+        grenadeAvailable--;
+
         _canGrenade = true;
     }
 

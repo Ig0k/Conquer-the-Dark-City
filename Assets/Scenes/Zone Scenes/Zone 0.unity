@@ -6241,13 +6241,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093745004}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.36193353, w: 0.93220395}
-  m_LocalPosition: {x: 0.53107774, y: -30.977432, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.22172761, w: 0.9751087}
+  m_LocalPosition: {x: -0.08, y: -27.69, z: 0}
   m_LocalScale: {x: 0.88428867, y: 0.88428867, z: 0.88428867}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1327245317}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 42.438}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 25.621}
 --- !u!70 &1093745007
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7891,7 +7891,7 @@ GameObject:
   - component: {fileID: 1613981072}
   - component: {fileID: 1613981071}
   - component: {fileID: 1613981074}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sight and Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14997,7 +14997,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7695173927375124351}
   - component: {fileID: 3467601579089949574}
-  - component: {fileID: 8216170215829476364}
   - component: {fileID: 3367693216225027234}
   - component: {fileID: 8216170215829476360}
   - component: {fileID: 3210574051343158492}
@@ -15005,6 +15004,7 @@ GameObject:
   - component: {fileID: 8216170215829476361}
   - component: {fileID: 8216170215829476362}
   - component: {fileID: 8216170215829476363}
+  - component: {fileID: 8216170215829476364}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -25663,9 +25663,9 @@ MonoBehaviour:
   _damage2: 2
   _destroyTime: 3
   _speed: 40
-  _speed2: 40.4
+  _speed2: 15
   _mousePoint: {fileID: 471181883}
-  _player: {fileID: 0}
+  _player: {fileID: 7695173927375124351}
   _grenadeCD: 0.12
   _PunchCD2: 12
   grenadeAvailable: 0

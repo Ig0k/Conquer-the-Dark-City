@@ -144,5 +144,6 @@ public class Enemy2 : MonoBehaviour
         return _life;
     }
 
+   public void Die() { Destroy(gameObject); }
 
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1195180600636797614}
   - component: {fileID: 5424689446884885549}
   - component: {fileID: 1158799604732746409}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: grenadethrowable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,9 +75,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.21599196, g: 0.4339623, b: 0.13264507, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: b013b6274dd15564f908f7c78e5d9853, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,13 +99,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7396d832a1aca40429ce29f24e5f4473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 12.49
-  _destroyTime: 8.62
-  _damage: 0
+  tiempo: 1
+  explosionTime: 1
+  explosionratio: 8
+  prefabExplo: {fileID: 1887347123800337572, guid: d5ac148319197d5458f7903e4a9d1b07, type: 3}
+  _speed: 5
+  _destroyTime: 0
+  _damage: 100
   _layerMask:
     serializedVersion: 2
-    m_Bits: 0
-  _isPlayer: 0
+    m_Bits: 64
+  _isPlayer: 1
 --- !u!58 &5424689446884885549
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -167,4 +171,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

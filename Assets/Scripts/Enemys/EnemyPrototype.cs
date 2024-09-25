@@ -145,4 +145,7 @@ public class EnemyPrototype : MonoBehaviour
         _life -= damage;
         return _life;
     }
+
+    public void Die() { Destroy(gameObject); }
+
 }
