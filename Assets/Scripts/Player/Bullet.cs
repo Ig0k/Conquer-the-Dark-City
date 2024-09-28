@@ -25,6 +25,12 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, _destroyTime);
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.forward, 0.5f, _layerMask);
+        RaycastHit2D hitWalls = Physics2D.Raycast(transform.position, transform.forward, 0.5f);
+
+        if (hitWalls.collider != null && hitWalls.collider.gameObject.layer == 8) // layer 8 = Wall
+        {
+            Destroy(gameObject);
+        }
 
         if (_isPlayer)
         {
