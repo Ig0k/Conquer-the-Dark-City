@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,6 +35,8 @@ public class EnemyPrototype : MonoBehaviour
     [SerializeField] private float _bulletSpeed = 15f;
     [SerializeField] private float _bulletDestroyTime = 5f;
     [SerializeField] private int _bulletDamage = 1;
+
+    
 
     private void Awake()
     {
