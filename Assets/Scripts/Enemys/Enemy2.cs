@@ -35,9 +35,29 @@ public class Enemy2 : MonoBehaviour
     [SerializeField] private float _PunchDestroyTime = 5f;
     [SerializeField] private int _PunchDamage = 3;
 
+    public float _ogSpeed = 0, _ogPunchSpeed = 0, _ogPunchCD = 0;
+
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
+
+        _ogSpeed = _agent.speed;
+        _ogPunchSpeed = _PunchSpeed;
+        _ogPunchCD = _PunchCD;
+    }
+
+    public void TimeModification(float newPunchSpeed, float newSpeed, float newPunchCD)
+    {
+        _PunchSpeed = newPunchSpeed;
+        _agent.speed = newSpeed;
+        _PunchCD = newPunchCD;
+    }
+
+    public void BackToOgParams()
+    {
+        _PunchCD = _ogPunchCD;
+        _agent.speed = _ogSpeed;
+        _PunchSpeed = _ogPunchSpeed;
     }
 
     private void Start()

@@ -25,7 +25,7 @@ public class EnemyPrototype : MonoBehaviour
 
     [Header("Bullet References")]
     [SerializeField] private GameObject _bullet;
-    //[SerializeField] private Bullet _bulletScript;
+    [SerializeField] private Bullet _bulletScript;
     [SerializeField] private Transform _sight;
 
     [SerializeField] private float _shootCD = 1f;
@@ -36,11 +36,43 @@ public class EnemyPrototype : MonoBehaviour
     [SerializeField] private float _bulletDestroyTime = 5f;
     [SerializeField] private int _bulletDamage = 1;
 
-    
+    private float _ogBulletSpeed = 0f;
+    private float _ogBulletDestroyTime = 0f;
+    private float _ogMoveSpeed = 0f;
+    private float _ogShootCD = 0f;
 
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
+
+        _ogBulletSpeed = _bulletSpeed;
+        _ogBulletDestroyTime = _bulletDestroyTime;
+        _ogMoveSpeed = _agent.speed;
+        _ogShootCD = _shootCD;
+
+        if(_bulletScript != null) _bulletScript.SetProperties(_bulletSpeed, _bulletDestroyTime, _bulletDamage);
+
+    }
+
+    public void TimeModification(float newSpeed, float newBulletSpeed, float newBulletDestroyTime, 
+        float newShootCD)
+    {    
+        _bulletSpeed = newBulletSpeed;
+        _bulletDestroyTime = newBulletDestroyTime;
+        _shootCD = newShootCD;
+
+        _bulletScript.SetProperties(newSpeed, newBulletDestroyTime, _bulletDamage);
+        _agent.speed = newSpeed;
+    }
+
+    public void BackToOgParams()
+    {
+        _bulletSpeed = _ogBulletSpeed;
+        _bulletDestroyTime = _ogBulletDestroyTime;
+        _agent.speed = _ogMoveSpeed;
+        _shootCD = _ogShootCD;
+
+        _bulletScript.SetProperties(_bulletSpeed, _bulletDestroyTime, _bulletDamage);
     }
 
     private void Start()
