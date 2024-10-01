@@ -62,7 +62,7 @@ public class EnemyPrototype : MonoBehaviour
         _shootCD = newShootCD;
 
         _bulletScript.SetProperties(newSpeed, newBulletDestroyTime, _bulletDamage);
-        _agent.speed = newSpeed;
+        if(_agent.speed != 0) _agent.speed = newSpeed;
     }
 
     public void BackToOgParams()

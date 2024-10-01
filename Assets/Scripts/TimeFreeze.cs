@@ -57,7 +57,7 @@ public class TimeFreeze : MonoBehaviour
 
     private void FreezeTimeMethod()
     {
-        Debug.Log("Tiempo Freezado");
+        //Debug.Log("Tiempo Freezado");
         //escribir la logica de freezeo de tiempo aca
 
         _UIFreezeEffect.SetActive(true);
@@ -74,7 +74,7 @@ public class TimeFreeze : MonoBehaviour
         {
             if(_enemy1Script[i] != null)
             {
-                _enemy1Script[i].TimeModification(1.2f, 5f, 12f, 3f);
+                _enemy1Script[i].TimeModification(1.2f, 13f, 12f, 3f);
             }
             
         }
@@ -83,7 +83,7 @@ public class TimeFreeze : MonoBehaviour
 
     private void NormalTime()
     {
-        Debug.Log("Tiempo normal");
+        //Debug.Log("Tiempo normal");
         //escribir logica de tiempo no freezado aca
 
         _UIFreezeEffect.SetActive(false);

@@ -19,10 +19,19 @@ public class MapManager : MonoBehaviour
         _zone = zone;
     }
 
+    private void Start()
+    {
+        if(SceneManager.GetActiveScene().name == "Map" || SceneManager.GetActiveScene().name == "Art")
+        {
+            UnityEngine.Cursor.lockState = CursorLockMode.None; 
+            UnityEngine.Cursor.visible = true;
+        }
+    }
+
     public void GoToScene()
     {
         chancesToConfrontation = Random.Range(0, 12);
-        if (chancesToConfrontation <= 3)
+        if (chancesToConfrontation <= 4)
         {
             StartCoroutine(GoToConfrontation());
         }
