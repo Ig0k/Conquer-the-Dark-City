@@ -45,6 +45,11 @@ public class Bullet : MonoBehaviour
                 enemy2.TakeDamage(_damage);
                 Destroy(gameObject);
             }
+            if (hit.collider !=null && hit.collider.TryGetComponent<Torreta>(out Torreta turret))
+            {
+                turret.TakeDamage(_damage);
+                Destroy(gameObject);
+            }
         }
 
         else
