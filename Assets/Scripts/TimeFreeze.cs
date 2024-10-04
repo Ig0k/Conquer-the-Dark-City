@@ -18,6 +18,12 @@ public class TimeFreeze : MonoBehaviour
 
     [SerializeField] private GameObject _UIFreezeEffect;
 
+    private void Start()
+    {
+        if(PowerManagement.canUseTimeFreeze) enabled = true;
+        else enabled = false;
+    }
+
     private void Update()
     {
         if (_startCD) Timer();
