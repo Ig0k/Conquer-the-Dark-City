@@ -8990,6 +8990,7 @@ MonoBehaviour:
   _playerLife: {fileID: 0}
   _sceneName: Map
   _mapScene: Map
+  _baseScene: 
   _animator: {fileID: 407166608}
   _currentCharacter: 0
 --- !u!4 &1749622517
@@ -15433,6 +15434,7 @@ GameObject:
   - component: {fileID: 8216170215829476363}
   - component: {fileID: 8216170215829476364}
   - component: {fileID: 8216170215829476365}
+  - component: {fileID: 8216170215829476366}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -26149,6 +26151,18 @@ MonoBehaviour:
   - {fileID: 1894236911760478348}
   - {fileID: 13829618}
   _UIFreezeEffect: {fileID: 8475957248145159568}
+--- !u!114 &8216170215829476366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278398248855385425}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe9b8c55d7f2324e8dbde86b63e6a0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8244715956638746587
 MonoBehaviour:
   m_ObjectHideFlags: 3

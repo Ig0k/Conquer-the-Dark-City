@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private CharacterData _characterData;
     [SerializeField] private PlayerLife _playerLife;
-    [SerializeField] private string _sceneName, _mapScene;
+    [SerializeField] private string _sceneName, _mapScene, _baseScene;
 
     [SerializeField] private Animator _animator;
 
@@ -32,10 +32,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Time.timeScale = 1f;
+    }
+
     public void WinLevel(int currentZoneNumb)
     {
         _characterData.CompletedZones(currentZoneNumb);
-        StartCoroutine(LoadScene(_mapScene));
+        StartCoroutine(LoadScene(_baseScene));
     }
 
     private void Update()

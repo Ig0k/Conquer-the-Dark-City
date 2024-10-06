@@ -26,6 +26,8 @@ public class MapManager : MonoBehaviour
             UnityEngine.Cursor.lockState = CursorLockMode.None; 
             UnityEngine.Cursor.visible = true;
         }
+
+        Time.timeScale = 1f;
     }
 
     public void GoToScene()
@@ -52,7 +54,7 @@ public class MapManager : MonoBehaviour
     {
         _confrontationWarning.SetActive(true);
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(4f);
 
         SceneManager.LoadScene("Confrontation1");
     }

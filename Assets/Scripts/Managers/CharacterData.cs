@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterData : MonoBehaviour
 {
@@ -40,6 +41,21 @@ public class CharacterData : MonoBehaviour
     private void Update()
     {
         _characterVisualization = _character;
+
+        //EN BASE:
+        if(SceneManager.GetActiveScene().name == "Base")
+        {
+            if (Input.GetKeyDown(KeyCode.Tab) && _character == 1 && Input.GetAxis("Horizontal") == 0 
+                && Input.GetAxis("Vertical") == 0)
+            {
+                _character = 2;
+            }
+            else if(Input.GetKeyDown(KeyCode.Tab) && _character == 2 && Input.GetAxis("Horizontal") == 0
+                && Input.GetAxis("Vertical") == 0)
+            {
+                _character = 1;
+            }
+        }
     }
 
     public void CompletedZones(int zoneCompleted)
