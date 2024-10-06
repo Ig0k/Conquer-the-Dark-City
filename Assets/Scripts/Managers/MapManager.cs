@@ -14,6 +14,9 @@ public class MapManager : MonoBehaviour
     public int chancesToConfrontation = 0;
     [SerializeField] private GameObject _confrontationWarning;
 
+    [SerializeField] private int _moneyToBribe = 5;
+    private bool _bribed = false;
+
     public void SaveSceneString(string zone)
     {
         _zone = zone;
@@ -21,6 +24,8 @@ public class MapManager : MonoBehaviour
 
     private void Start()
     {
+        _bribed = false;
+
         if(SceneManager.GetActiveScene().name == "Map" || SceneManager.GetActiveScene().name == "Art")
         {
             UnityEngine.Cursor.lockState = CursorLockMode.None; 
@@ -30,10 +35,21 @@ public class MapManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void Bribe() //bribe == sobornar
+    {
+        if(Money.money >= _moneyToBribe)
+        {
+            _bribed = true;
+            _confrontationWarning.SetActive(false);
+
+            Money.money -= _moneyToBribe;
+        }
+    }
+
     public void GoToScene()
     {
         chancesToConfrontation = Random.Range(0, 12);
-        if (chancesToConfrontation <= 4)
+        if (chancesToConfrontation <= 4 && !_bribed)
         {
             StartCoroutine(GoToConfrontation());
         }
@@ -56,6 +72,9 @@ public class MapManager : MonoBehaviour
 
         yield return new WaitForSeconds(4f);
 
-        SceneManager.LoadScene("Confrontation1");
+        if(!_bribed)
+        {
+            SceneManager.LoadScene("Confrontation1");
+        }
     }
 }

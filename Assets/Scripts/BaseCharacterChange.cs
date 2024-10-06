@@ -10,6 +10,11 @@ public class BaseCharacterChange : MonoBehaviour
     [SerializeField] private PlayerMovement _player1Movement, _player2Movement;
     [SerializeField] private PlayerAvatar _player1Avatar, _player2Avatar; // para que no roten hacia el mouse
 
+    private void Start()
+    {
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+    }
+
     private void Update()
     {
         if(CharacterData._character == 1)
