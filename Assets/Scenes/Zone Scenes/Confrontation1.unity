@@ -272,6 +272,7 @@ MonoBehaviour:
   _bulletSpeed: 30
   _bulletDestroyTime: 5
   _bulletDamage: 1
+  _invisibility: {fileID: 8216170215829476366}
 --- !u!212 &13829619
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20260,6 +20261,7 @@ MonoBehaviour:
   _bulletSpeed: 30
   _bulletDestroyTime: 5
   _bulletDamage: 1
+  _invisibility: {fileID: 8216170215829476366}
 --- !u!114 &2246613652381018813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20391,7 +20393,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278398248855385425}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 197a5e3520efe9f489f1eb998ffb6f11, type: 3}
   m_Name: 
@@ -25818,6 +25820,7 @@ MonoBehaviour:
   _ogSpeed: 0
   _ogPunchSpeed: 0
   _ogPunchCD: 0
+  _invisibility: {fileID: 8216170215829476366}
 --- !u!4 &6758548355052446544
 Transform:
   m_ObjectHideFlags: 0
@@ -26163,6 +26166,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe9b8c55d7f2324e8dbde86b63e6a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInvisible: 0
+  _invisibilityDuration: 7
+  _currentCD: 0
+  _onCD: 0
+  _startCD: 0
+  _canBeInvisible: 1
+  _timeBetween: 5.5
+  _spriteRenderer: {fileID: 840451051}
 --- !u!114 &8244715956638746587
 MonoBehaviour:
   m_ObjectHideFlags: 3

@@ -41,6 +41,8 @@ public class EnemyPrototype : MonoBehaviour
     private float _ogMoveSpeed = 0f;
     private float _ogShootCD = 0f;
 
+    [SerializeField] private Invisibility _invisibility;
+
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -97,14 +99,22 @@ public class EnemyPrototype : MonoBehaviour
         {
             if (_agent.isOnNavMesh)
             {
+                if(_invisibility != null && _invisibility.isInvisible)
+                {
+                    _isFollowingPlayer = false;
+                    _agent.isStopped = false;
 
+                    Patroll();
+                }
 
                 if (_isFollowingPlayer && _distanceFromPlayer >= _minDistanceToStop)
+                    
                 {
                     _agent.isStopped = false;
                     FollowPlayer(_playerTransform);
                 }
-                else if (_isFollowingPlayer && _distanceFromPlayer < _minDistanceToStop)
+                else if (_isFollowingPlayer && _distanceFromPlayer < _minDistanceToStop 
+                    && _invisibility.isInvisible == false)
                 {
                     _agent.isStopped = true;
 
@@ -115,19 +125,23 @@ public class EnemyPrototype : MonoBehaviour
                 }
 
                 //SHOOT
-                if (_distanceFromPlayer <= _minDistanceToShootPlayer && _canShoot)
+                if (_distanceFromPlayer <= _minDistanceToShootPlayer && _canShoot 
+                    && _invisibility.isInvisible == false)
                 {
 
                     StartCoroutine(Shoot());
 
-                }
+                }                
 
                 //FOLLOW PLAYER
                 if (_distanceFromPlayer <= _minDistanceToFollowPlayer)
                 {
                     _isFollowingPlayer = true;
                 }
-                else _isFollowingPlayer = false;
+                else if(_invisibility.enabled && _invisibility.isInvisible == true)
+                {
+                    _isFollowingPlayer = false;
+                }
 
             }
         }

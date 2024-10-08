@@ -37,6 +37,8 @@ public class Enemy2 : MonoBehaviour
 
     public float _ogSpeed = 0, _ogPunchSpeed = 0, _ogPunchCD = 0;
 
+    [SerializeField] private Invisibility _invisibility;
+
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -82,7 +84,15 @@ public class Enemy2 : MonoBehaviour
         {
             if (_agent.isOnNavMesh)
             {
-                if (_isFollowingPlayer && _distanceFromPlayer >= _minDistanceToStop)
+                if (_invisibility.isInvisible)
+                {                  
+                    _isFollowingPlayer = false;
+                    _agent.isStopped = false;
+
+                    Patroll();
+                }
+                if (_isFollowingPlayer && _distanceFromPlayer >= _minDistanceToStop 
+                    && _invisibility.isInvisible == false)
                 {
                     _agent.isStopped = false;
                     FollowPlayer(_playerTransform);
@@ -98,19 +108,21 @@ public class Enemy2 : MonoBehaviour
                 }
 
                 //SHOOT
-                if (_distanceFromPlayer <= _minDistanceToPunchPlayer && _canPunch)
+                if (_distanceFromPlayer <= _minDistanceToPunchPlayer && _canPunch 
+                    && _invisibility.isInvisible == false)
                 {
-
                     StartCoroutine(Punch());
-
                 }
 
                 //FOLLOW PLAYER
-                if (_distanceFromPlayer <= _minDistanceToFollowPlayer)
+                if (_distanceFromPlayer <= _minDistanceToFollowPlayer && _invisibility.isInvisible == false)
                 {
                     _isFollowingPlayer = true;
                 }
-                else _isFollowingPlayer = false;
+                else if(_distanceFromPlayer > _minDistanceToFollowPlayer || _invisibility.isInvisible)
+                {
+                    _isFollowingPlayer = false;
+                }
             }
             
         }

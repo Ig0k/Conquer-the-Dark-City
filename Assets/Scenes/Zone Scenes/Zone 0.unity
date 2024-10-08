@@ -2057,6 +2057,7 @@ MonoBehaviour:
   _bulletSpeed: 38
   _bulletDestroyTime: 6
   _bulletDamage: 1
+  _invisibility: {fileID: 8979344724063642797}
 --- !u!212 &192238049
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3388,6 +3389,7 @@ MonoBehaviour:
   _ogSpeed: 0
   _ogPunchSpeed: 0
   _ogPunchCD: 0
+  _invisibility: {fileID: 0}
 --- !u!212 &294183558
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9447,6 +9449,7 @@ MonoBehaviour:
   _bulletSpeed: 30
   _bulletDestroyTime: 5
   _bulletDamage: 1
+  _invisibility: {fileID: 8979344724063642797}
 --- !u!212 &1062799038
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12366,6 +12369,7 @@ MonoBehaviour:
   _ogSpeed: 0
   _ogPunchSpeed: 0
   _ogPunchCD: 0
+  _invisibility: {fileID: 0}
 --- !u!212 &1557559698
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13362,6 +13366,7 @@ MonoBehaviour:
   _bulletSpeed: 30
   _bulletDestroyTime: 5
   _bulletDamage: 1
+  _invisibility: {fileID: 8979344724063642797}
 --- !u!212 &1623574557
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26408,6 +26413,7 @@ MonoBehaviour:
   _bulletSpeed: 38
   _bulletDestroyTime: 6
   _bulletDamage: 1
+  _invisibility: {fileID: 8979344724063642797}
 --- !u!50 &2241221236244625639
 Rigidbody2D:
   serializedVersion: 4
@@ -27059,7 +27065,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: 7205a88e75852b54a82db91f1392b674, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -27190,7 +27196,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633911486753971364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a132b37d07f2ba4d9b72c74ed0bbe69, type: 3}
   m_Name: 
@@ -27396,6 +27402,7 @@ MonoBehaviour:
   _ogSpeed: 0
   _ogPunchSpeed: 0
   _ogPunchCD: 0
+  _invisibility: {fileID: 8979344724063642797}
 --- !u!4 &6758548355052446544
 Transform:
   m_ObjectHideFlags: 0
@@ -27857,6 +27864,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe9b8c55d7f2324e8dbde86b63e6a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInvisible: 0
+  _invisibilityDuration: 7
+  _currentCD: 0
+  _onCD: 0
+  _startCD: 0
+  _canBeInvisible: 1
+  _timeBetween: 5.5
+  _spriteRenderer: {fileID: 5761483785289385196}
 --- !u!114 &8986894794778444319
 MonoBehaviour:
   m_ObjectHideFlags: 0
