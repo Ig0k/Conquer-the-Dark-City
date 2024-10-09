@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,6 +40,12 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int dmg )
+    {
+
+        _life -= dmg;
+
+    }
     public void ShowParticles()
     {
         Instantiate(_bloodParticles, transform.position, Quaternion.identity);

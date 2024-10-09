@@ -49,6 +49,12 @@ public class Bullet : MonoBehaviour
             {
                 turret.TakeDamage(_damage);
                 Destroy(gameObject);
+
+            }
+            if (hit.collider!= null && hit.collider.TryGetComponent<Kamikaze>(out Kamikaze kam))
+            {
+                kam.TakeDamage(_damage);
+                Destroy(gameObject);
             }
         }
 

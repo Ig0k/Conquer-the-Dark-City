@@ -5153,6 +5153,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe9b8c55d7f2324e8dbde86b63e6a0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInvisible: 0
+  _invisibilityDuration: 7
+  _currentCD: 0
+  _onCD: 0
+  _startCD: 0
+  _canBeInvisible: 1
+  _timeBetween: 5.5
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &5376500825573775959
 GameObject:
   m_ObjectHideFlags: 0
