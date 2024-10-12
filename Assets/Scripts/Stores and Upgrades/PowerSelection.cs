@@ -45,6 +45,13 @@ public class PowerSelection : MonoBehaviour
         {
             _currentPower.text = "Time Freeze activated";
         }
+
+        //ACTIVACION AUTOMATICA DEL BOOST DE DISPAROS:
+
+        if(UpgradesStore.shootBoostBought)
+        {
+            _powerManagement.ActiveShootBoost(true);
+        }
     }
 
     private IEnumerator UnpurchasedSkill()

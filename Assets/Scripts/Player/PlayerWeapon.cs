@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
@@ -17,12 +18,32 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private float _shootCD = .7f, _shootCD2 = 1.3f;
     private bool _canShoot = true;
 
+    [Header("Boost Values")]
+
+    [SerializeField] private bool _canUseBoost = false;
+    [SerializeField] private bool _boost = false;
+    [SerializeField] private float _boostSpeed = 60f, _boostCD = 0.3f;
+
+    [SerializeField] private float _boostDuration = 5f;
+    [SerializeField] private float _timeBetweenBost = 8f, _currentCD = 0f;
+    private bool _onCD = false;
+
     public float ShootCD
     {
         set { _shootCD = value; }
     }
 
+    private void Awake()
+    {
+        if (PowerManagement.canUseShootBoost) _canUseBoost = true;
+    }
+
     private void Start()
+    {
+        CheckForProperties();
+    }
+
+    private void CheckForProperties()
     {
         if (GameManager.currentCharacter == 1 && _upgrades.level == 1)
         {
@@ -41,23 +62,60 @@ public class PlayerWeapon : MonoBehaviour
             ShootCD = _shootCD;
         }
 
-        else if(GameManager.currentCharacter == 1 && _upgrades.level == 0)
+        else if (GameManager.currentCharacter == 1 && _upgrades.level == 0)
         {
             _bulletScript.SetProperties(40, _destroyTime, 1);
             ShootCD = _shootCD2;
         }
-        else if ( GameManager.currentCharacter == 2 && _upgrades.level == 0)
+        else if (GameManager.currentCharacter == 2 && _upgrades.level == 0)
         {
             _bulletScript.SetProperties(27, _destroyTime, 2);
             ShootCD = _shootCD2;
         }
     }
 
-    
+    private IEnumerator BoostTimer()
+    {
+        _boost = true;
+        yield return new WaitForSeconds(_boostDuration);
+        _boost = false;
+        _currentCD = 0f;
+    }
+
+    private void BetweenBoostTimer()
+    {
+        if (_onCD)
+        {
+            _currentCD += Time.deltaTime;
+
+            if (_currentCD > _timeBetweenBost)
+            {
+                _onCD = false;
+                _currentCD = 0f;
+            }
+        }
+    }
 
     private void Update()
     {
-        if(Input.GetMouseButton(0) && _canShoot) StartCoroutine(Shoot());
+        if (_canUseBoost && !_onCD && Input.GetKeyDown(KeyCode.Alpha1) && !_boost)
+        {
+            StartCoroutine(BoostTimer());
+            _onCD = true;
+        }
+
+        BetweenBoostTimer();
+
+        if (!_boost)
+        {
+            if (Input.GetMouseButtonDown(0) && _canShoot) StartCoroutine(Shoot());
+            CheckForProperties();
+        }
+        else
+        {
+            if (Input.GetMouseButton(0) && _canShoot) StartCoroutine(Shoot());
+            _bulletScript.SetProperties(_boostSpeed, _destroyTime, 1);
+        }
 
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -69,9 +127,19 @@ public class PlayerWeapon : MonoBehaviour
 
     private IEnumerator Shoot()
     {
-        _canShoot = false;
-        Instantiate(_bullet, transform.position, transform.rotation);
-        yield return new WaitForSeconds(_shootCD);
-        _canShoot = true;
+        if (!_boost)
+        {
+            _canShoot = false;
+            Instantiate(_bullet, transform.position, transform.rotation);
+            yield return new WaitForSeconds(_shootCD);
+            _canShoot = true;
+        }
+        else
+        {
+            _canShoot = false;
+            Instantiate(_bullet, transform.position, transform.rotation);
+            yield return new WaitForSeconds(_boostCD);
+            _canShoot = true;
+        }
     }
 }

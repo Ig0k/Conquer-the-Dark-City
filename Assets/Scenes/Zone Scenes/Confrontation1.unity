@@ -8347,6 +8347,13 @@ MonoBehaviour:
   _player: {fileID: 7695173927375124351}
   _shootCD: 0.7
   _shootCD2: 1.3
+  _canUseBoost: 0
+  _boost: 0
+  _boostSpeed: 90
+  _boostCD: 0.3
+  _boostDuration: 5
+  _timeBetweenBost: 8
+  _currentCD: 0
 --- !u!212 &1613981072
 SpriteRenderer:
   m_ObjectHideFlags: 0

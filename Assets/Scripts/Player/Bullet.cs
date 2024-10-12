@@ -40,6 +40,11 @@ public class Bullet : MonoBehaviour
                 enemy1.TakeDamage(_damage);
                 Destroy(gameObject);
             }
+            if (hit.collider != null && hit.collider.TryGetComponent<Enemy3>(out Enemy3 enemy3))
+            {
+                enemy3.TakeDamage(_damage);
+                Destroy(gameObject);
+            }
             if (hit.collider != null && hit.collider.TryGetComponent<Enemy2>(out Enemy2 enemy2))
             {
                 enemy2.TakeDamage(_damage);

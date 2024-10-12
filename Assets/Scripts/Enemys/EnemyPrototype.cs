@@ -95,6 +95,9 @@ public class EnemyPrototype : MonoBehaviour
 
         float _distanceFromPlayer = Vector2.Distance(transform.position, _playerTransform.position);
 
+        Vector2 dirToPlayer = (_playerTransform.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(Vector3.forward, dirToPlayer);
+
         if (gameObject != null)
         {
             if (_agent.isOnNavMesh)
@@ -111,7 +114,7 @@ public class EnemyPrototype : MonoBehaviour
                     
                 {
                     _agent.isStopped = false;
-                    FollowPlayer(_playerTransform);
+                    FollowPlayer(_playerTransform, lookRotation);
                 }
                 else if (_isFollowingPlayer && _distanceFromPlayer < _minDistanceToStop 
                     && _invisibility.isInvisible == false)
@@ -143,18 +146,21 @@ public class EnemyPrototype : MonoBehaviour
                     _isFollowingPlayer = false;
                 }
 
+                if (_isFollowingPlayer)
+                {
+                    transform.rotation = lookRotation;
+                }
+
             }
         }
 
     }
 
-    private void FollowPlayer(Transform player)
+    private void FollowPlayer(Transform player, Quaternion rot)
     {
         if (_agent.isOnNavMesh)
         {
-            Vector2 dirToPlayer = (player.position - transform.position).normalized;
-            Quaternion lookRotation = Quaternion.LookRotation(Vector3.forward, dirToPlayer);
-            transform.rotation = lookRotation;
+            transform.rotation = rot;
 
             _agent.SetDestination(player.position);
         }

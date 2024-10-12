@@ -9,8 +9,11 @@ public class PowerManagement : MonoBehaviour
     public static bool canUseTimeFreeze;
     public static bool canUseInvisibility;
 
+    public static bool canUseShootBoost;
+
     [SerializeField] private bool _isTimeFreezeVisualization;
     [SerializeField] private bool _isInvisibilityVisualization;
+    [SerializeField] private bool _canUseShootBoostVisualization;
 
     private void Awake()
     {
@@ -30,8 +33,19 @@ public class PowerManagement : MonoBehaviour
         canUseTimeFreeze = true;
         canUseInvisibility = false;
 
+        canUseShootBoost = false;
+
         _isInvisibilityVisualization = canUseInvisibility;
         _isTimeFreezeVisualization = canUseTimeFreeze;
+
+        _canUseShootBoostVisualization = canUseShootBoost;
+    }
+
+    public void ActiveShootBoost(bool _canUseShootBoost)
+    {
+        canUseShootBoost = true;
+
+        _canUseShootBoostVisualization = canUseShootBoost;
     }
 
     public void ActiveInvisibility(bool _canUseInvisibility)

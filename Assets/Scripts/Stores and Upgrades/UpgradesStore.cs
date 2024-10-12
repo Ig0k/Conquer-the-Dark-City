@@ -8,7 +8,9 @@ public class UpgradesStore : MonoBehaviour
     [Header("Store Properties")]
 
     [SerializeField] private int _invisibilityPrice = 30;
+    [SerializeField] private int _shootBoostPrice = 80;
     public static bool invisibilityBought = false;
+    public static bool shootBoostBought = false;
 
     [SerializeField] private TMP_Text _moneyText;
 
@@ -32,6 +34,16 @@ public class UpgradesStore : MonoBehaviour
             invisibilityBought = true;
 
             Money.money -= _invisibilityPrice;
+        }
+    }
+
+    public void BuyShootBoost()
+    {
+        if (Money.money >= _shootBoostPrice && !shootBoostBought)
+        {
+            shootBoostBought = true;
+
+            Money.money -= _shootBoostPrice;    
         }
     }
 

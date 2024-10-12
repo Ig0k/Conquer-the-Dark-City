@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy2 : MonoBehaviour
+public class Enemy3 : MonoBehaviour
 {
     [SerializeField] private int _life = 5;
 
@@ -14,28 +14,31 @@ public class Enemy2 : MonoBehaviour
 
     [SerializeField] private Transform[] _wayPoints;
     [SerializeField] private float _minDistanceForWps = 0.2f;
-    [SerializeField] private float _minDistanceToFollowPlayer = 4f;
-    [SerializeField] private float _minDistanceToPunchPlayer = 2f;
+    [SerializeField] private float _minDistanceToFollowPlayer = 15f;
+    [SerializeField] private float _minDistanceToShootPlayer = 15f;
     [SerializeField] private float _minDistanceToStop;
 
     [SerializeField] private bool _isFollowingPlayer = false;
 
     [SerializeField] private int _wpsIndex = 0;
 
-    [Header("Punch References")]
-    [SerializeField] private GameObject _Punch;
-    //[SerializeField] private Bullet _bulletScript;
-    [SerializeField] private Transform _sight;
+    [Header("Bullet References")]
+    [SerializeField] private GameObject _bullet;
+    [SerializeField] private Bullet _bulletScript;
+    [SerializeField] private Transform _sight1, _sight2, _sight3;
 
-    [SerializeField] private float _PunchCD = 1f;
-    [SerializeField] private bool _canPunch = true;
+    [SerializeField] private float _shootCD = 1f;
+    [SerializeField] private bool _canShoot = true;
 
-    [Header("Punch Properties")]
-    [SerializeField] private float _PunchSpeed = 15f;
-    [SerializeField] private float _PunchDestroyTime = 5f;
-    [SerializeField] private int _PunchDamage = 3;
+    [Header("Bullet Properties")]
+    [SerializeField] private float _bulletSpeed = 15f;
+    [SerializeField] private float _bulletDestroyTime = 5f;
+    [SerializeField] private int _bulletDamage = 1;
 
-    public float _ogSpeed = 0, _ogPunchSpeed = 0, _ogPunchCD = 0;
+    private float _ogBulletSpeed = 0f;
+    private float _ogBulletDestroyTime = 0f;
+    private float _ogMoveSpeed = 0f;
+    private float _ogShootCD = 0f;
 
     [SerializeField] private Invisibility _invisibility;
 
@@ -43,23 +46,34 @@ public class Enemy2 : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
 
-        _ogSpeed = _agent.speed;
-        _ogPunchSpeed = _PunchSpeed;
-        _ogPunchCD = _PunchCD;
+        _ogBulletSpeed = _bulletSpeed;
+        _ogBulletDestroyTime = _bulletDestroyTime;
+        _ogMoveSpeed = _agent.speed;
+        _ogShootCD = _shootCD;
+
+        if (_bulletScript != null) _bulletScript.SetProperties(_bulletSpeed, _bulletDestroyTime, _bulletDamage);
+
     }
 
-    public void TimeModification(float newPunchSpeed, float newSpeed, float newPunchCD)
+    public void TimeModification(float newSpeed, float newBulletSpeed, float newBulletDestroyTime,
+        float newShootCD)
     {
-        _PunchSpeed = newPunchSpeed;
-        _agent.speed = newSpeed;
-        _PunchCD = newPunchCD;
+        _bulletSpeed = newBulletSpeed;
+        _bulletDestroyTime = newBulletDestroyTime;
+        _shootCD = newShootCD;
+
+        _bulletScript.SetProperties(newSpeed, newBulletDestroyTime, _bulletDamage);
+        if (_agent.speed != 0) _agent.speed = newSpeed;
     }
 
     public void BackToOgParams()
     {
-        _PunchCD = _ogPunchCD;
-        _agent.speed = _ogSpeed;
-        _PunchSpeed = _ogPunchSpeed;
+        _bulletSpeed = _ogBulletSpeed;
+        _bulletDestroyTime = _ogBulletDestroyTime;
+        _agent.speed = _ogMoveSpeed;
+        _shootCD = _ogShootCD;
+
+        _bulletScript.SetProperties(_bulletSpeed, _bulletDestroyTime, _bulletDamage);
     }
 
     private void Start()
@@ -87,20 +101,22 @@ public class Enemy2 : MonoBehaviour
         {
             if (_agent.isOnNavMesh)
             {
-                if (_invisibility.isInvisible)
-                {                  
+                if (_invisibility != null && _invisibility.isInvisible)
+                {
                     _isFollowingPlayer = false;
                     _agent.isStopped = false;
 
                     Patroll();
                 }
-                if (_isFollowingPlayer && _distanceFromPlayer >= _minDistanceToStop 
-                    && _invisibility.isInvisible == false)
+
+                if (_isFollowingPlayer && _distanceFromPlayer >= _minDistanceToStop)
+
                 {
                     _agent.isStopped = false;
                     FollowPlayer(_playerTransform, lookRotation);
                 }
-                else if (_isFollowingPlayer && _distanceFromPlayer < _minDistanceToStop)
+                else if (_isFollowingPlayer && _distanceFromPlayer < _minDistanceToStop
+                    && _invisibility.isInvisible == false)
                 {
                     _agent.isStopped = true;
 
@@ -111,18 +127,20 @@ public class Enemy2 : MonoBehaviour
                 }
 
                 //SHOOT
-                if (_distanceFromPlayer <= _minDistanceToPunchPlayer && _canPunch 
+                if (_distanceFromPlayer <= _minDistanceToShootPlayer && _canShoot
                     && _invisibility.isInvisible == false)
                 {
-                    StartCoroutine(Punch());
+
+                    StartCoroutine(Shoot());
+
                 }
 
                 //FOLLOW PLAYER
-                if (_distanceFromPlayer <= _minDistanceToFollowPlayer && _invisibility.isInvisible == false)
+                if (_distanceFromPlayer <= _minDistanceToFollowPlayer)
                 {
                     _isFollowingPlayer = true;
                 }
-                else if(_distanceFromPlayer > _minDistanceToFollowPlayer || _invisibility.isInvisible)
+                else if (_invisibility.enabled && _invisibility.isInvisible == true)
                 {
                     _isFollowingPlayer = false;
                 }
@@ -132,7 +150,6 @@ public class Enemy2 : MonoBehaviour
                     transform.rotation = lookRotation;
                 }
             }
-            
         }
 
     }
@@ -140,7 +157,7 @@ public class Enemy2 : MonoBehaviour
     private void FollowPlayer(Transform player, Quaternion rot)
     {
         if (_agent.isOnNavMesh)
-        {
+        {            
             transform.rotation = rot;
 
             _agent.SetDestination(player.position);
@@ -168,12 +185,14 @@ public class Enemy2 : MonoBehaviour
         }
     }
 
-    private IEnumerator Punch()
+    private IEnumerator Shoot()
     {
-        _canPunch = false;
-        Instantiate(_Punch, transform.position, transform.rotation);
-        yield return new WaitForSeconds(_PunchCD);
-        _canPunch = true;
+        _canShoot = false;
+        Instantiate(_bullet, _sight1.position, _sight1.rotation);
+        Instantiate(_bullet, _sight2.position, _sight2.rotation);
+        Instantiate(_bullet, _sight3.position, _sight3.rotation);
+        yield return new WaitForSeconds(_shootCD);
+        _canShoot = true;
     }
 
     public int TakeDamage(int damage)
@@ -182,6 +201,6 @@ public class Enemy2 : MonoBehaviour
         return _life;
     }
 
-   public void Die() { Destroy(gameObject); }
+    public void Die() { Destroy(gameObject); }
 
 }
