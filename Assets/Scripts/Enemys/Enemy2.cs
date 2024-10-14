@@ -39,6 +39,16 @@ public class Enemy2 : MonoBehaviour
 
     [SerializeField] private Invisibility _invisibility;
 
+    [SerializeField] private Rigidbody2D _rb;
+
+    [Header("Knockback Values")]
+    [SerializeField] private float _knockbackForce = 2f, _knockBackDuration;
+    private Coroutine knockbackCoroutine;
+
+    [Header("Sounds")]
+    [SerializeField] private AudioClip _impactClip;
+    [SerializeField] private SoundsManager _audioManager;
+
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -46,6 +56,10 @@ public class Enemy2 : MonoBehaviour
         _ogSpeed = _agent.speed;
         _ogPunchSpeed = _PunchSpeed;
         _ogPunchCD = _PunchCD;
+
+        if(_rb == null) _rb = GetComponent<Rigidbody2D>();
+
+        if(_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
     }
 
     public void TimeModification(float newPunchSpeed, float newSpeed, float newPunchCD)
@@ -179,9 +193,27 @@ public class Enemy2 : MonoBehaviour
     public int TakeDamage(int damage)
     {
         _life -= damage;
+
+        _audioManager.PlaySound(_impactClip, 0.35f);
+
+        Vector2 dirToPlayer = transform.position - _playerTransform.position;
+
+        if (knockbackCoroutine != null) StopCoroutine(knockbackCoroutine);
+
+        knockbackCoroutine = StartCoroutine(Knockback(dirToPlayer));
+
         return _life;
     }
 
-   public void Die() { Destroy(gameObject); }
+    private IEnumerator Knockback(Vector2 dir)
+    {
+        _rb.velocity = dir * _knockbackForce;
+
+        yield return new WaitForSeconds(_knockBackDuration);
+
+        _rb.velocity = Vector2.zero;
+    }
+
+    public void Die() { Destroy(gameObject); }
 
 }

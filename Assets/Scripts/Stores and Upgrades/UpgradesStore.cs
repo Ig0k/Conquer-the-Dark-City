@@ -27,6 +27,16 @@ public class UpgradesStore : MonoBehaviour
 
     [SerializeField] private bool _isMapTrigger = false;
 
+    [Header("Sounds")]
+
+    [SerializeField] private AudioClip _boughtClip;
+    [SerializeField] private SoundsManager _audioManager;
+
+    private void Awake()
+    {
+        if(_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
+    }
+
     public void BuyInvisibility()
     {
         if(Money.money >= _invisibilityPrice && !invisibilityBought)
@@ -34,6 +44,8 @@ public class UpgradesStore : MonoBehaviour
             invisibilityBought = true;
 
             Money.money -= _invisibilityPrice;
+
+            _audioManager.PlaySound(_boughtClip, 5f);
         }
     }
 
@@ -43,7 +55,9 @@ public class UpgradesStore : MonoBehaviour
         {
             shootBoostBought = true;
 
-            Money.money -= _shootBoostPrice;    
+            Money.money -= _shootBoostPrice;
+
+            _audioManager.PlaySound(_boughtClip, 5f);
         }
     }
 

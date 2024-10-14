@@ -17,12 +17,20 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private SpriteRenderer _sprite;
     [SerializeField] private PlayerMovement _movement;
 
+    [SerializeField] private CameraShake _camShake;
+
+    [Header("Sounds")]
+    [SerializeField] private AudioClip _impactClip;
+    [SerializeField] private SoundsManager _audioManager;
+
     private void Awake()
     {
         if(_animator == null) _animator = GetComponent<Animator>();
         if(_sprite == null) _sprite = GetComponent<SpriteRenderer>();
         if(_movement == null) _movement = GetComponent<PlayerMovement>();
         if(_playerAnimations == null) _playerAnimations = GetComponentInChildren<PlayerAnimations>();
+        if(_camShake == null) _camShake = FindObjectOfType<CameraShake>();
+        if(_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
     }
 
     public int Life
@@ -40,12 +48,23 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
+    public void ShakeCall() //SONIDO Y SHAKE ACÁ
+    {
+        Shake(6f, 0.42f);
+        _audioManager.PlaySound(_impactClip, 0.6f);
+    }
+
     public void TakeDamage(int dmg )
     {
 
         _life -= dmg;
 
     }
+    private void Shake(float shakeIntensity, float shakeDuration)
+    {
+        _camShake.ShakeCamera(shakeIntensity, shakeDuration);
+    }
+
     public void ShowParticles()
     {
         Instantiate(_bloodParticles, transform.position, Quaternion.identity);

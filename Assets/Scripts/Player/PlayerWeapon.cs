@@ -28,6 +28,11 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private float _timeBetweenBost = 8f, _currentCD = 0f;
     private bool _onCD = false;
 
+    [Header("Sounds")]
+
+    [SerializeField] private AudioClip _shootClip;
+    [SerializeField] private SoundsManager _audioManager;
+
     public float ShootCD
     {
         set { _shootCD = value; }
@@ -36,6 +41,7 @@ public class PlayerWeapon : MonoBehaviour
     private void Awake()
     {
         if (PowerManagement.canUseShootBoost) _canUseBoost = true;
+        if(_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
     }
 
     private void Start()
@@ -131,15 +137,19 @@ public class PlayerWeapon : MonoBehaviour
         {
             _canShoot = false;
             Instantiate(_bullet, transform.position, transform.rotation);
+            _audioManager.PlaySound(_shootClip, 0.7f);
+
             yield return new WaitForSeconds(_shootCD);
-            _canShoot = true;
+            _canShoot = true;          
         }
         else
         {
             _canShoot = false;
             Instantiate(_bullet, transform.position, transform.rotation);
+            _audioManager.PlaySound(_shootClip, 0.7f);
+
             yield return new WaitForSeconds(_boostCD);
-            _canShoot = true;
+            _canShoot = true;     
         }
     }
 }

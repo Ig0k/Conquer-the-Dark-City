@@ -71,6 +71,7 @@ public class Bullet : MonoBehaviour
 
                 playerLife.Life -= _damage;
                 playerLife.ShowParticles();
+                playerLife.ShakeCall();
 
                 if (playerLife.parpadeo)
                 {

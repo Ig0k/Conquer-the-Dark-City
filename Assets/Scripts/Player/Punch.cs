@@ -30,6 +30,7 @@ public class Punch : MonoBehaviour
             //}
 
             playerLife.Life -= _damage;
+            playerLife.ShakeCall();
         }
     }
 
