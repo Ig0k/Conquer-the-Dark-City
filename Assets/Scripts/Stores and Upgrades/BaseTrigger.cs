@@ -16,6 +16,14 @@ public class BaseTrigger : MonoBehaviour
 
     [SerializeField] private bool _isMapTrigger = false;
 
+    private void Start()
+    {
+        Time.timeScale = 1f;
+
+        UnityEngine.Cursor.visible = false;
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == 7) //player layer

@@ -59,4 +59,9 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene(sceneName);
     }
+
+    public void LoadSceneByName(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }

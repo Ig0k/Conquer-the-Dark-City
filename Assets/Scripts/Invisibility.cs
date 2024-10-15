@@ -37,7 +37,7 @@ public class Invisibility : MonoBehaviour
 
         invisible();
 
-        if (_canBeInvisible && Input.GetKeyDown(KeyCode.P) && _onCD)
+        if (_canBeInvisible && Input.GetKeyDown(KeyCode.Q) && _onCD)
         {
             invisible = InvisibleMethod;
             _startCD = true;

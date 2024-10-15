@@ -125,10 +125,14 @@ public class PlayerWeapon : MonoBehaviour
 
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        Vector2 dir = (mousePos - (Vector2)transform.position).normalized;
-        transform.up = dir;
+        Vector2 dir = (mousePos - (Vector2)transform.position).normalized;        
 
-        transform.position = _player.position; //+ new Vector3(0, 1.5f, 0);
+        if(PauseMenu.gamePaused == false)
+        {
+            transform.up = dir;
+            transform.position = _player.position;
+        }
+         //+ new Vector3(0, 1.5f, 0);
     }
 
     private IEnumerator Shoot()

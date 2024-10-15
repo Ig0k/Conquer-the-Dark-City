@@ -19,8 +19,11 @@ public class CameraShake : MonoBehaviour
 
     public void ShakeCamera(float intensity, float time)
     {
-        shakeIntensity = intensity;
-        shakeTimer = time;
+        if (PauseMenu.gamePaused == false)
+        {
+            shakeIntensity = intensity;
+            shakeTimer = time;
+        }   
     }
 
     private void Update()
