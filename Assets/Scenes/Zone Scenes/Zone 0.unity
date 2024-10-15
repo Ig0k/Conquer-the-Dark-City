@@ -362,7 +362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &75819514
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3397,7 +3397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &276861663
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5507,7 +5507,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.7529716, y: -0.27614, z: -10}
+  m_LocalPosition: {x: -3.7303581, y: -2.3588998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9794,7 +9794,7 @@ Transform:
   m_GameObject: {fileID: 1004581042}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.7, y: -0.3, z: -10}
+  m_LocalPosition: {x: -15.7, y: -2.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10118,6 +10118,10 @@ PrefabInstance:
     - target: {fileID: 5114050601653925499, guid: 7bba70e4fe9b60e4c932ccb22160e823, type: 3}
       propertyPath: m_Name
       value: Turret (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114050601653925499, guid: 7bba70e4fe9b60e4c932ccb22160e823, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11406,7 +11410,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1134337792
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17451,11 +17455,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 1749622516}
-  _panel: {fileID: 0}
+  _panel: {fileID: 110648644}
   _texts:
   - {fileID: 75819513}
   - {fileID: 276861662}
   - {fileID: 1134337791}
+  _playerLife: {fileID: 8607888235575316394}
+  _moneyAtFinsihLevel: 50
+  _pauseMenu: {fileID: 1129691411}
+  _playerWeapon: {fileID: 1613981071}
 --- !u!1 &1981701342
 GameObject:
   m_ObjectHideFlags: 0
@@ -23388,7 +23396,7 @@ Transform:
   m_GameObject: {fileID: 1633911486753971364}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.7, y: -0.3, z: 0}
+  m_LocalPosition: {x: -15.7, y: -2.4, z: 0}
   m_LocalScale: {x: 2.3046384, y: 2.7054152, z: 1.4749686}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -23,14 +23,18 @@ public class Punch : MonoBehaviour
     {
         if (collision.gameObject.layer == 7)
         {
-            collision.TryGetComponent<PlayerLife>(out PlayerLife playerLife);
-            //if (playerLife.parpadeo)
-            //{
-            //    playerLife.StartCoroutine("Parpadeo");
-            //}
+            if(PauseMenu.gamePaused == false)
+            {
+                collision.TryGetComponent<PlayerLife>(out PlayerLife playerLife);
+                //if (playerLife.parpadeo)
+                //{
+                //    playerLife.StartCoroutine("Parpadeo");
+                //}
 
-            playerLife.Life -= _damage;
-            playerLife.ShakeCall();
+                playerLife.Life -= _damage;
+                playerLife.ShakeCall();
+            }
+            
         }
     }
 
