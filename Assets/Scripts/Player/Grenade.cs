@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Grenade : MonoBehaviour
@@ -11,7 +12,7 @@ public class Grenade : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 7)
+        if (collision.name.Contains("Player"))
 
         {
 
@@ -23,6 +24,7 @@ public class Grenade : MonoBehaviour
             
 
         }
+        
     }
 
 }
