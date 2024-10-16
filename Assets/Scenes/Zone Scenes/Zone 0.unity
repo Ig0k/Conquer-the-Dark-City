@@ -1679,8 +1679,8 @@ Transform:
   m_GameObject: {fileID: 135662038}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.0212, y: 11.8112, z: 0}
-  m_LocalScale: {x: 26.182865, y: 0.12349305, z: 1}
+  m_LocalPosition: {x: 7.0212, y: 11.7747, z: 0}
+  m_LocalScale: {x: 26.182865, y: 0.05044691, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1857,6 +1857,10 @@ PrefabInstance:
     - target: {fileID: 7227621035328305979, guid: 9348342221bb38c45845aeaae6cd7e67, type: 3}
       propertyPath: m_Name
       value: grenade (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7227621035328305979, guid: 9348342221bb38c45845aeaae6cd7e67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9115177848311543823, guid: 9348342221bb38c45845aeaae6cd7e67, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6092,6 +6096,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: grenade (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7227621035328305979, guid: 9348342221bb38c45845aeaae6cd7e67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9115177848311543823, guid: 9348342221bb38c45845aeaae6cd7e67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.352521
@@ -8943,6 +8951,10 @@ PrefabInstance:
     - target: {fileID: 7227621035328305979, guid: 9348342221bb38c45845aeaae6cd7e67, type: 3}
       propertyPath: m_Name
       value: grenade
+      objectReference: {fileID: 0}
+    - target: {fileID: 7227621035328305979, guid: 9348342221bb38c45845aeaae6cd7e67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9115177848311543823, guid: 9348342221bb38c45845aeaae6cd7e67, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12135,6 +12147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: grenade (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7227621035328305979, guid: 9348342221bb38c45845aeaae6cd7e67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9115177848311543823, guid: 9348342221bb38c45845aeaae6cd7e67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.673786
@@ -14473,6 +14489,10 @@ PrefabInstance:
     - target: {fileID: 7227621035328305979, guid: 9348342221bb38c45845aeaae6cd7e67, type: 3}
       propertyPath: m_Name
       value: grenade (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7227621035328305979, guid: 9348342221bb38c45845aeaae6cd7e67, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9115177848311543823, guid: 9348342221bb38c45845aeaae6cd7e67, type: 3}
       propertyPath: m_LocalPosition.x
