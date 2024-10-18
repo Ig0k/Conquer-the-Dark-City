@@ -9,8 +9,11 @@ public class UpgradesStore : MonoBehaviour
 
     [SerializeField] private int _invisibilityPrice = 30;
     [SerializeField] private int _shootBoostPrice = 80;
+    [SerializeField] private int _masiveShootPrice = 10;
+
     public static bool invisibilityBought = false;
     public static bool shootBoostBought = false;
+    public static bool masiveShootBought = false;
 
     [SerializeField] private TMP_Text _moneyText;
 
@@ -35,6 +38,20 @@ public class UpgradesStore : MonoBehaviour
     private void Awake()
     {
         if(_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
+    }
+
+    public void BuyMasiveShoot()
+    {
+        if (CharacterData._character == 1 && Money.money >= _masiveShootPrice && !masiveShootBought)
+        {
+            masiveShootBought = true;
+
+            Money.money -= _masiveShootPrice;
+
+            _audioManager.PlaySound(_boughtClip, 5f);
+
+            PowerManagement.canUseMasiveShoot = true;
+        }
     }
 
     public void BuyInvisibility()

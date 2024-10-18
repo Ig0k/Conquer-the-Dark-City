@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PowerManagement : MonoBehaviour
 {
@@ -11,9 +12,13 @@ public class PowerManagement : MonoBehaviour
 
     public static bool canUseShootBoost;
 
+    public static bool canUseMasiveShoot;
+    [SerializeField] private bool _canBuyMasiveShoot = true;
+
     [SerializeField] private bool _isTimeFreezeVisualization;
     [SerializeField] private bool _isInvisibilityVisualization;
     [SerializeField] private bool _canUseShootBoostVisualization;
+    [SerializeField] private bool _canUseMasiveShootVisualization;
 
     private void Awake()
     {
@@ -30,6 +35,8 @@ public class PowerManagement : MonoBehaviour
 
     private void Start()
     {
+        _canBuyMasiveShoot = true;
+
         canUseTimeFreeze = true;
         canUseInvisibility = false;
 
@@ -39,6 +46,17 @@ public class PowerManagement : MonoBehaviour
         _isTimeFreezeVisualization = canUseTimeFreeze;
 
         _canUseShootBoostVisualization = canUseShootBoost;
+    }
+
+    public void ActiveMasiveShoot()
+    {
+        canUseMasiveShoot = true;
+    }
+
+    private void Update()
+    {
+        if (canUseMasiveShoot) _canUseMasiveShootVisualization = true;
+        else _canUseMasiveShootVisualization = false;
     }
 
     public void ActiveShootBoost(bool _canUseShootBoost)
