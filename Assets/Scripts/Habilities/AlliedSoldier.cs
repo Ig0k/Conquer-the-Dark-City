@@ -17,6 +17,15 @@ public class AlliedSoldier : MonoBehaviour
 
     int i = 0;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip _shootClip;
+    [SerializeField] private SoundsManager _audioManager;
+
+    private void Awake()
+    {
+        if(_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
+    }
+
     private void Start()
     {
         if(CharacterData.zone1CH1) gameObject.SetActive(true);
@@ -48,6 +57,7 @@ public class AlliedSoldier : MonoBehaviour
 
         yield return new WaitForSeconds(_shootCD);
         Instantiate(_bullet, _sight.position, _sight.rotation);
+        _audioManager.PlaySound(_shootClip, 0.5f);
 
         _canShoot = true;
     }

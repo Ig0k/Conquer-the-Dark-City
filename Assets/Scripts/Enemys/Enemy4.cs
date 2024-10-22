@@ -52,6 +52,10 @@ public class Enemy4 : MonoBehaviour
     [SerializeField] private AudioClip _shootClip, _impactClip;
     [SerializeField] private SoundsManager _audioManager;
 
+    private int _wayPointToGo = 0;
+    [SerializeField] private float _timeBetweenTps = 2f;
+    private bool _canTp = true;
+
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -68,169 +72,34 @@ public class Enemy4 : MonoBehaviour
         if (_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
     }
 
-    public void TimeModification(float newSpeed, float newBulletSpeed, float newBulletDestroyTime,
-        float newShootCD)
-    {
-        _bulletSpeed = newBulletSpeed;
-        _bulletDestroyTime = newBulletDestroyTime;
-        _shootCD = newShootCD;
-
-        _bulletScript.SetProperties(newSpeed, newBulletDestroyTime, _bulletDamage);
-        if (_agent.speed != 0) _agent.speed = newSpeed;
-    }
-
-    public void BackToOgParams()
-    {
-        _bulletSpeed = _ogBulletSpeed;
-        _bulletDestroyTime = _ogBulletDestroyTime;
-        _agent.speed = _ogMoveSpeed;
-        _shootCD = _ogShootCD;
-
-        _bulletScript.SetProperties(_bulletSpeed, _bulletDestroyTime, _bulletDamage);
-    }
-
-    private void Start()
-    {
-        //ESTO SIRVE PARA QUE EL PERSONAJE NO DESAPAREZCA, POR NO ENTRAR EN MAS DETALLES
-
-        _agent.updateRotation = false;
-        _agent.updateUpAxis = false;
-
-        //_bulletScript.SetProperties(_bulletSpeed, _bulletDestroyTime, _bulletDamage);
-    }
-
     private void Update()
     {
-        if (_life <= 0) Destroy(gameObject);
-
-        _life = Mathf.Clamp(_life, 0, _maxLife);
-
         float _distanceFromPlayer = Vector2.Distance(transform.position, _playerTransform.position);
 
-        Vector2 dirToPlayer = (_playerTransform.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(Vector3.forward, dirToPlayer);
-
-        if (gameObject != null)
+        if (!_isFollowingPlayer)
         {
-            if (_agent.isOnNavMesh)
-            {
-                if (_invisibility != null && _invisibility.isInvisible)
-                {
-                    _isFollowingPlayer = false;
-                    _agent.isStopped = false;
-
-                    Patroll();
-                }
-
-                if (_isFollowingPlayer && _distanceFromPlayer >= _minDistanceToStop)
-
-                {
-                    _agent.isStopped = false;
-                    FollowPlayer(_playerTransform, lookRotation);
-                }
-                else if (_isFollowingPlayer && _distanceFromPlayer < _minDistanceToStop
-                    && _invisibility.isInvisible == false)
-                {
-                    _agent.isStopped = true;
-
-                }
-                else if (_isFollowingPlayer == false && _agent.isStopped == false)
-                {
-                    Patroll();
-                }
-
-                //SHOOT
-                if (_distanceFromPlayer <= _minDistanceToShootPlayer && _canShoot
-                    && _invisibility.isInvisible == false)
-                {
-
-                    StartCoroutine(Shoot());
-
-                }
-
-                //FOLLOW PLAYER
-                if (_distanceFromPlayer <= _minDistanceToFollowPlayer)
-                {
-                    _isFollowingPlayer = true;
-                }
-                else if (_invisibility.enabled && _invisibility.isInvisible == true)
-                {
-                    _isFollowingPlayer = false;
-                }
-
-                if (_isFollowingPlayer)
-                {
-                    transform.rotation = lookRotation;
-                }
-
-            }
+            if(_canTp) StartCoroutine(Patroll());
         }
-
-    }
-
-    private void FollowPlayer(Transform player, Quaternion rot)
-    {
-        if (_agent.isOnNavMesh)
+        else
         {
-            transform.rotation = rot;
-
-            _agent.SetDestination(player.position);
+            if (_canTp) StartCoroutine(Patroll());
+            Shoot();
         }
     }
 
-    private void Patroll()
+    private IEnumerator Patroll()
     {
-        if (_agent.isOnNavMesh)
-        {
-            Vector2 dirToPlayer = (_wayPoints[_wpsIndex].position - transform.position).normalized;
-            Quaternion lookRotation = Quaternion.LookRotation(Vector3.forward, dirToPlayer);
-            transform.rotation = lookRotation;
+        _canTp = false;
 
-            _agent.SetDestination(_wayPoints[_wpsIndex].position);
+        yield return new WaitForSeconds(_timeBetweenTps);
+        _wayPointToGo = Random.Range(0, _wayPoints.Length);
+        transform.position = _wayPoints[_wayPointToGo].position;
 
-            if (Vector2.Distance(transform.position, _wayPoints[_wpsIndex].position) <= _minDistanceForWps)
-            {
-                _wpsIndex++;
-            }
-            if (_wpsIndex >= _wayPoints.Length)
-            {
-                _wpsIndex = 0;
-            }
-        }
+        _canTp = true;
     }
 
-    private IEnumerator Shoot()
+    private void Shoot()
     {
-        _canShoot = false;
         Instantiate(_bullet, transform.position, transform.rotation);
-        _audioManager.PlaySound(_shootClip, 0.3f);
-
-        yield return new WaitForSeconds(_shootCD);
-        _canShoot = true;
     }
-
-    public int TakeDamage(int damage)
-    {
-        _life -= damage;
-
-        _audioManager.PlaySound(_impactClip, 0.35f);
-
-        Vector2 dirToPlayer = transform.position - _playerTransform.position;
-
-        if (knockbackCoroutine != null) StopCoroutine(knockbackCoroutine);
-
-        knockbackCoroutine = StartCoroutine(Knockback(dirToPlayer));
-        return _life;
-    }
-
-    private IEnumerator Knockback(Vector2 dir)
-    {
-        _rb.velocity = dir * _knockbackForce;
-
-        yield return new WaitForSeconds(_knockBackDuration);
-
-        _rb.velocity = Vector2.zero;
-    }
-
-    public void Die() { Destroy(gameObject); }
 }

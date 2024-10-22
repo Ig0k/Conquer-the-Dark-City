@@ -1733,10 +1733,12 @@ MonoBehaviour:
   - {fileID: 394160889851022936}
   - {fileID: 4527701486017498661}
   - {fileID: 1291355669}
-  _rangeToShoot: 7
-  _shootCD: 3
+  _rangeToShoot: 15
+  _shootCD: 2
   _bullet: {fileID: 6996412163210009648, guid: 8d1d838707a65ba4c85dccba4e4774f3, type: 3}
   _sight: {fileID: 2100298284}
+  _shootClip: {fileID: 8300000, guid: 05b8cbb365354494589b8965fb6e81a3, type: 3}
+  _audioManager: {fileID: 0}
 --- !u!1 &135662038
 GameObject:
   m_ObjectHideFlags: 0
@@ -17496,6 +17498,8 @@ MonoBehaviour:
   _moneyAtFinsihLevel: 50
   _pauseMenu: {fileID: 1129691411}
   _playerWeapon: {fileID: 1613981071}
+  _winClip: {fileID: 8300000, guid: 7c5e1428cc1f84c48afa556378f309cc, type: 3}
+  _audioManager: {fileID: 0}
 --- !u!1 &1981701342
 GameObject:
   m_ObjectHideFlags: 0
@@ -28652,6 +28656,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Box
       objectReference: {fileID: 0}
+    - target: {fileID: 6202877576592807366, guid: 563224b405a27a04d81ab81c5a796294, type: 3}
+      propertyPath: _addLife
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202877576592807366, guid: 563224b405a27a04d81ab81c5a796294, type: 3}
+      propertyPath: _healthClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a62ecabdc67f01847b0275ec9275fb63, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29287,6 +29299,12 @@ MonoBehaviour:
   _walkSpeed: 8
   _Particle: {fileID: 8992000390830912383}
   _playerAnimations: {fileID: 0}
+  _stepsClip:
+  - {fileID: 8300000, guid: 5198977431873384fa6187a568c89f7e, type: 3}
+  - {fileID: 8300000, guid: 5d01ab8e069a7d44d916755d5da7dcc5, type: 3}
+  - {fileID: 8300000, guid: cdd2ccf8507eb7a4498a9a19e089b657, type: 3}
+  - {fileID: 8300000, guid: de62b21a0c3aade448cb6fa51ce7bf30, type: 3}
+  _audioManager: {fileID: 0}
 --- !u!4 &7449748781038623451
 Transform:
   m_ObjectHideFlags: 0
@@ -29370,6 +29388,10 @@ PrefabInstance:
     - target: {fileID: 3064424528844174510, guid: 2d9dc0c7ca07c51468d99d01546f745f, type: 3}
       propertyPath: m_Name
       value: Enemy Prototype
+      objectReference: {fileID: 0}
+    - target: {fileID: 3527241483747728464, guid: 2d9dc0c7ca07c51468d99d01546f745f, type: 3}
+      propertyPath: m_FlipX
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8056627627632803689, guid: 2d9dc0c7ca07c51468d99d01546f745f, type: 3}
       propertyPath: _invisibility

@@ -15,11 +15,21 @@ public class WinTrigger : MonoBehaviour
     [SerializeField] private PauseMenu _pauseMenu;
     [SerializeField] private PlayerWeapon _playerWeapon;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip _winClip;
+    [SerializeField] private SoundsManager _audioManager;
+
+    private void Awake()
+    {
+        if(_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 7)
         {
             Money.money += _moneyAtFinsihLevel;
+            _audioManager.PlaySound(_winClip, 1f);
 
             _playerLife.enabled = false;
             _pauseMenu.enabled = false;
