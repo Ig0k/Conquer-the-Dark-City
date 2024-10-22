@@ -28870,8 +28870,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4776992547227947420}
     - target: {fileID: 4777087027723716248, guid: a9dffade466e8e94b95f26c6735821b7, type: 3}
+      propertyPath: _PunchCD
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777087027723716248, guid: a9dffade466e8e94b95f26c6735821b7, type: 3}
       propertyPath: _PunchDamage
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4777087027723716248, guid: a9dffade466e8e94b95f26c6735821b7, type: 3}
       propertyPath: _invisibility
@@ -28883,7 +28887,7 @@ PrefabInstance:
       objectReference: {fileID: 603116871057539018}
     - target: {fileID: 4777087027723716248, guid: a9dffade466e8e94b95f26c6735821b7, type: 3}
       propertyPath: _minDistanceToStop
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4777087027723716248, guid: a9dffade466e8e94b95f26c6735821b7, type: 3}
       propertyPath: _wayPoints.Array.data[0]
