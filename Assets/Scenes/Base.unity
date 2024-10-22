@@ -9413,6 +9413,12 @@ MonoBehaviour:
   _walkSpeed: 8
   _Particle: {fileID: 263690235}
   _playerAnimations: {fileID: 0}
+  _stepsClip:
+  - {fileID: 8300000, guid: 5198977431873384fa6187a568c89f7e, type: 3}
+  - {fileID: 8300000, guid: 5d01ab8e069a7d44d916755d5da7dcc5, type: 3}
+  - {fileID: 8300000, guid: cdd2ccf8507eb7a4498a9a19e089b657, type: 3}
+  - {fileID: 8300000, guid: de62b21a0c3aade448cb6fa51ce7bf30, type: 3}
+  _audioManager: {fileID: 0}
 --- !u!50 &1862987320
 Rigidbody2D:
   serializedVersion: 4
@@ -14955,6 +14961,12 @@ MonoBehaviour:
   _walkSpeed: 8
   _Particle: {fileID: 5534617477489845372}
   _playerAnimations: {fileID: 0}
+  _stepsClip:
+  - {fileID: 8300000, guid: 5198977431873384fa6187a568c89f7e, type: 3}
+  - {fileID: 8300000, guid: 5d01ab8e069a7d44d916755d5da7dcc5, type: 3}
+  - {fileID: 8300000, guid: cdd2ccf8507eb7a4498a9a19e089b657, type: 3}
+  - {fileID: 8300000, guid: de62b21a0c3aade448cb6fa51ce7bf30, type: 3}
+  _audioManager: {fileID: 0}
 --- !u!4 &6528644506573275331
 Transform:
   m_ObjectHideFlags: 0

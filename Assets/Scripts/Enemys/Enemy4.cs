@@ -54,7 +54,9 @@ public class Enemy4 : MonoBehaviour
 
     private int _wayPointToGo = 0;
     [SerializeField] private float _timeBetweenTps = 2f;
-    private bool _canTp = true;
+    private bool _canTp = true, _canBeInvisible;
+
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
@@ -70,36 +72,74 @@ public class Enemy4 : MonoBehaviour
         if (_rb == null) _rb = GetComponent<Rigidbody2D>();
 
         if (_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
+
+        if(_spriteRenderer == null) _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Start()
+    {
+        _bulletScript.SetProperties(_bulletSpeed, _bulletDestroyTime, _bulletDamage);
+    }
+
+    public int TakeDamage(int damage)
+    {
+        _life -= damage;
+
+        //_audioManager.PlaySound(_impactClip, 0.35f);
+
+        return _life;
     }
 
     private void Update()
     {
+        if (_life <= 0) Destroy(gameObject);
+
+        _life = Mathf.Clamp(_life, 0, _maxLife);
+
         float _distanceFromPlayer = Vector2.Distance(transform.position, _playerTransform.position);
 
-        if (!_isFollowingPlayer)
+        Vector2 dirToPlayer = (_playerTransform.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(Vector3.forward, dirToPlayer);
+
+        if (_distanceFromPlayer <= _minDistanceToFollowPlayer) _isFollowingPlayer = true;
+        else _isFollowingPlayer = false;
+
+        //if (!_isFollowingPlayer)
+        //{
+        //    if(_canTp) StartCoroutine(Patroll());
+        //}
+        if(_isFollowingPlayer)
         {
-            if(_canTp) StartCoroutine(Patroll());
-        }
-        else
-        {
-            if (_canTp) StartCoroutine(Patroll());
-            Shoot();
+            if (_canTp) StartCoroutine(PatrollAndShoot());
+            //if(_canShoot) StartCoroutine(Shoot());
+
+            transform.rotation = lookRotation;
         }
     }
 
-    private IEnumerator Patroll()
+    private IEnumerator PatrollAndShoot()
     {
         _canTp = false;
 
+        Instantiate(_bullet, transform.position, transform.rotation);
+
         yield return new WaitForSeconds(_timeBetweenTps);
         _wayPointToGo = Random.Range(0, _wayPoints.Length);
+
         transform.position = _wayPoints[_wayPointToGo].position;
+        _spriteRenderer.enabled = false;
+        yield return new WaitForSeconds(_timeBetweenTps / 2);
+        _spriteRenderer.enabled = true;
 
         _canTp = true;
     }
 
-    private void Shoot()
-    {
-        Instantiate(_bullet, transform.position, transform.rotation);
-    }
+    //private IEnumerator Shoot()
+    //{
+    //    _canShoot = false;
+
+    //    yield return new WaitForSeconds(_shootCD);
+    //    Instantiate(_bullet, transform.position, transform.rotation);
+    //    _canShoot = true;
+    //}
 }

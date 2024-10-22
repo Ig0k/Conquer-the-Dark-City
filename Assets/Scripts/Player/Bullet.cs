@@ -61,6 +61,11 @@ public class Bullet : MonoBehaviour
                 kam.TakeDamage(_damage);
                 Destroy(gameObject);
             }
+            if (hit.collider != null && hit.collider.TryGetComponent<Enemy4>(out Enemy4 enemy4))
+            {
+                enemy4.TakeDamage(_damage);
+                Destroy(gameObject);
+            }
         }
 
         else
