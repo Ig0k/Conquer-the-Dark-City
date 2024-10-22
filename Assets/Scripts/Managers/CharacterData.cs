@@ -18,6 +18,8 @@ public class CharacterData : MonoBehaviour
     public static int character1Level = 0;
     public static int character2Level = 0;
 
+    public static bool zone1CH1 = false;
+
     private void Awake()
     {
         if(Instance == null)
@@ -40,6 +42,8 @@ public class CharacterData : MonoBehaviour
 
     private void Update()
     {
+        zone1CH1 = _zone1CH1;
+
         _characterVisualization = _character;
 
         //EN BASE:
