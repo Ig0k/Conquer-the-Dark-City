@@ -1689,10 +1689,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.98812425, g: 1, b: 0.9858491, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c473939d6697b5d4f827230313e0ed5c, type: 3}
+  m_Color: {r: 0.8923862, g: 0.73, b: 0.4669811, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -1710,7 +1710,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.58, y: -1.0466, z: 0}
-  m_LocalScale: {x: 1, y: 1.3269, z: 1}
+  m_LocalScale: {x: 2.5998, y: 3.4496748, z: 2.5998}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2100298284}
@@ -28870,6 +28870,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4776992547227947420}
     - target: {fileID: 4777087027723716248, guid: a9dffade466e8e94b95f26c6735821b7, type: 3}
+      propertyPath: _PunchDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4777087027723716248, guid: a9dffade466e8e94b95f26c6735821b7, type: 3}
       propertyPath: _invisibility
       value: 
       objectReference: {fileID: 8979344724063642797}
@@ -28877,6 +28881,10 @@ PrefabInstance:
       propertyPath: _playerTransform
       value: 
       objectReference: {fileID: 603116871057539018}
+    - target: {fileID: 4777087027723716248, guid: a9dffade466e8e94b95f26c6735821b7, type: 3}
+      propertyPath: _minDistanceToStop
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4777087027723716248, guid: a9dffade466e8e94b95f26c6735821b7, type: 3}
       propertyPath: _wayPoints.Array.data[0]
       value: 
@@ -28889,6 +28897,14 @@ PrefabInstance:
       propertyPath: _wayPoints.Array.data[2]
       value: 
       objectReference: {fileID: 1939966777}
+    - target: {fileID: 4777087027723716248, guid: a9dffade466e8e94b95f26c6735821b7, type: 3}
+      propertyPath: _minDistanceToPunchPlayer
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439860621911626089, guid: a9dffade466e8e94b95f26c6735821b7, type: 3}
+      propertyPath: m_Speed
+      value: 5.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8784227600629547022, guid: a9dffade466e8e94b95f26c6735821b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.78
