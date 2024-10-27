@@ -19,6 +19,8 @@ public class WinTrigger : MonoBehaviour
     [SerializeField] private AudioClip _winClip;
     [SerializeField] private SoundsManager _audioManager;
 
+    [SerializeField] private float _timeBetweenTexts = 2f;
+
     private void Awake()
     {
         if(_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
@@ -40,15 +42,23 @@ public class WinTrigger : MonoBehaviour
 
     private IEnumerator FinishLevel()
     {
-        _panel.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        _texts[0].SetActive(true);
-        yield return new WaitForSeconds(2f);
-        _texts[1].SetActive(true);
-        yield return new WaitForSeconds(2f);
-        _texts[2].SetActive(true);
-        yield return new WaitForSeconds(3f);
-        _gameManager.WinLevel(1);
-        Destroy(gameObject);
+        if(_panel != null && _texts != null)
+        {
+            _panel.SetActive(true);
+            yield return new WaitForSeconds(_timeBetweenTexts);
+            _texts[0].SetActive(true);
+            yield return new WaitForSeconds(_timeBetweenTexts);
+            _texts[1].SetActive(true);
+            yield return new WaitForSeconds(_timeBetweenTexts);
+            _texts[2].SetActive(true);
+            yield return new WaitForSeconds(3f);
+            _gameManager.WinLevel(2);
+            Destroy(gameObject);
+        }
+        else
+        {
+            _gameManager.WinLevel(2);
+            Destroy(gameObject);
+        }
     }
 }

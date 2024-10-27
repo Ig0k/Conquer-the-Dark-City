@@ -33,6 +33,7 @@ public class Bullet : MonoBehaviour
             Debug.Log("Colisionando con pared");
         }
 
+
         if (_isPlayer)
         {
             if (hit.collider != null && hit.collider.TryGetComponent<EnemyPrototype>(out EnemyPrototype enemy1))
@@ -73,18 +74,21 @@ public class Bullet : MonoBehaviour
             if (hit.collider != null && hit.collider.TryGetComponent<PlayerLife>(out PlayerLife playerLife))
             {
                 //if(playerLife.parpadeo) playerLife.Life -= _damage;
-
-                playerLife.Life -= _damage;
-                playerLife.ShowParticles();
-                playerLife.ShakeCall();
-
-                if (playerLife.parpadeo)
+                if (playerLife.enabled)
                 {
-                    playerLife.StartCoroutine("Parpadeo");
-                    Debug.Log("1");
-                }         
+                    playerLife.Life -= _damage;
+                    playerLife.ShowParticles();
+                    playerLife.ShakeCall();
 
-                Destroy(gameObject);
+                    if (playerLife.parpadeo)
+                    {
+                        playerLife.StartCoroutine("Parpadeo");
+                        Debug.Log("1");
+                    }
+
+                    Destroy(gameObject);
+                }
+ 
             }
         }
 

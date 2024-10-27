@@ -13,6 +13,8 @@ public class PowerManagement : MonoBehaviour
     public static bool canUseShootBoost;
 
     public static bool canUseMasiveShoot;
+    public static bool canUseShield;
+
     [SerializeField] private bool _canBuyMasiveShoot = true;
 
     [SerializeField] private bool _isTimeFreezeVisualization;
@@ -51,6 +53,11 @@ public class PowerManagement : MonoBehaviour
     public void ActiveMasiveShoot()
     {
         canUseMasiveShoot = true;
+    }
+
+    public void ActiveShield()
+    {
+        canUseShield = true;
     }
 
     private void Update()

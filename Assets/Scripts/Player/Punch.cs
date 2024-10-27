@@ -30,12 +30,16 @@ public class Punch : MonoBehaviour
                 //{
                 //    playerLife.StartCoroutine("Parpadeo");
                 //}
-
-                playerLife.Life -= _damage;
-                playerLife.ShakeCall();
+                if (playerLife.enabled)
+                {
+                    playerLife.Life -= _damage;
+                    playerLife.ShakeCall();
+                }
+                
             }
             
         }
+
     }
 
 
@@ -62,7 +66,7 @@ public class Punch : MonoBehaviour
 
             }
         }
-        
+
         /*
         else
         {
