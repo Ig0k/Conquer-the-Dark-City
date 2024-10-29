@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeFreeze : MonoBehaviour
 {
     [SerializeField] private float _freezeDuration = 7f, _freezeCD = 0f;
     [SerializeField] private bool _onCD = false, _startCD = false, _canFreezeTime = true;
 
-    [SerializeField] private float _timeBetween = 5.5f;
+    [SerializeField] private float _timeBetween = 12f, _currentTimeBetween = 0;
+    [SerializeField] private bool _canStartTimeBetween = false;
 
     public delegate void TimeFreezeDelegate();
     public TimeFreezeDelegate timeFreeze = delegate { };
@@ -18,16 +20,26 @@ public class TimeFreeze : MonoBehaviour
 
     [SerializeField] private GameObject _UIFreezeEffect;
 
+    [SerializeField] private GameObject _barObject; //es el circle en realidad
+    [SerializeField] private Image _bar;
+
     private void Awake()
     {
         if(PowerManagement.canUseTimeFreeze) enabled = true;
         else enabled = false;
     }
 
+
     private void Update()
     {
-        if (_startCD) Timer();
-        else _startCD = false;
+        if (_startCD)
+        {
+            Timer();
+        }
+        else
+        {
+            _startCD = false;           
+        }
 
         //if (_startCD && !_onCD) _canFreezeTime = true;
 
@@ -39,7 +51,10 @@ public class TimeFreeze : MonoBehaviour
             _startCD = true;
             _freezeCD = 0f;
 
+            _canStartTimeBetween = false;
+
             StartCoroutine(StartTimeFreeze());
+     
         }
         else if (!_onCD)
         {
@@ -47,16 +62,31 @@ public class TimeFreeze : MonoBehaviour
             _onCD = true;
 
             _startCD = true;
+
+            _canStartTimeBetween = true;
+            _currentTimeBetween = 0f;
         }
 
         
+        //if (_canStartTimeBetween && _barObject.activeSelf)
+        //{
+        //    _currentTimeBetween += Time.deltaTime;
+        //    _bar.fillAmount = _currentTimeBetween / 5;
+
+        //    if (_currentTimeBetween >= 5)
+        //    {
+        //        _canFreezeTime = true;
+        //        _currentTimeBetween = 0f;
+        //    }
+        //}
+
     }
 
     private IEnumerator StartTimeFreeze()
     {
         _canFreezeTime = false;
-
-        yield return new WaitForSeconds(_timeBetween); 
+     
+        yield return new WaitForSeconds(_timeBetween);      
 
         _canFreezeTime = true;
     }
@@ -65,6 +95,8 @@ public class TimeFreeze : MonoBehaviour
     {
         //Debug.Log("Tiempo Freezado");
         //escribir la logica de freezeo de tiempo aca
+
+        //_barObject.SetActive(false);
 
         _UIFreezeEffect.SetActive(true);
 
@@ -92,6 +124,8 @@ public class TimeFreeze : MonoBehaviour
         //Debug.Log("Tiempo normal");
         //escribir logica de tiempo no freezado aca
 
+        //_barObject.SetActive(true);
+
         _UIFreezeEffect.SetActive(false);
 
         for (int i = 0; i < _enemy2Script.Length; i++)
@@ -115,13 +149,13 @@ public class TimeFreeze : MonoBehaviour
     private void Timer()
     {
         if (_onCD)
-        {
+        {        
             _freezeCD += Time.deltaTime;
 
             if (_freezeCD > _freezeDuration)
             {
                 _onCD = false;
-                _freezeCD = 0f;
+                _freezeCD = 0f;   
             }
         }
     }
