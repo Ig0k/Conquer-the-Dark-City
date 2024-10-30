@@ -2,79 +2,77 @@ using UnityEngine;
 
 public class Kamikaze : MonoBehaviour
 {
-    [SerializeField] private float velocidad = 3f; // Velocidad de movimiento
-    [SerializeField] private float rangoDeteccion = 5f; // Rango de detección
-    [SerializeField] private int vida = 3; // Vida del kamikaze
-    [SerializeField] private int dañoExplosión = 3; // Daño que inflige al jugador al explotar
-    [SerializeField] private GameObject explosiónPrefab; // Prefab de explosión
 
-    private Transform jugador; // Referencia al jugador
+ 
+
+    [SerializeField] private float speed = 3f; // Velocidad de movimiento
+    [SerializeField] private float detectionRange = 5f; // Rango de detección
+    [SerializeField] private float explosionRange = 0.5f; // Rango para explotar
+    [SerializeField] private GameObject explosionPrefab; // Prefab de explosión
+    [SerializeField] private Transform player; // Transform del jugador
+    [SerializeField] private int health = 3;
+
+
+    public int TakeDamage(int dmg)
+    {
+
+        health--;
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+
+        }
+        return health;
+    }
+
+    private void Start()
+    {
+        // Buscar al jugador por su tag al iniciar
+        player = GameObject.FindWithTag("Player")?.transform;
+
+        if (player == null)
+        {
+            Debug.LogWarning("No se encontró un objeto con el tag 'Player'. Asegúrate de que el jugador tenga este tag.");
+        }
+
+
+    }
+
+
 
     void Update()
     {
-        // Verificar si el jugador está dentro del rango de detección
-        if (jugador != null && Vector2.Distance(transform.position, jugador.position) <= rangoDeteccion)
+        if (player != null && Vector2.Distance(transform.position, player.position) <= detectionRange)
         {
-            MoverHaciaJugador();
+            MoveTowardsPlayer();
 
-            // Comprobar si está lo suficientemente cerca del jugador para explotar
-            if (Vector2.Distance(transform.position, jugador.position) < 0.5f)
+            if (Vector2.Distance(transform.position, player.position) <= explosionRange)
             {
-                Explotar();
+                Explode();
             }
         }
     }
 
-    private void MoverHaciaJugador()
+    private void MoveTowardsPlayer()
     {
-        // Moverse hacia el jugador
-        Vector3 direccion = (jugador.position - transform.position).normalized;
-        transform.position += direccion * velocidad * Time.deltaTime;
+        Vector3 direction = (player.position - transform.position).normalized;
+        transform.position += direction * speed * Time.deltaTime;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Explode()
     {
-        if (collision.CompareTag("Player"))
-        {
-            jugador = collision.transform; 
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            jugador = null; 
-        }
-    }
-
-    public void TakeDamage(int damage)
-    {
-        vida -= damage;
-        if (vida <= 0)
-        {
-            Explotar(); 
-        }
-    }
-
-    private void Explotar()
-    {
-        
-        Instantiate(explosiónPrefab, transform.position, Quaternion.identity);
-
-        
-        if (jugador != null)
-        {
-            var playerLife = jugador.GetComponent<PlayerLife>();
-            if (playerLife != null)
-            {
-                playerLife.TakeDamage(dañoExplosión); 
-            }
-        }
-
-        
-        Destroy(gameObject);
+        Debug.Log("¡Explosión!");
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity); // Instanciar la explosión
+        Destroy(gameObject); // Destruir el enemigo
     }
 }
 
 
+
+
+
+
+
+
+   

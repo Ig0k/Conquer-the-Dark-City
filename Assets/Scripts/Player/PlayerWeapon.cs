@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
 {
+    [SerializeField] private float tiempoEfecto = 0.1f;
+    [SerializeField] private GameObject effectBullet;
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Bullet _bulletScript;
     [SerializeField] private PlayerUpgrades _upgrades;
@@ -141,19 +143,30 @@ public class PlayerWeapon : MonoBehaviour
         {
             _canShoot = false;
             Instantiate(_bullet, transform.position, transform.rotation);
+            
+           
+
             _audioManager.PlaySound(_shootClip, 0.7f);
+            GameObject instanciaEfec = Instantiate(effectBullet, transform.position, transform.rotation);
+            Destroy(instanciaEfec, tiempoEfecto);
 
             yield return new WaitForSeconds(_shootCD);
-            _canShoot = true;          
+            
+            _canShoot = true;
+            
         }
         else
         {
             _canShoot = false;
             Instantiate(_bullet, transform.position, transform.rotation);
             _audioManager.PlaySound(_shootClip, 0.7f);
-
+            GameObject instanciaEfec = Instantiate(effectBullet, transform.position, transform.rotation);
+            Destroy(instanciaEfec, tiempoEfecto);
             yield return new WaitForSeconds(_boostCD);
-            _canShoot = true;     
+            _canShoot = true;
+          
         }
+
+        
     }
 }

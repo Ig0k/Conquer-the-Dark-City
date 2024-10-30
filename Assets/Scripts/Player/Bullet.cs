@@ -18,6 +18,8 @@ public class Bullet : MonoBehaviour
         _damage = damage;
     }
 
+ 
+
     private void Update()
     {
         transform.position += transform.up * _speed * Time.deltaTime;
@@ -33,6 +35,8 @@ public class Bullet : MonoBehaviour
             Debug.Log("Colisionando con pared");
         }
 
+        
+        
 
         if (_isPlayer)
         {

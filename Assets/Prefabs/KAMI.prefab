@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6516439963667787547}
   - component: {fileID: 3497928169788778683}
   - component: {fileID: -7846849488864663583}
+  - component: {fileID: -1031535444867972784}
   - component: {fileID: -8868968899678765880}
-  - component: {fileID: 2747257878132482016}
+  - component: {fileID: 4632767744581210586}
   m_Layer: 6
   m_Name: KAMI
   m_TagString: Enemy
@@ -122,6 +123,24 @@ CircleCollider2D:
   m_Offset: {x: 0.017061116, y: 0}
   serializedVersion: 2
   m_Radius: 0.22
+--- !u!114 &-1031535444867972784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3886003444781681630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5260f7fc462fb4fbec33e0adeff016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  detectionRange: 5
+  explosionRange: 0.5
+  explosionPrefab: {fileID: 100008, guid: f3613b78354895b469b7da1f0a90e686, type: 3}
+  player: {fileID: 0}
+  health: 3
 --- !u!50 &-8868968899678765880
 Rigidbody2D:
   serializedVersion: 4
@@ -149,7 +168,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2747257878132482016
+--- !u!114 &4632767744581210586
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,8 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5260f7fc462fb4fbec33e0adeff016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 4.26
-  rangoDeteccion: 5.8
-  vida: 3
-  "da\xF1oExplosi\xF3n": 3
-  "explosi\xF3nPrefab": {fileID: 100008, guid: f3613b78354895b469b7da1f0a90e686, type: 3}
+  speed: 3
+  detectionRange: 5
+  explosionRange: 0.5
+  explosionPrefab: {fileID: 100008, guid: f3613b78354895b469b7da1f0a90e686, type: 3}
+  player: {fileID: 0}
+  health: 3
