@@ -57,6 +57,7 @@ public class Enemy4 : MonoBehaviour
     private bool _canTp = true, _canBeInvisible;
 
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Animator _animator;
 
     private void Awake()
     {
@@ -74,6 +75,7 @@ public class Enemy4 : MonoBehaviour
         if (_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
 
         if(_spriteRenderer == null) _spriteRenderer = GetComponent<SpriteRenderer>();
+        if(_animator == null) _animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -120,16 +122,18 @@ public class Enemy4 : MonoBehaviour
     private IEnumerator PatrollAndShoot()
     {
         _canTp = false;
-
+        yield return new WaitForSeconds(0.7f);
         Instantiate(_bullet, transform.position, transform.rotation);
-
+        _animator.Play("Fade");
         yield return new WaitForSeconds(_timeBetweenTps);
         _wayPointToGo = Random.Range(0, _wayPoints.Length);
-
+        
         transform.position = _wayPoints[_wayPointToGo].position;
-        _spriteRenderer.enabled = false;
-        yield return new WaitForSeconds(_timeBetweenTps / 2);
-        _spriteRenderer.enabled = true;
+        
+        //_spriteRenderer.enabled = false;
+        yield return new WaitForSeconds(_timeBetweenTps / 1.5f);
+        _animator.Play("Fade 2");
+        //_spriteRenderer.enabled = true;
 
         _canTp = true;
     }
