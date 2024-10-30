@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 95333048}
   - component: {fileID: 95333049}
   - component: {fileID: 95333050}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Palo de luz (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -963,6 +963,7 @@ GameObject:
   - component: {fileID: 99795359}
   - component: {fileID: 99795361}
   - component: {fileID: 99795362}
+  - component: {fileID: 99795363}
   m_Layer: 8
   m_Name: barril 1 (1)
   m_TagString: Untagged
@@ -1088,6 +1089,41 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!58 &99795363
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99795358}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.0000019073486}
+  serializedVersion: 2
+  m_Radius: 3.365
 --- !u!1 &105131982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,6 +1135,7 @@ GameObject:
   - component: {fileID: 105131985}
   - component: {fileID: 105131984}
   - component: {fileID: 105131983}
+  - component: {fileID: 105131986}
   m_Layer: 8
   m_Name: arbol vivo (4)
   m_TagString: Untagged
@@ -1208,6 +1245,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &105131986
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105131982}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.8449996
 --- !u!1 &107035052
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,6 +2575,7 @@ GameObject:
   - component: {fileID: 212339768}
   - component: {fileID: 212339767}
   - component: {fileID: 212339766}
+  - component: {fileID: 212339769}
   m_Layer: 8
   m_Name: arbol vivo (1)
   m_TagString: Untagged
@@ -2612,6 +2685,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &212339769
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212339765}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.8449996
 --- !u!1 &215513735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,6 +2877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 233346256}
   - component: {fileID: 233346257}
+  - component: {fileID: 233346258}
   m_Layer: 8
   m_Name: arbol (5)
   m_TagString: Untagged
@@ -2843,6 +2952,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &233346258
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233346255}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.0000038146973}
+  serializedVersion: 2
+  m_Radius: 2.8449998
 --- !u!1 &233708061
 GameObject:
   m_ObjectHideFlags: 0
@@ -2889,6 +3033,7 @@ GameObject:
   m_Component:
   - component: {fileID: 234645339}
   - component: {fileID: 234645338}
+  - component: {fileID: 234645340}
   m_Layer: 8
   m_Name: arbol (2)
   m_TagString: Untagged
@@ -2963,6 +3108,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &234645340
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234645337}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.8449998
 --- !u!1 &236628152
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,7 +3155,7 @@ GameObject:
   - component: {fileID: 236628154}
   - component: {fileID: 236628155}
   - component: {fileID: 236628156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Palo de luz (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3293,7 +3473,7 @@ GameObject:
   - component: {fileID: 266942494}
   - component: {fileID: 266942495}
   - component: {fileID: 266942496}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Palo de luz (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4913,6 +5093,7 @@ GameObject:
   m_Component:
   - component: {fileID: 428504040}
   - component: {fileID: 428504041}
+  - component: {fileID: 428504042}
   m_Layer: 8
   m_Name: arbol (8)
   m_TagString: Untagged
@@ -4987,6 +5168,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &428504042
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428504039}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000019073486, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.8449998
 --- !u!1 &432580666
 GameObject:
   m_ObjectHideFlags: 0
@@ -5317,6 +5533,7 @@ GameObject:
   m_Component:
   - component: {fileID: 504478027}
   - component: {fileID: 504478026}
+  - component: {fileID: 504478028}
   m_Layer: 8
   m_Name: arbol (1)
   m_TagString: Untagged
@@ -5391,6 +5608,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &504478028
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504478025}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000076293945, y: 0.0000009536743}
+  serializedVersion: 2
+  m_Radius: 2.8449998
 --- !u!1 &512508734
 GameObject:
   m_ObjectHideFlags: 0
@@ -5724,7 +5976,7 @@ GameObject:
   - component: {fileID: 520692294}
   - component: {fileID: 520692295}
   - component: {fileID: 520692296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cono (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6189,6 +6441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 573230791}
   - component: {fileID: 573230792}
+  - component: {fileID: 573230793}
   m_Layer: 8
   m_Name: arbol (9)
   m_TagString: Untagged
@@ -6263,6 +6516,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &573230793
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573230790}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000009536743, y: -0.0000038146973}
+  serializedVersion: 2
+  m_Radius: 2.8449998
 --- !u!1 &576849630
 GameObject:
   m_ObjectHideFlags: 0
@@ -6275,7 +6563,7 @@ GameObject:
   - component: {fileID: 576849632}
   - component: {fileID: 576849633}
   - component: {fileID: 576849634}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Palo de luz (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6488,6 +6776,7 @@ GameObject:
   - component: {fileID: 603820571}
   - component: {fileID: 603820573}
   - component: {fileID: 603820574}
+  - component: {fileID: 603820575}
   m_Layer: 8
   m_Name: barril 3
   m_TagString: Untagged
@@ -6613,6 +6902,41 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!58 &603820575
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603820570}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.0000009536743}
+  serializedVersion: 2
+  m_Radius: 3.365
 --- !u!1 &611367766
 GameObject:
   m_ObjectHideFlags: 0
@@ -6954,6 +7278,7 @@ GameObject:
   - component: {fileID: 682223408}
   - component: {fileID: 682223410}
   - component: {fileID: 682223409}
+  - component: {fileID: 682223411}
   m_Layer: 8
   m_Name: arbol vivo (5)
   m_TagString: Untagged
@@ -7063,6 +7388,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &682223411
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682223407}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000009536743, y: -0.0000019073486}
+  serializedVersion: 2
+  m_Radius: 2.8449996
 --- !u!1 &695352703
 GameObject:
   m_ObjectHideFlags: 0
@@ -7488,6 +7848,7 @@ GameObject:
   - component: {fileID: 733308980}
   - component: {fileID: 733308979}
   - component: {fileID: 733308978}
+  - component: {fileID: 733308981}
   m_Layer: 8
   m_Name: arbol vivo
   m_TagString: Untagged
@@ -7597,6 +7958,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &733308981
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733308977}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000038146973, y: -0.0000009536743}
+  serializedVersion: 2
+  m_Radius: 2.8449996
 --- !u!1 &736123772
 GameObject:
   m_ObjectHideFlags: 0
@@ -8067,7 +8463,8 @@ GameObject:
   - component: {fileID: 804900285}
   - component: {fileID: 804900284}
   - component: {fileID: 804900286}
-  m_Layer: 0
+  - component: {fileID: 804900287}
+  m_Layer: 8
   m_Name: Auto 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8176,6 +8573,41 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 5.95, y: 10.339999}
   m_Direction: 0
+--- !u!58 &804900287
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804900283}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000038146973, y: 0}
+  serializedVersion: 2
+  m_Radius: 5.1699996
 --- !u!1 &827663589
 GameObject:
   m_ObjectHideFlags: 0
@@ -8739,6 +9171,7 @@ GameObject:
   - component: {fileID: 922429207}
   - component: {fileID: 922429209}
   - component: {fileID: 922429210}
+  - component: {fileID: 922429211}
   m_Layer: 8
   m_Name: barril 1
   m_TagString: Untagged
@@ -8864,6 +9297,41 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!58 &922429211
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922429206}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000076293945, y: 0.0000009536743}
+  serializedVersion: 2
+  m_Radius: 3.365
 --- !u!1 &925304583
 GameObject:
   m_ObjectHideFlags: 0
@@ -9293,6 +9761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 972966131}
   - component: {fileID: 972966132}
+  - component: {fileID: 972966133}
   m_Layer: 8
   m_Name: arbol (11)
   m_TagString: Untagged
@@ -9367,6 +9836,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &972966133
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972966130}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.8449998
 --- !u!1 &976103038
 GameObject:
   m_ObjectHideFlags: 0
@@ -9773,7 +10277,8 @@ GameObject:
   - component: {fileID: 1009902334}
   - component: {fileID: 1009902333}
   - component: {fileID: 1009902335}
-  m_Layer: 0
+  - component: {fileID: 1009902336}
+  m_Layer: 8
   m_Name: Palo de luz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9869,6 +10374,51 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!61 &1009902336
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009902332}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.76414937, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.74, y: 3.37}
+    newSize: {x: 6.73, y: 3.37}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1551037, y: 3.37}
+  m_EdgeRadius: 0
 --- !u!1 &1014766879
 GameObject:
   m_ObjectHideFlags: 0
@@ -9881,7 +10431,7 @@ GameObject:
   - component: {fileID: 1014766881}
   - component: {fileID: 1014766882}
   - component: {fileID: 1014766883}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Palo de luz (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10975,6 +11525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1113473100}
   - component: {fileID: 1113473099}
+  - component: {fileID: 1113473101}
   m_Layer: 8
   m_Name: arbol (3)
   m_TagString: Untagged
@@ -11049,6 +11600,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1113473101
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113473098}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000038146973, y: 0.0000009536743}
+  serializedVersion: 2
+  m_Radius: 2.8449998
 --- !u!1 &1113735197
 GameObject:
   m_ObjectHideFlags: 0
@@ -11689,7 +12275,7 @@ GameObject:
   - component: {fileID: 1141704309}
   - component: {fileID: 1141704310}
   - component: {fileID: 1141704311}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cono (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11808,6 +12394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1172163022}
   - component: {fileID: 1172163023}
+  - component: {fileID: 1172163024}
   m_Layer: 8
   m_Name: arbol (10)
   m_TagString: Untagged
@@ -11882,6 +12469,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1172163024
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172163021}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000019073486, y: -0.0000076293945}
+  serializedVersion: 2
+  m_Radius: 2.8449998
 --- !u!1 &1193955713
 GameObject:
   m_ObjectHideFlags: 0
@@ -12007,6 +12629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1203227615}
   - component: {fileID: 1203227616}
+  - component: {fileID: 1203227617}
   m_Layer: 8
   m_Name: arbol (4)
   m_TagString: Untagged
@@ -12081,6 +12704,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1203227617
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203227614}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.8449998
 --- !u!1 &1220597643
 GameObject:
   m_ObjectHideFlags: 0
@@ -12744,6 +13402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1391989245}
   - component: {fileID: 1391989246}
+  - component: {fileID: 1391989247}
   m_Layer: 8
   m_Name: arbol (7)
   m_TagString: Untagged
@@ -12818,6 +13477,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1391989247
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391989244}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000019073486, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.8449998
 --- !u!1001 &1398785392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13947,6 +14641,7 @@ GameObject:
   - component: {fileID: 1583395704}
   - component: {fileID: 1583395706}
   - component: {fileID: 1583395705}
+  - component: {fileID: 1583395707}
   m_Layer: 8
   m_Name: arbol vivo (8)
   m_TagString: Untagged
@@ -14056,6 +14751,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1583395707
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583395703}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.0000076293945}
+  serializedVersion: 2
+  m_Radius: 2.8449996
 --- !u!1 &1603334881
 GameObject:
   m_ObjectHideFlags: 0
@@ -14364,6 +15094,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881f9578a1a6d9144af60111689d4aa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tiempoEfecto: 0.1
+  effectBullet: {fileID: 0}
   _bullet: {fileID: 6996412163210009648, guid: 8d1d838707a65ba4c85dccba4e4774f3, type: 3}
   _bulletScript: {fileID: 5184648691491419368, guid: 8d1d838707a65ba4c85dccba4e4774f3, type: 3}
   _upgrades: {fileID: 2327397843036670212}
@@ -16072,6 +16804,7 @@ GameObject:
   - component: {fileID: 1794378045}
   - component: {fileID: 1794378047}
   - component: {fileID: 1794378046}
+  - component: {fileID: 1794378048}
   m_Layer: 8
   m_Name: arbol vivo (7)
   m_TagString: Untagged
@@ -16181,6 +16914,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1794378048
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794378044}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.0000038146973}
+  serializedVersion: 2
+  m_Radius: 2.8449996
 --- !u!1 &1840619234
 GameObject:
   m_ObjectHideFlags: 0
@@ -16323,7 +17091,7 @@ GameObject:
   - component: {fileID: 1855759459}
   - component: {fileID: 1855759460}
   - component: {fileID: 1855759461}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Palo de luz (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16602,6 +17370,7 @@ GameObject:
   - component: {fileID: 1867797405}
   - component: {fileID: 1867797404}
   - component: {fileID: 1867797403}
+  - component: {fileID: 1867797406}
   m_Layer: 8
   m_Name: arbol vivo (3)
   m_TagString: Untagged
@@ -16711,6 +17480,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1867797406
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867797402}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.8449996
 --- !u!1 &1882832329
 GameObject:
   m_ObjectHideFlags: 0
@@ -16806,6 +17610,7 @@ GameObject:
   - component: {fileID: 1903652131}
   - component: {fileID: 1903652130}
   - component: {fileID: 1903652129}
+  - component: {fileID: 1903652132}
   m_Layer: 8
   m_Name: arbol vivo (2)
   m_TagString: Untagged
@@ -16915,6 +17720,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1903652132
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903652128}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.0000009536743}
+  serializedVersion: 2
+  m_Radius: 2.8449996
 --- !u!1 &1908276746
 GameObject:
   m_ObjectHideFlags: 0
@@ -17040,6 +17880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1929974343}
   - component: {fileID: 1929974344}
+  - component: {fileID: 1929974345}
   m_Layer: 8
   m_Name: arbol (12)
   m_TagString: Untagged
@@ -17114,6 +17955,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1929974345
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929974342}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.8449998
 --- !u!1 &1939966776
 GameObject:
   m_ObjectHideFlags: 0
@@ -17286,6 +18162,7 @@ GameObject:
   - component: {fileID: 1959858650}
   - component: {fileID: 1959858652}
   - component: {fileID: 1959858651}
+  - component: {fileID: 1959858653}
   m_Layer: 8
   m_Name: arbol vivo (6)
   m_TagString: Untagged
@@ -17395,6 +18272,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1959858653
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959858649}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000019073486, y: -0.0000038146973}
+  serializedVersion: 2
+  m_Radius: 2.8449996
 --- !u!1 &1965564182
 GameObject:
   m_ObjectHideFlags: 0
@@ -18123,6 +19035,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2042640848}
   - component: {fileID: 2042640849}
+  - component: {fileID: 2042640850}
   m_Layer: 8
   m_Name: arbol (6)
   m_TagString: Untagged
@@ -18197,6 +19110,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &2042640850
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042640847}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000019073486, y: -0.0000076293945}
+  serializedVersion: 2
+  m_Radius: 2.8449998
 --- !u!1 &2049041052
 GameObject:
   m_ObjectHideFlags: 0
@@ -23869,7 +24817,7 @@ GameObject:
   - component: {fileID: 8979344724063642799}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
