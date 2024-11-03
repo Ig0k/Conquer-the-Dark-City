@@ -2487,7 +2487,7 @@ AudioSource:
   m_GameObject: {fileID: 392430673}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5236946899417833172, guid: d909c2ba021414f4a9f1a1cc9341f3e4, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -8491,6 +8491,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881f9578a1a6d9144af60111689d4aa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tiempoEfecto: 0.1
+  effectBullet: {fileID: 1967835574231978638, guid: 3e196c9e632c76841a71cb6e2dc6d010, type: 3}
   _bullet: {fileID: 6996412163210009648, guid: 8d1d838707a65ba4c85dccba4e4774f3, type: 3}
   _bulletScript: {fileID: 5184648691491419368, guid: 8d1d838707a65ba4c85dccba4e4774f3, type: 3}
   _upgrades: {fileID: 8216170215829476363}
@@ -10104,6 +10106,7 @@ MonoBehaviour:
   _playerWeapon: {fileID: 0}
   _winClip: {fileID: 0}
   _audioManager: {fileID: 0}
+  _timeBetweenTexts: 2
 --- !u!1001 &1993891155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10729,6 +10732,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.67, y: 6.99}
   m_EdgeRadius: 0
+--- !u!1 &75956699179495829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4429847084152524007}
+  - component: {fileID: 2876519909318498638}
+  m_Layer: 0
+  m_Name: Music Requester
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &290705893323016670
 Transform:
   m_ObjectHideFlags: 0
@@ -20521,6 +20541,19 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 1115307973}
   m_Damping: 0.5
   m_MaxWindowSize: -1
+--- !u!114 &2876519909318498638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75956699179495829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70af984e867490a40ab80a29d1123f68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clipToPlay: {fileID: 8300000, guid: 839e8ac80014daa4b88514e4c75bc71e, type: 3}
 --- !u!61 &2989373799017631205
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25511,6 +25544,21 @@ Transform:
   - {fileID: 5609612663492221707}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4429847084152524007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75956699179495829}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1390.0349, y: 349.26562, z: -15.98273}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4527701486017498661
 GameObject:
   m_ObjectHideFlags: 0
@@ -26355,12 +26403,16 @@ MonoBehaviour:
   _startCD: 0
   _canFreezeTime: 1
   _timeBetween: 5.5
+  _currentTimeBetween: 0
+  _canStartTimeBetween: 0
   _enemy2Script:
   - {fileID: 6737842230667581528}
   _enemy1Script:
   - {fileID: 1894236911760478348}
   - {fileID: 13829618}
   _UIFreezeEffect: {fileID: 8475957248145159568}
+  _barObject: {fileID: 0}
+  _bar: {fileID: 0}
 --- !u!114 &8216170215829476366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26657,6 +26709,7 @@ SceneRoots:
   - {fileID: 7449748781038623451}
   - {fileID: 392430676}
   - {fileID: 1327245317}
+  - {fileID: 4429847084152524007}
   - {fileID: 2056876504}
   - {fileID: 1113735199}
   - {fileID: 904512805}

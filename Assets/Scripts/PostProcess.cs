@@ -38,6 +38,10 @@ public class PostProcess : MonoBehaviour
             float bloodIntensity = (_playerLifeAtStart - _playerLife.Life) / (float)_playerLifeAtStart * 0.5f;
             _vignette.intensity.value = bloodIntensity;
         }
+        else
+        {
+            _vignette.intensity.value = 0f;
+        }
 
     }
 }
