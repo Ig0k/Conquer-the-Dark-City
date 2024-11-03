@@ -72,11 +72,11 @@ public class CharacterData : MonoBehaviour
             }
             else if (zoneCompleted == 2)
             {
-                _zone1CH1 = true;
+                _zone2CH1 = true;
             }
             else if (zoneCompleted == 3)
             {
-                _zone1CH1 = true;
+                _zone3CH1 = true;
             }
         }
         else if (_character == 2)
@@ -87,11 +87,11 @@ public class CharacterData : MonoBehaviour
             }
             else if (zoneCompleted == 2)
             {
-                _zone1CH2 = true;
+                _zone2CH2 = true;
             }
             else if (zoneCompleted == 3)
             {
-                _zone1CH2 = true;
+                _zone3CH2 = true;
             }
         }
     }

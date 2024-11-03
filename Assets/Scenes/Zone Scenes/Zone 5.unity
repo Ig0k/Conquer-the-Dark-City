@@ -28136,6 +28136,7 @@ MonoBehaviour:
   _winClip: {fileID: 8300000, guid: 7c5e1428cc1f84c48afa556378f309cc, type: 3}
   _audioManager: {fileID: 0}
   _timeBetweenTexts: 0
+  _currentZone: 2
 --- !u!1 &995912951
 GameObject:
   m_ObjectHideFlags: 0

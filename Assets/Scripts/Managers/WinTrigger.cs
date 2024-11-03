@@ -21,6 +21,9 @@ public class WinTrigger : MonoBehaviour
 
     [SerializeField] private float _timeBetweenTexts = 2f;
 
+    [Header("Zone")]
+    [SerializeField] private int _currentZone = 1;
+
     private void Awake()
     {
         if(_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
@@ -52,12 +55,13 @@ public class WinTrigger : MonoBehaviour
             yield return new WaitForSeconds(_timeBetweenTexts);
             _texts[2].SetActive(true);
             yield return new WaitForSeconds(3f);
-            _gameManager.WinLevel(2);
+            _gameManager.WinLevel(_currentZone);
             Destroy(gameObject);
         }
         else
         {
-            _gameManager.WinLevel(2);
+            _gameManager.WinLevel(_currentZone);
+            yield return new WaitForSeconds(2f);
             Destroy(gameObject);
         }
     }
