@@ -11,7 +11,7 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private ParticleSystem _bloodParticles, _healthParticles;
 
     [SerializeField] private Animator _animator;
-    public bool parpadeo = true;
+    //public bool parpadeo = true;
     [SerializeField] private PlayerAnimations _playerAnimations;
 
     [SerializeField] private SpriteRenderer _sprite;
@@ -26,7 +26,7 @@ public class PlayerLife : MonoBehaviour
     private void Awake()
     {
         if(_animator == null) _animator = GetComponent<Animator>();
-        if(_sprite == null) _sprite = GetComponent<SpriteRenderer>();
+        if(_sprite == null) _sprite = GetComponentInChildren<SpriteRenderer>();
         if(_movement == null) _movement = GetComponent<PlayerMovement>();
         if(_playerAnimations == null) _playerAnimations = GetComponentInChildren<PlayerAnimations>();
         if(_camShake == null) _camShake = FindObjectOfType<CameraShake>();
@@ -52,6 +52,10 @@ public class PlayerLife : MonoBehaviour
     {
         Shake(6f, 0.42f);
         _audioManager.PlaySound(_impactClip, 0.6f);
+
+        Instantiate(_bloodParticles, transform.position, transform.rotation);
+
+        _playerAnimations.StartCoroutine("PlayerParpadeo");
     }
 
     public void TakeDamage(int dmg )
@@ -65,20 +69,6 @@ public class PlayerLife : MonoBehaviour
         _camShake.ShakeCamera(shakeIntensity, shakeDuration);
     }
 
-    public void ShowParticles()
-    {
-        Instantiate(_bloodParticles, transform.position, Quaternion.identity);
-        _bloodParticles.Play();
-    }
-
-    public IEnumerator Parpadeo()
-    {
-        parpadeo = false;
-        //_animator.SetBool("Parpadeo", true);
-        yield return new WaitForSeconds(.5f);
-        //_animator.SetBool("Parpadeo", false);
-        parpadeo = true;
-    }
 
     public void ShowHealthParticles()
     {

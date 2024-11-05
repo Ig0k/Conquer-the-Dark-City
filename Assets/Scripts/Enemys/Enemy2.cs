@@ -49,6 +49,8 @@ public class Enemy2 : MonoBehaviour
     [SerializeField] private AudioClip _impactClip;
     [SerializeField] private SoundsManager _audioManager;
 
+    [SerializeField] private ParticleSystem _bloodParticles;
+
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -197,6 +199,8 @@ public class Enemy2 : MonoBehaviour
         _audioManager.PlaySound(_impactClip, 0.35f);
 
         Vector2 dirToPlayer = transform.position - _playerTransform.position;
+
+        Instantiate(_bloodParticles, transform.position, transform.rotation);
 
         if (knockbackCoroutine != null) StopCoroutine(knockbackCoroutine);
 

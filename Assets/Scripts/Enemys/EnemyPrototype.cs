@@ -53,6 +53,8 @@ public class EnemyPrototype : MonoBehaviour
     [SerializeField] private AudioClip _shootClip, _impactClip;
     [SerializeField] private SoundsManager _audioManager;
 
+    [SerializeField] private ParticleSystem _bloodParticles;
+
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -215,6 +217,8 @@ public class EnemyPrototype : MonoBehaviour
         _life -= damage;
 
         _audioManager.PlaySound(_impactClip, 0.35f);
+
+        Instantiate(_bloodParticles, transform.position, transform.rotation);
 
         Vector2 dirToPlayer = transform.position - _playerTransform.position;
         

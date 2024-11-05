@@ -59,6 +59,8 @@ public class Enemy4 : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Animator _animator;
 
+    [SerializeField] private ParticleSystem _bloodParticles;
+
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -88,6 +90,7 @@ public class Enemy4 : MonoBehaviour
         _life -= damage;
 
         //_audioManager.PlaySound(_impactClip, 0.35f);
+        Instantiate(_bloodParticles, transform.position, transform.rotation);
 
         return _life;
     }

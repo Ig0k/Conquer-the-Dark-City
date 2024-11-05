@@ -35,6 +35,8 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private AudioClip _shootClip;
     [SerializeField] private SoundsManager _audioManager;
 
+    [SerializeField] private GameObject _boostText;
+
     public float ShootCD
     {
         set { _shootCD = value; }
@@ -118,11 +120,15 @@ public class PlayerWeapon : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) && _canShoot) StartCoroutine(Shoot());
             CheckForProperties();
+
+            _boostText.SetActive(false);
         }
         else
         {
             if (Input.GetMouseButton(0) && _canShoot) StartCoroutine(Shoot());
             _bulletScript.SetProperties(_boostSpeed, _destroyTime, 1);
+
+            _boostText.SetActive(true);
         }
 
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -158,11 +164,15 @@ public class PlayerWeapon : MonoBehaviour
         else
         {
             _canShoot = false;
+            //_boostText.SetActive(true);
+
             Instantiate(_bullet, transform.position, transform.rotation);
             _audioManager.PlaySound(_shootClip, 0.7f);
             GameObject instanciaEfec = Instantiate(effectBullet, transform.position, transform.rotation);
             Destroy(instanciaEfec, tiempoEfecto);
             yield return new WaitForSeconds(_boostCD);
+
+            //_boostText.SetActive(false);
             _canShoot = true;
           
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MapManager : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class MapManager : MonoBehaviour
     [SerializeField] private GameObject _bribeFeedback, _bribeText;
 
     [SerializeField] private TMP_Text _moneyUI;
+
+    //[Header("Button Visuals")]
+    //[SerializeField] private Image _zone0Image;
+    //[SerializeField] private Sprite _zone0ClickedImage, _zone0Deselected;
 
     public void SaveSceneString(string zone)
     {
@@ -44,6 +49,8 @@ public class MapManager : MonoBehaviour
         }
 
         Time.timeScale = 1f;
+
+        //_zone0Deselected = _zone0Image.sprite;
     }
 
     public void Bribe() //bribe == sobornar
@@ -68,6 +75,16 @@ public class MapManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         _bribeFeedback.SetActive(false);
     }
+
+    //public void ImageOnClick()
+    //{
+    //    _zone0Image.sprite = _zone0ClickedImage;
+    //}
+
+    //public void ImageDeselected()
+    //{
+    //    _zone0Image.sprite = _zone0Deselected;
+    //}
 
     public void GoToScene()
     {

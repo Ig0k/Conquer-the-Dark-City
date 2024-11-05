@@ -81,14 +81,7 @@ public class Bullet : MonoBehaviour
                 if (playerLife.enabled)
                 {
                     playerLife.Life -= _damage;
-                    playerLife.ShowParticles();
                     playerLife.ShakeCall();
-
-                    if (playerLife.parpadeo)
-                    {
-                        playerLife.StartCoroutine("Parpadeo");
-                        Debug.Log("1");
-                    }
 
                     Destroy(gameObject);
                 }

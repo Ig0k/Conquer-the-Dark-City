@@ -17,6 +17,8 @@ public class Invisibility : MonoBehaviour
 
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
+    [SerializeField] private GameObject _UIInvisibleEffect;
+
     //[SerializeField] private Enemy2[] _enemy2Script;
     //[SerializeField] private EnemyPrototype[] _enemy1Script;
 
@@ -67,12 +69,16 @@ public class Invisibility : MonoBehaviour
     {
         isInvisible = true;
 
+        _UIInvisibleEffect.SetActive(true);
+
         _spriteRenderer.enabled = false;
     }
 
     private void Visible()
     {
         isInvisible = false;
+
+        _UIInvisibleEffect.SetActive(false);
 
         _spriteRenderer.enabled = true;
     }

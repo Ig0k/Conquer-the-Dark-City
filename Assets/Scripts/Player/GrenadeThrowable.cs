@@ -57,13 +57,9 @@ public class GrenadeThrowable : MonoBehaviour
                 //if(playerLife.parpadeo) playerLife.Life -= _damage;
 
                 playerLife.Life -= _damage;
-                playerLife.ShowParticles();
+            //playerLife.ShowParticles();
 
-                if (playerLife.parpadeo)
-                {
-                    playerLife.StartCoroutine("Parpadeo");
-                    Debug.Log("1");
-                }
+                playerLife.ShakeCall(); 
 
                 Destroy(gameObject);
             }
