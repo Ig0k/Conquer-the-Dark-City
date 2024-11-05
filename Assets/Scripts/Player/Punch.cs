@@ -65,6 +65,21 @@ public class Punch : MonoBehaviour
                 Destroy(gameObject);
 
             }
+            else if (hit.collider != null && hit.collider.TryGetComponent<Kamikaze>(out Kamikaze Kami))
+            {
+                Kami.TakeDamage(_damage);
+                Destroy(gameObject);
+            }
+            else if (hit.collider != null && hit.collider.TryGetComponent<Enemy3>(out Enemy3 enemy3))
+            {
+                enemy3.TakeDamage(_damage);
+                Destroy(gameObject);
+            }
+            else if (hit.collider != null && hit.collider.TryGetComponent<Enemy4>(out Enemy4 enemy4))
+            {
+                enemy4.TakeDamage(_damage);
+                Destroy(gameObject);
+            }
         }
 
         /*

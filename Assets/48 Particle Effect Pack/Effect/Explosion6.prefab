@@ -9802,7 +9802,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -9855,7 +9855,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -12868,7 +12868,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0
@@ -14039,7 +14039,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: be7533a6f81a2e14d9ab9d57915552ca, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18808,7 +18807,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: ce1a2cdc9db22ed4190e11159c00f4d3, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18869,6 +18867,8 @@ GameObject:
   m_Component:
   - component: {fileID: 400008}
   - component: {fileID: 114000013023381446}
+  - component: {fileID: 8379166588379631721}
+  - component: {fileID: 8611243966099216239}
   m_Layer: 0
   m_Name: Explosion6
   m_TagString: Untagged
@@ -18885,8 +18885,8 @@ Transform:
   m_GameObject: {fileID: 100008}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.029597, y: 0.15724, z: 0.025902}
-  m_LocalScale: {x: 0.01577865, y: 0.01577865, z: 0.01577865}
+  m_LocalPosition: {x: 0.43763, y: 0.71927, z: 0.024044}
+  m_LocalScale: {x: 0.086180225, y: 0.086180225, z: 0.086180225}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 400006}
@@ -18908,6 +18908,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db08735561a38424182823d8d175333b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8379166588379631721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe4448a28ef811c4f8a05edaefae2028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 5
+--- !u!58 &8611243966099216239
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.73617744, y: -7.6447463}
+  serializedVersion: 2
+  m_Radius: 21.371096
 --- !u!1 &100010
 GameObject:
   m_ObjectHideFlags: 0

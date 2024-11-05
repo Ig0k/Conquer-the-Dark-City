@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 32bc2b5af3925304898dbbacd4e2278c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 80ab2dcb02aca9d4aa4f407179b6ab6c, type: 3}
   m_Color: {r: 0.7169812, g: 0.26650053, b: 0.26650053, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  detectionRange: 5
+  detectionRange: 10.83
   explosionRange: 0.5
   explosionPrefab: {fileID: 100008, guid: f3613b78354895b469b7da1f0a90e686, type: 3}
   player: {fileID: 0}

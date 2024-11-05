@@ -9,6 +9,6 @@ public class MusicRequester : MonoBehaviour
 
     private void Start()
     {
-        MusicManager.Instance.PlayMusicClip(_clipToPlay);
+        //MusicManager.Instance.PlayMusicClip(_clipToPlay);
     }
 }

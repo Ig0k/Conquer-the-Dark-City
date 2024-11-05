@@ -6,13 +6,13 @@ using UnityEngine;
 public class Grenade : MonoBehaviour
 {
     [SerializeField]
-    private int grenadeAmount = 1;
+    private int grenadeAmount = 2;
     
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.name.Contains("Player"))
+        if (collision.CompareTag("Player"))
 
         {
 

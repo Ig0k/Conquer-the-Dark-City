@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9115177848311543823}
   - component: {fileID: 146921818293248214}
   - component: {fileID: -4975354755484529579}
-  - component: {fileID: 3457843177005549002}
+  - component: {fileID: 6819220650216259156}
   m_Layer: 7
   m_Name: grenade
   m_TagString: Untagged
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: -0.002997287, y: 0}
   serializedVersion: 2
   m_Radius: 0.22723494
---- !u!114 &3457843177005549002
+--- !u!114 &6819220650216259156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,4 +133,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29640ad024b50b5409d9a360f20bea3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grenadeAmount: 1
+  grenadeAmount: 2

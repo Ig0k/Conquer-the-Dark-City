@@ -37,21 +37,33 @@ public class Playerpunch : MonoBehaviour
 
     private void Update()
     {
+        // Si el jugador presiona el botón de mouse derecho (botón 1)
         if (Input.GetMouseButton(1) && _canPunch) StartCoroutine(Shoot());
 
+        // Obtener la posición del ratón en el mundo
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+        // Calcular la dirección hacia el ratón y rotar el jugador hacia esa dirección
         Vector2 dir = (mousePos - (Vector2)transform.position).normalized;
         transform.up = dir;
 
-        transform.position = _player.position;/* + new Vector3(0, 1.5f, 0);*/
+        // Mantener la posición del jugador (aquí es donde debería moverse el jugador en el juego)
+        transform.position = _player.position;
     }
 
     private IEnumerator Shoot()
     {
         _canPunch = false;
-        Instantiate(_punch, transform.position, transform.rotation);
+
+        // Calcular la posición donde aparecerá el golpe (frente al jugador)
+        Vector3 punchPosition = transform.position + transform.up * 1f; // Aquí 1.5f es la distancia frente al jugador
+
+        // Instanciar el golpe en la posición calculada y con la rotación actual del jugador
+        Instantiate(_punch, punchPosition, transform.rotation);
+
+        // Esperar el tiempo de cooldown antes de poder volver a golpear
         yield return new WaitForSeconds(_PunchCD);
+
         _canPunch = true;
     }
 }
