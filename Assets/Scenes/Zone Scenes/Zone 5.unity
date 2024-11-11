@@ -15734,7 +15734,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 32bc2b5af3925304898dbbacd4e2278c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -26394,7 +26394,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 32bc2b5af3925304898dbbacd4e2278c, type: 3}
   m_Color: {r: 1, g: 0.5235849, b: 0.5235849, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -29732,7 +29732,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 32bc2b5af3925304898dbbacd4e2278c, type: 3}
   m_Color: {r: 0.383811, g: 0.3925895, b: 0.7075472, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -37832,7 +37832,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 32bc2b5af3925304898dbbacd4e2278c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -43427,7 +43427,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 32bc2b5af3925304898dbbacd4e2278c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -44739,7 +44739,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 32bc2b5af3925304898dbbacd4e2278c, type: 3}
   m_Color: {r: 0.383811, g: 0.3925895, b: 0.7075472, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -64647,7 +64647,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 32bc2b5af3925304898dbbacd4e2278c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -80248,7 +80248,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 32bc2b5af3925304898dbbacd4e2278c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -83021,7 +83021,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 32bc2b5af3925304898dbbacd4e2278c, type: 3}
   m_Color: {r: 0.383811, g: 0.3925895, b: 0.7075472, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5

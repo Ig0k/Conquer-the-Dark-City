@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -15,38 +16,53 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (!gamePaused)
+        if(SceneManager.GetActiveScene().name != "Base")
         {
-            if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) gamePaused = true;
-        }
-        else if(gamePaused)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) gamePaused = false;
-        }
+            if (!gamePaused)
+            {
+                if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) gamePaused = true;
+            }
+            else if (gamePaused)
+            {
+                if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) gamePaused = false;
+            }
 
-        if (gamePaused)
-        {
-            OpenPauseMenu();
+            if (gamePaused)
+            {
+                OpenPauseMenu();
+            }
+            else
+            {
+                ClosePauseMenu();
+            }
         }
-        else
-        {
-            ClosePauseMenu();
-        }
+        
     }
 
     public void OpenPauseMenu()
     {
-        _pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
+        if(SceneManager.GetActiveScene().name != "Base")
+        {
+            _pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
 
-        UnityEngine.Cursor.visible = true;
+            UnityEngine.Cursor.visible = true;
+        }   
     }
 
     public void ClosePauseMenu()
     {
-        _pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
+        if (SceneManager.GetActiveScene().name != "Base")
+        {
+            _pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
 
-        UnityEngine.Cursor.visible = false;
+            UnityEngine.Cursor.visible = false;
+        }
+        else
+        {
+            UnityEngine.Cursor.visible = true;
+            UnityEngine.Cursor.lockState = CursorLockMode.None;
+        }
     }
 }

@@ -33,7 +33,7 @@ public class PostProcess : MonoBehaviour
     private void Update()
     {
 
-        if(_playerLife.Life <= 5)
+        if(_playerLife.Life <= 2)
         {
             float bloodIntensity = (_playerLifeAtStart - _playerLife.Life) / (float)_playerLifeAtStart * 0.5f;
             _vignette.intensity.value = bloodIntensity;

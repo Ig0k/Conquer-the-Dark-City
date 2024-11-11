@@ -7,6 +7,7 @@ public class Cursor : MonoBehaviour
 {
     [SerializeField] private Transform _mousePoint, _player;
 
+
     private void Update()
     {
         if (PauseMenu.gamePaused == false || SceneManager.GetActiveScene().name == "Confrontation1")

@@ -147,7 +147,9 @@ public class UpgradesStore : MonoBehaviour
         Time.timeScale = 1f;
         _cursorScript.enabled = true;
 
-        UnityEngine.Cursor.visible = false;
-        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        //UnityEngine.Cursor.visible = false;
+        //UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        UnityEngine.Cursor.visible = true;
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
     }
 }

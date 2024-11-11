@@ -45,13 +45,13 @@ public class PlayerMovement : MonoBehaviour
 
         if(GameManager.currentCharacter == 1)
         {
-            _walkSpeed = 6;
+            _walkSpeed = 12;
 
             //Distintas stats segun personaje... Desarrollar qué tiene de diferente cada uno (también en otros scripts)
         }
         else if(GameManager.currentCharacter == 2)
         {
-            _walkSpeed = 8; //Velocidad original con que entregamos la build es 8.
+            _walkSpeed = 10; //Velocidad original con que entregamos la build es 8.
 
             //Distintas stats segun personaje... Desarrollar qué tiene de diferente cada uno (también en otros scripts)
         }
@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 move = (transform.up * vertical + transform.right * horizontal).normalized;
         _rb.velocity = move * _walkSpeed;
-        _Particle.Play();
+        //_Particle.Play();
 
         //ANIMATOR MANAGEMENT
 
@@ -82,13 +82,17 @@ public class PlayerMovement : MonoBehaviour
             if(_canPlaySteps) StartCoroutine(PlaySteps());
 
             _stepsVolume = 0.25f;
+
+            _Particle.Play();
         }
         else
         {
             _playerAnimations.StopWalk();
 
             _stepsVolume = 0f;
-        }     
+
+            _Particle.Stop();
+        }
     }
 
     private IEnumerator PlaySteps()
