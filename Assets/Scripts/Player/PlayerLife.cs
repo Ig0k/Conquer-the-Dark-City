@@ -42,7 +42,7 @@ public class PlayerLife : MonoBehaviour
         
         set
         {
-            _life = Mathf.Clamp(_life, 0, 30);
+            _life = Mathf.Clamp(_life, 0, 6);
 
             _life = value;
         }

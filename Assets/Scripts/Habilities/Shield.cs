@@ -82,7 +82,8 @@ public class Shield : MonoBehaviour
         _shieldGameObject.SetActive(true);
         _playerLife.enabled = false;
         _playerMovement.enabled = false;
-     
+
+        _playerLife.Life = 5;
 
         if (!_onCD)
         {
