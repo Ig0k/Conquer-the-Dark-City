@@ -212,7 +212,7 @@ public class EnemyPrototype : MonoBehaviour
         _canShoot = true;
     }
 
-    public int TakeDamage(int damage)
+    public int TakeDamage(int damage, float knockbackForce, float knockbackDur)
     {
         _life -= damage;
 
@@ -224,15 +224,15 @@ public class EnemyPrototype : MonoBehaviour
         
         if(knockbackCoroutine != null) StopCoroutine(knockbackCoroutine);
 
-        knockbackCoroutine = StartCoroutine(Knockback(dirToPlayer));
+        knockbackCoroutine = StartCoroutine(Knockback(dirToPlayer, knockbackForce, knockbackDur));
         return _life; 
     }
 
-    private IEnumerator Knockback(Vector2 dir)
+    private IEnumerator Knockback(Vector2 dir, float knockbackForce, float knockbackDur)
     {
-        _rb.velocity = dir * _knockbackForce;
+        _rb.velocity = dir * knockbackForce;
 
-        yield return new WaitForSeconds(_knockBackDuration);
+        yield return new WaitForSeconds(knockbackDur);
 
         _rb.velocity = Vector2.zero;
     }

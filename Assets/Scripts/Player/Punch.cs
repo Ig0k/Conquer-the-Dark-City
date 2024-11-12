@@ -11,6 +11,8 @@ public class Punch : MonoBehaviour
     [SerializeField] private float _rayDistance;
     [SerializeField] private bool _isPlayer = false;
 
+    [SerializeField] private float _knockbackForce = 1.15f, _knockbackDuration = 0.1f;
+
     public void SetProperties( float destroyTime, int damage)
     {
         
@@ -55,13 +57,13 @@ public class Punch : MonoBehaviour
         {
             if (hit.collider != null && hit.collider.TryGetComponent<EnemyPrototype>(out EnemyPrototype enemy1))
             {
-                enemy1.TakeDamage(_damage);
+                enemy1.TakeDamage(_damage, _knockbackForce, _knockbackDuration);
                 Destroy(gameObject);
             }
 
             else if (hit.collider != null && hit.collider.TryGetComponent<Enemy2>(out Enemy2 enemy2))
             {
-                enemy2.TakeDamage(_damage);
+                enemy2.TakeDamage(_damage, _knockbackForce, _knockbackDuration);
                 Destroy(gameObject);
 
             }
@@ -72,7 +74,7 @@ public class Punch : MonoBehaviour
             }
             else if (hit.collider != null && hit.collider.TryGetComponent<Enemy3>(out Enemy3 enemy3))
             {
-                enemy3.TakeDamage(_damage);
+                enemy3.TakeDamage(_damage, _knockbackForce, _knockbackDuration);
                 Destroy(gameObject);
             }
             else if (hit.collider != null && hit.collider.TryGetComponent<Enemy4>(out Enemy4 enemy4))

@@ -7,6 +7,8 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     public int dmg = 5;
+
+    [SerializeField] private float _knockbackForce = 1.15f, _knockbackDuration = 0.1f;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,13 +25,13 @@ public class NewBehaviourScript : MonoBehaviour
         }
         else if (collision.TryGetComponent<EnemyPrototype>(out EnemyPrototype enemy1))
         {
-            enemy1.TakeDamage(dmg);
+            enemy1.TakeDamage(dmg, _knockbackForce, _knockbackDuration);
            
         }
 
         else if (collision.TryGetComponent<Enemy2>(out Enemy2 enemy2))
         {
-            enemy2.TakeDamage(dmg);
+            enemy2.TakeDamage(dmg, _knockbackForce, _knockbackDuration);
             
 
         }
@@ -40,7 +42,7 @@ public class NewBehaviourScript : MonoBehaviour
         }
         else if (collision.TryGetComponent<Enemy3>(out Enemy3 enemy3))
         {
-            enemy3.TakeDamage(dmg);
+            enemy3.TakeDamage(dmg, _knockbackForce, _knockbackDuration);
            
         }
         else if (collision.TryGetComponent<Enemy4>(out Enemy4 enemy4))

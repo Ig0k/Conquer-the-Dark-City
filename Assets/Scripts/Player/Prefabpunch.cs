@@ -11,6 +11,8 @@ public class Prefabpunch : MonoBehaviour
     [SerializeField] private int _damage;
     [SerializeField] private LayerMask _layerMask;
 
+    [SerializeField] private float _knockbackForce = 1.15f, _knockbackDuration = 0.1f;
+
     //[SerializeField] private bool _isPlayer = false;
 
     private void Start()
@@ -31,12 +33,12 @@ public class Prefabpunch : MonoBehaviour
         {
             if(collision.TryGetComponent<EnemyPrototype>(out EnemyPrototype enemy1))
             {
-                enemy1.TakeDamage(_damage);
+                enemy1.TakeDamage(_damage, _knockbackForce, _knockbackDuration);
                 Destroy(gameObject);
             }
             else if(collision.TryGetComponent<Enemy2>(out Enemy2 enemy2))
             {
-                enemy2.TakeDamage(_damage);
+                enemy2.TakeDamage(_damage, _knockbackForce, _knockbackDuration);
                 Destroy(gameObject);
             }  
         }

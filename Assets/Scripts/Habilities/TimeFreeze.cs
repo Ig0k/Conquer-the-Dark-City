@@ -29,7 +29,6 @@ public class TimeFreeze : MonoBehaviour
         else enabled = false;
     }
 
-
     private void Update()
     {
         if (_startCD)
@@ -67,19 +66,6 @@ public class TimeFreeze : MonoBehaviour
             _currentTimeBetween = 0f;
         }
 
-        
-        //if (_canStartTimeBetween && _barObject.activeSelf)
-        //{
-        //    _currentTimeBetween += Time.deltaTime;
-        //    _bar.fillAmount = _currentTimeBetween / 5;
-
-        //    if (_currentTimeBetween >= 5)
-        //    {
-        //        _canFreezeTime = true;
-        //        _currentTimeBetween = 0f;
-        //    }
-        //}
-
     }
 
     private IEnumerator StartTimeFreeze()
@@ -95,8 +81,6 @@ public class TimeFreeze : MonoBehaviour
     {
         //Debug.Log("Tiempo Freezado");
         //escribir la logica de freezeo de tiempo aca
-
-        //_barObject.SetActive(false);
 
         _UIFreezeEffect.SetActive(true);
 
@@ -123,8 +107,6 @@ public class TimeFreeze : MonoBehaviour
     {
         //Debug.Log("Tiempo normal");
         //escribir logica de tiempo no freezado aca
-
-        //_barObject.SetActive(true);
 
         _UIFreezeEffect.SetActive(false);
 

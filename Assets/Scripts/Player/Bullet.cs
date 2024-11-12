@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] private int _damage;
     [SerializeField] private LayerMask _layerMask;
 
+    [SerializeField] private float _knockbackForce = 1.15f, _knockbackDuration = 0.1f;
+
     [SerializeField] private bool _isPlayer = false;
 
     public void SetProperties(float speed, float destroyTime, int damage)
@@ -42,17 +44,17 @@ public class Bullet : MonoBehaviour
         {
             if (hit.collider != null && hit.collider.TryGetComponent<EnemyPrototype>(out EnemyPrototype enemy1))
             {
-                enemy1.TakeDamage(_damage);
+                enemy1.TakeDamage(_damage, _knockbackForce, _knockbackDuration);
                 Destroy(gameObject);
             }
             if (hit.collider != null && hit.collider.TryGetComponent<Enemy3>(out Enemy3 enemy3))
             {
-                enemy3.TakeDamage(_damage);
+                enemy3.TakeDamage(_damage, _knockbackForce, _knockbackDuration);
                 Destroy(gameObject);
             }
             if (hit.collider != null && hit.collider.TryGetComponent<Enemy2>(out Enemy2 enemy2))
             {
-                enemy2.TakeDamage(_damage);
+                enemy2.TakeDamage(_damage, _knockbackForce, _knockbackDuration);
                 Destroy(gameObject);
             }
             if (hit.collider !=null && hit.collider.TryGetComponent<Torreta>(out Torreta turret))
@@ -73,7 +75,7 @@ public class Bullet : MonoBehaviour
             }
             if (hit.collider != null && hit.collider.TryGetComponent<NewEnemy1>(out NewEnemy1 newEnemy1))
             {
-                newEnemy1.TakeDamage(_damage);
+                newEnemy1.TakeDamage(_damage, _knockbackForce, _knockbackDuration);
                 Destroy(gameObject);
             }
         }

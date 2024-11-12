@@ -16,6 +16,16 @@ public class Shield : MonoBehaviour
     [SerializeField] private PlayerLife _playerLife;
     [SerializeField] private PlayerMovement _playerMovement;
 
+    [SerializeField] private Enemy2[] _enemy2Script;
+    [SerializeField] private EnemyPrototype[] _enemy1Script;
+    [SerializeField] private NewEnemy1[] _newEnemys1Script;
+    [SerializeField] private Enemy3[] _enemy3Script;
+
+    [SerializeField] private float _knockbakcForce = 3, _knockbackDuration = 0.23f;
+    [SerializeField] private int _damage = 0;
+
+    [SerializeField] private float _distanceToKnockback = 7f;
+
     private void Awake()
     {
         if(_playerLife == null) _playerLife = GetComponent<PlayerLife>();
@@ -72,13 +82,66 @@ public class Shield : MonoBehaviour
         _shieldGameObject.SetActive(true);
         _playerLife.enabled = false;
         _playerMovement.enabled = false;
+     
+
+        if (!_onCD)
+        {
+            for (int i = 0; i < _enemy2Script.Length; i++)
+            {
+                if (_enemy2Script[i] != null)
+                {
+                    float distance = Vector2.Distance(transform.position, _enemy2Script[i].transform.position);
+
+                    if (_enemy2Script[i] != null && distance <= _distanceToKnockback)
+                    {
+                        _enemy2Script[i].TakeDamage(_damage, _knockbakcForce, _knockbackDuration); //el tercer parámetro, el newPunchCD, debe ser mayor, no menor (al reves que los otros 2)
+                    }
+                }
+            }
+            for (int i = 0; i < _enemy1Script.Length; i++)
+            {
+                if (_enemy1Script[i] != null)
+                {
+                    float distance = Vector2.Distance(transform.position, _enemy1Script[i].transform.position);
+
+                    if (_enemy1Script[i] != null && distance <= _distanceToKnockback)
+                    {
+                        _enemy1Script[i].TakeDamage(_damage, _knockbakcForce, _knockbackDuration);
+                    }
+                }
+            }
+            for (int i = 0; i < _newEnemys1Script.Length; i++)
+            {
+                if(_newEnemys1Script[i] != null)
+                {
+                    float distance = Vector2.Distance(transform.position, _newEnemys1Script[i].transform.position);
+
+                    if (distance <= _distanceToKnockback)
+                    {
+                        _newEnemys1Script[i].TakeDamage(_damage, _knockbakcForce, _knockbackDuration);
+                    }
+                }
+            }
+            for (int i = 0; i < _enemy3Script.Length; i++)
+            {
+                if (_enemy3Script[i] != null)
+                {
+                    float distance = Vector2.Distance(transform.position, _enemy3Script[i].transform.position);
+
+                    if (_enemy3Script[i] != null && distance <= _distanceToKnockback)
+                    {
+                        _enemy3Script[i].TakeDamage(_damage, _knockbakcForce, _knockbackDuration);
+                    }
+                }
+            }
+        }
     }
 
     private void NoShield()
     {
         _shieldGameObject.SetActive(false);
         _playerLife.enabled = true;
-        _playerMovement.enabled = true;
+        _playerMovement.enabled = true;   
     }
 
     private void Timer()
