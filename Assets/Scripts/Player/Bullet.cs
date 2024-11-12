@@ -71,6 +71,11 @@ public class Bullet : MonoBehaviour
                 enemy4.TakeDamage(_damage);
                 Destroy(gameObject);
             }
+            if (hit.collider != null && hit.collider.TryGetComponent<NewEnemy1>(out NewEnemy1 newEnemy1))
+            {
+                newEnemy1.TakeDamage(_damage);
+                Destroy(gameObject);
+            }
         }
 
         else
