@@ -21,6 +21,7 @@ public class Kamikaze : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            Explode();
 
         }
         return health;
