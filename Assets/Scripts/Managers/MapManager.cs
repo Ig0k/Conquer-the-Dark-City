@@ -19,7 +19,8 @@ public class MapManager : MonoBehaviour
     [Header("Bribe Settings")]
 
     [SerializeField] private int _moneyToBribe = 5;
-    [SerializeField] private bool _bribedZone0 = false, _bribedZone5 = false, _bribedZone3 = false;
+    private static bool _bribedZone0 = false, _bribedZone5 = false, _bribedZone3 = false;
+    [SerializeField] private bool _bribedZone0View = false, _bribedZone5View = false, _bribedZone3View = false;
     [SerializeField] private GameObject _bribeFeedback, _bribeText;
 
     [SerializeField] private TMP_Text _moneyUI;
@@ -36,13 +37,15 @@ public class MapManager : MonoBehaviour
     private void Update()
     {
         _moneyUI.text = "$ " + Money.money;
+
+        _bribedZone0View = _bribedZone0;
+        _bribedZone3View = _bribedZone3;
+        _bribedZone5View = _bribedZone5;
     }
 
     private void Start()
     {
-        //_bribedZone0 = false;
-        //_bribedZone5 = false;
-        //_bribedZone3 = false;
+        
 
         if (SceneManager.GetActiveScene().name == "Map" || SceneManager.GetActiveScene().name == "Art")
         {
@@ -187,30 +190,21 @@ public class MapManager : MonoBehaviour
 
     private IEnumerator GoToConfrontation()
     {
-        if(_zone == "Zone 0" && !_bribedZone0)
+        _confrontationWarning.SetActive(true);
+
+        yield return new WaitForSeconds(4f);
+
+        if(!_bribedZone0 && _zone == "Zone 0")
         {
-            _confrontationWarning.SetActive(true);
-
-            yield return new WaitForSeconds(4f);
-
             SceneManager.LoadScene("Confrontation1");
         }
-        else if (_zone == "Zone 5" && !_bribedZone5)
+        else if(!_bribedZone3 && _zone == "Zone 3")
         {
-            _confrontationWarning.SetActive(true);
-
-            yield return new WaitForSeconds(4f);
-
             SceneManager.LoadScene("Confrontation1");
         }
-        else if (_zone == "Zone 3" && !_bribedZone3)
+        else if (!_bribedZone5 && _zone == "Zone 5")
         {
-            _confrontationWarning.SetActive(true);
-
-            yield return new WaitForSeconds(4f);
-
             SceneManager.LoadScene("Confrontation1");
         }
-
     }
 }
