@@ -118,7 +118,7 @@ public class PlayerWeapon : MonoBehaviour
 
         if (!_boost)
         {
-            if (Input.GetMouseButtonDown(0) && _canShoot) StartCoroutine(Shoot());
+            if (Input.GetMouseButton(0) && _canShoot) StartCoroutine(Shoot());
             CheckForProperties();
 
             _boostText.SetActive(false);

@@ -19,7 +19,7 @@ public class MapManager : MonoBehaviour
     [Header("Bribe Settings")]
 
     [SerializeField] private int _moneyToBribe = 5;
-    private bool _bribed = false;
+    [SerializeField] private bool _bribedZone0 = false, _bribedZone5 = false, _bribedZone3 = false;
     [SerializeField] private GameObject _bribeFeedback, _bribeText;
 
     [SerializeField] private TMP_Text _moneyUI;
@@ -40,9 +40,11 @@ public class MapManager : MonoBehaviour
 
     private void Start()
     {
-        _bribed = false;
+        //_bribedZone0 = false;
+        //_bribedZone5 = false;
+        //_bribedZone3 = false;
 
-        if(SceneManager.GetActiveScene().name == "Map" || SceneManager.GetActiveScene().name == "Art")
+        if (SceneManager.GetActiveScene().name == "Map" || SceneManager.GetActiveScene().name == "Art")
         {
             UnityEngine.Cursor.lockState = CursorLockMode.None; 
             UnityEngine.Cursor.visible = true;
@@ -53,16 +55,63 @@ public class MapManager : MonoBehaviour
         //_zone0Deselected = _zone0Image.sprite;
     }
 
-    public void Bribe() //bribe == sobornar
+    public void Bribe()
+    {
+        if(_zone == "Zone 0")
+        {
+            BribeZone0();
+        }
+        else if(_zone == "Zone 5")
+        {
+            BribeZone5();
+        }
+        else if(_zone == "Zone 3")
+        {
+            BribeZone3();
+        }
+        else
+        {
+            Debug.Log(1);
+        }
+    }
+
+    public void BribeZone0() //bribe == sobornar
     {
         if(Money.money >= _moneyToBribe)
         {
-            _bribed = true;
+            _bribedZone0 = true;
             _confrontationWarning.SetActive(false);
 
             Money.money -= _moneyToBribe;
         }
         StartCoroutine(BribeUI());
+        StopCoroutine(GoToConfrontation());
+    }
+
+    public void BribeZone5() //bribe == sobornar
+    {
+        if (Money.money >= _moneyToBribe)
+        {
+            _bribedZone5 = true;
+            _confrontationWarning.SetActive(false);
+
+            Money.money -= _moneyToBribe;
+        }
+        StartCoroutine(BribeUI());
+        StopCoroutine(GoToConfrontation());
+    }
+
+    public void BribeZone3() //bribe == sobornar
+    {
+        if (Money.money >= _moneyToBribe)
+        {
+            _bribedZone3 = true;
+            _confrontationWarning.SetActive(false);
+
+            Money.money -= _moneyToBribe;
+        }
+        StartCoroutine(BribeUI());
+        StopCoroutine(GoToConfrontation());
     }
 
     private IEnumerator BribeUI()
@@ -89,15 +138,40 @@ public class MapManager : MonoBehaviour
     public void GoToScene()
     {
         chancesToConfrontation = Random.Range(0, 12);
-        if (chancesToConfrontation <= 4 && !_bribed)
+
+        if(_zone == "Zone 0")
         {
-            StartCoroutine(GoToConfrontation());
+            if(chancesToConfrontation <= 4 && !_bribedZone0)
+            {
+                StartCoroutine(GoToConfrontation());
+            }
+            else if(_bribedZone0 || chancesToConfrontation > 4)
+            {
+                SceneManager.LoadScene(_zone);
+            }
         }
-        else
+        else if (_zone == "Zone 5")
         {
-            SceneManager.LoadScene(_zone);
+            if (chancesToConfrontation <= 4 && !_bribedZone5)
+            {
+                StartCoroutine(GoToConfrontation());
+            }
+            else if(_bribedZone5 || chancesToConfrontation > 4)
+            {
+                SceneManager.LoadScene(_zone);
+            }
         }
-        
+        else if (_zone == "Zone 3")
+        {
+            if (chancesToConfrontation <= 4 && !_bribedZone3)
+            {
+                StartCoroutine(GoToConfrontation());
+            }
+            else if (_bribedZone3 || chancesToConfrontation > 4)
+            {
+                SceneManager.LoadScene(_zone);
+            }
+        }
     }
 
     public void GoToBase()
@@ -113,13 +187,30 @@ public class MapManager : MonoBehaviour
 
     private IEnumerator GoToConfrontation()
     {
-        _confrontationWarning.SetActive(true);
-
-        yield return new WaitForSeconds(4f);
-
-        if(!_bribed)
+        if(_zone == "Zone 0" && !_bribedZone0)
         {
+            _confrontationWarning.SetActive(true);
+
+            yield return new WaitForSeconds(4f);
+
             SceneManager.LoadScene("Confrontation1");
         }
+        else if (_zone == "Zone 5" && !_bribedZone5)
+        {
+            _confrontationWarning.SetActive(true);
+
+            yield return new WaitForSeconds(4f);
+
+            SceneManager.LoadScene("Confrontation1");
+        }
+        else if (_zone == "Zone 3" && !_bribedZone3)
+        {
+            _confrontationWarning.SetActive(true);
+
+            yield return new WaitForSeconds(4f);
+
+            SceneManager.LoadScene("Confrontation1");
+        }
+
     }
 }

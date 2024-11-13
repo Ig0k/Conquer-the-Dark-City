@@ -328,6 +328,9 @@ MonoBehaviour:
   chancesToConfrontation: 0
   _confrontationWarning: {fileID: 453342259}
   _moneyToBribe: 5
+  _bribedZone0: 0
+  _bribedZone5: 0
+  _bribedZone3: 0
   _bribeFeedback: {fileID: 1562116063}
   _bribeText: {fileID: 825471834}
   _moneyUI: {fileID: 1062732865}

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Cursor : MonoBehaviour
 {
-    [SerializeField] private Transform _mousePoint, _player;
+    [SerializeField] private Transform _mousePoint;
 
 
     private void Update()
