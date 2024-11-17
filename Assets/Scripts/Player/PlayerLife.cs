@@ -17,7 +17,7 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private SpriteRenderer _sprite;
     [SerializeField] private PlayerMovement _movement;
 
-    [SerializeField] private CameraShake _camShake;
+    [SerializeField] private CameraShake[] _camShake;
 
     [Header("Sounds")]
     [SerializeField] private AudioClip _impactClip;
@@ -29,7 +29,7 @@ public class PlayerLife : MonoBehaviour
         if(_sprite == null) _sprite = GetComponentInChildren<SpriteRenderer>();
         if(_movement == null) _movement = GetComponent<PlayerMovement>();
         if(_playerAnimations == null) _playerAnimations = GetComponentInChildren<PlayerAnimations>();
-        if(_camShake == null) _camShake = FindObjectOfType<CameraShake>();
+        if(_camShake == null) _camShake[0] = FindObjectOfType<CameraShake>();
         if(_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
     }
 
@@ -50,8 +50,10 @@ public class PlayerLife : MonoBehaviour
 
     public void ShakeCall() //SONIDO Y SHAKE ACÁ
     {
-        Shake(6f, 0.42f);
+        Shake(17f, 0.5f);
         _audioManager.PlaySound(_impactClip, 0.6f);
+
+        Debug.Log("Shake Call llamado");
 
         Instantiate(_bloodParticles, transform.position, transform.rotation);
 
@@ -64,9 +66,19 @@ public class PlayerLife : MonoBehaviour
         _life -= dmg;
 
     }
-    private void Shake(float shakeIntensity, float shakeDuration)
+    public void Shake(float shakeIntensity, float shakeDuration)
     {
-        _camShake.ShakeCamera(shakeIntensity, shakeDuration);
+        
+        if (_camShake[0].gameObject.activeSelf == false)
+        {
+            _camShake[1].ShakeCamera(shakeIntensity, shakeDuration);
+        }
+        else
+        {
+            _camShake[0].ShakeCamera(shakeIntensity, shakeDuration);
+        }
+
+        Debug.Log("Shake llamado");
     }
 
 
@@ -83,6 +95,5 @@ public class PlayerLife : MonoBehaviour
             _sprite.enabled = false;
             _movement.WalkSpeed = 0;
         }
-        
     }
 }

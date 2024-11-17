@@ -36241,6 +36241,7 @@ MonoBehaviour:
   _bullet: {fileID: 6996412163210009648, guid: 8d1d838707a65ba4c85dccba4e4774f3, type: 3}
   _bulletScript: {fileID: 5184648691491419368, guid: 8d1d838707a65ba4c85dccba4e4774f3, type: 3}
   _upgrades: {fileID: 1886054614}
+  _playerLife: {fileID: 0}
   _damage: 1
   _damage2: 2
   _destroyTime: 3
@@ -36248,8 +36249,8 @@ MonoBehaviour:
   _speed2: 27
   _mousePoint: {fileID: 903571871}
   _player: {fileID: 1886054612}
-  _shootCD: 0.7
-  _shootCD2: 1.3
+  _shootCD: 0.55
+  _shootCD2: 0.4
   _canUseBoost: 0
   _boost: 0
   _boostSpeed: 90
@@ -46295,7 +46296,8 @@ MonoBehaviour:
   _playerAnimations: {fileID: 0}
   _sprite: {fileID: 0}
   _movement: {fileID: 0}
-  _camShake: {fileID: 0}
+  _camShake:
+  - {fileID: 1815133164}
   _impactClip: {fileID: 8300000, guid: 25bface6c2df3bd46b4299ab006fc8c8, type: 3}
   _audioManager: {fileID: 0}
 --- !u!114 &1886054616

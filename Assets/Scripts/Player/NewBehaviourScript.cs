@@ -52,7 +52,10 @@ public class NewBehaviourScript : MonoBehaviour
         }
     }
 
-
+    private void Update()
+    {
+        Destroy(gameObject, 1.5f);
+    }
 
 }
 

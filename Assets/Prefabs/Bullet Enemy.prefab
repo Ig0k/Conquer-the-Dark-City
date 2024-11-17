@@ -99,13 +99,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00cae5a259fd5c4abd0bdbe9b9512f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
-  _destroyTime: 6
+  _speed: 8
+  _destroyTime: 7
   _damage: 1
   _layerMask:
     serializedVersion: 2
     m_Bits: 128
+  _knockbackForce: 1.15
+  _knockbackDuration: 0.1
   _isPlayer: 0
+  _particles: {fileID: 997392287999194021, guid: aa0428b9546f60646927781e49ec08a9, type: 3}
 --- !u!50 &1701334670275241876
 Rigidbody2D:
   serializedVersion: 4

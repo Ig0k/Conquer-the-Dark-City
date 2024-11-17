@@ -10,6 +10,9 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Bullet _bulletScript;
     [SerializeField] private PlayerUpgrades _upgrades;
+    [SerializeField] private PlayerLife _playerLife;
+
+    [Header("Shoot Values")]
 
     [SerializeField] private int _damage = 1, _damage2 = 2;
     [SerializeField] private float _destroyTime = 3f;
@@ -17,7 +20,7 @@ public class PlayerWeapon : MonoBehaviour
 
     [SerializeField] private Transform _mousePoint, _player;
 
-    [SerializeField] private float _shootCD = .7f, _shootCD2 = 1.3f;
+    [SerializeField] private float _shootCD = .45f, _shootCD2 = .45f;
     private bool _canShoot = true;
 
     [Header("Boost Values")]
@@ -46,6 +49,7 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (PowerManagement.canUseShootBoost) _canUseBoost = true;
         if(_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
+        if(_playerLife == null) _playerLife = FindObjectOfType<PlayerLife>();
     }
 
     private void Start()
@@ -149,8 +153,8 @@ public class PlayerWeapon : MonoBehaviour
         {
             _canShoot = false;
             Instantiate(_bullet, transform.position, transform.rotation);
-            
-           
+
+            _playerLife.Shake(7f, 0.25f);
 
             _audioManager.PlaySound(_shootClip, 0.7f);
             GameObject instanciaEfec = Instantiate(effectBullet, transform.position, transform.rotation);
@@ -168,6 +172,9 @@ public class PlayerWeapon : MonoBehaviour
 
             Instantiate(_bullet, transform.position, transform.rotation);
             _audioManager.PlaySound(_shootClip, 0.7f);
+
+            _playerLife.Shake(10f, 0.45f);
+
             GameObject instanciaEfec = Instantiate(effectBullet, transform.position, transform.rotation);
             Destroy(instanciaEfec, tiempoEfecto);
             yield return new WaitForSeconds(_boostCD);
