@@ -13,8 +13,6 @@ public class Bullet : MonoBehaviour
 
     [SerializeField] private bool _isPlayer = false;
 
-    [SerializeField] private ParticleSystem _particles;
-
     public void SetProperties(float speed, float destroyTime, int damage)
     {
         _speed = speed;
@@ -22,17 +20,10 @@ public class Bullet : MonoBehaviour
         _damage = damage;
     }
 
-    private void Start()
-    {
-        Instantiate(_particles, transform.position, transform.rotation);
-        //_particles.Play();
-    }
 
     private void Update()
     {
         transform.position += transform.up * _speed * Time.deltaTime;
-
-        _particles.transform.position = transform.position;
 
         Destroy(gameObject, _destroyTime);
 
