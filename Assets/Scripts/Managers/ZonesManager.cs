@@ -17,21 +17,41 @@ public class ZonesManager : MonoBehaviour
 
     [SerializeField] private CharacterData _characterData;
 
-    [SerializeField] private GameObject _winnedConfrontationUI;
+    [SerializeField] private GameObject _winnedConfrontationUI, _looseConfrontationUI;
+    private bool _showWinnedConfrontUI = false, _showLooseConfrontUI = false;
 
     [SerializeField] private PlayerUpgrades _upgrades;
+
+    [SerializeField] private int _moneyAtConfrontWinned = 50, _moneyAtConfrontLoosed;
 
 
     private void Awake()
     {
         if(_characterData == null) _characterData = FindObjectOfType<CharacterData>();
+    }
 
-        if (_characterData.confrontationWinned == true)
+    private void Start()
+    {
+        if (_characterData.confrontationWinned) _showWinnedConfrontUI = true;
+        if (_characterData.confrontationLoosed) _showLooseConfrontUI = true;
+
+        if (_characterData.confrontationWinned == true && _showWinnedConfrontUI == true)
         {
             _upgrades.level = 1; //el nivel inicial es 0. Si ganamos un enfrentamiento, sube a 1
             CharacterData.character1Level = 1;
             CharacterData.character2Level = 1;
             _winnedConfrontationUI.SetActive(true);
+            _showWinnedConfrontUI = false;
+
+            Money.money += _moneyAtConfrontWinned;
+        }
+        else if (_characterData.confrontationLoosed == true && _showLooseConfrontUI == true)
+        {
+            _looseConfrontationUI.SetActive(true);
+            _showLooseConfrontUI = false;
+
+            if (Money.money >= _moneyAtConfrontLoosed) Money.money -= _moneyAtConfrontLoosed;
+            else Money.money = 0;
         }
     }
 
@@ -69,6 +89,19 @@ public class ZonesManager : MonoBehaviour
     public void CloseConfrontationWindow()
     {
         _winnedConfrontationUI.SetActive(false);
+        _showWinnedConfrontUI = false;
+
+        _characterData.confrontationWinned = false;
+        _characterData.confrontationLoosed = false;
+    }
+
+    public void CloseLooseConfrontationWindow()
+    {
+        _looseConfrontationUI.SetActive(false);
+        _showLooseConfrontUI = false;
+
+        _characterData.confrontationWinned = false;
+        _characterData.confrontationLoosed = false;
     }
 
     //private void ChangeCharacterTo1()
@@ -80,6 +113,6 @@ public class ZonesManager : MonoBehaviour
     //    CharacterData._character = 2;
     //}
 
-    
+
 
 }

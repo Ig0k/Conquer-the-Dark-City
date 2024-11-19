@@ -19,7 +19,7 @@ public class MapManager : MonoBehaviour
     [Header("Bribe Settings")]
 
     [SerializeField] private int _moneyToBribe = 5;
-    private static bool _bribedZone0 = false, _bribedZone5 = false, _bribedZone3 = false;
+    private bool _bribedZone0 = false, _bribedZone5 = false, _bribedZone3 = false;
     [SerializeField] private bool _bribedZone0View = false, _bribedZone5View = false, _bribedZone3View = false;
     [SerializeField] private GameObject _bribeFeedback, _bribeText;
 
@@ -87,8 +87,12 @@ public class MapManager : MonoBehaviour
 
             Money.money -= _moneyToBribe;
         }
-        StartCoroutine(BribeUI());
-        StopCoroutine(GoToConfrontation());
+        if (_bribedZone0)
+        {
+            StartCoroutine(BribeUI());
+            StopCoroutine(GoToConfrontation());
+        }
+        
     }
 
     public void BribeZone5() //bribe == sobornar
@@ -100,8 +104,12 @@ public class MapManager : MonoBehaviour
 
             Money.money -= _moneyToBribe;
         }
-        StartCoroutine(BribeUI());
-        StopCoroutine(GoToConfrontation());
+        if (_bribedZone5)
+        {
+            StartCoroutine(BribeUI());
+            StopCoroutine(GoToConfrontation());
+        }
+        
     }
 
     public void BribeZone3() //bribe == sobornar
@@ -113,8 +121,12 @@ public class MapManager : MonoBehaviour
 
             Money.money -= _moneyToBribe;
         }
-        StartCoroutine(BribeUI());
-        StopCoroutine(GoToConfrontation());
+        if (_bribedZone3)
+        {
+            StartCoroutine(BribeUI());
+            StopCoroutine(GoToConfrontation());
+        }
+        
     }
 
     private IEnumerator BribeUI()

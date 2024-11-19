@@ -17,6 +17,8 @@ public class TimeFreeze : MonoBehaviour
 
     [SerializeField] private Enemy2[] _enemy2Script;
     [SerializeField] private EnemyPrototype[] _enemy1Script;
+    [SerializeField] private NewEnemy1[] _newEnemyScript;
+    [SerializeField] private Enemy3[] _enemy3Script;
 
     [SerializeField] private GameObject _UIFreezeEffect;
 
@@ -84,23 +86,48 @@ public class TimeFreeze : MonoBehaviour
 
         _UIFreezeEffect.SetActive(true);
 
-        for (int i = 0; i < _enemy2Script.Length; i++)
+        if(_enemy2Script != null)
         {
-            if(_enemy2Script[i] != null)
+            for (int i = 0; i < _enemy2Script.Length; i++)
             {
-                _enemy2Script[i].TimeModification(5, 2f, 3f); //el tercer parámetro, el newPunchCD, debe ser mayor, no menor (al reves que los otros 2)
+                if (_enemy2Script[i] != null)
+                {
+                    _enemy2Script[i].TimeModification(5, 2f, 3f); //el tercer parámetro, el newPunchCD, debe ser mayor, no menor (al reves que los otros 2)
+                }
             }
-            
         }
-        for (int i = 0; i < _enemy1Script.Length; i++)
+        if(_enemy1Script != null)
         {
-            if(_enemy1Script[i] != null)
+            for (int i = 0; i < _enemy1Script.Length; i++)
             {
-                _enemy1Script[i].TimeModification(1.2f, 13f, 12f, 3f);
+                if (_enemy1Script[i] != null)
+                {
+                    _enemy1Script[i].TimeModification(1.2f, 13f, 12f, 3f);
+                }
             }
-            
         }
-          
+        if(_enemy3Script != null)
+        {
+            for (int i = 0; i < _enemy3Script.Length; i++)
+            {
+                if (_enemy3Script[i] != null)
+                {
+                    _enemy3Script[i].TimeModification(1.2f, 13f, 12f, 3f);
+                }
+            }
+        }
+
+        if(_newEnemyScript != null)
+        {
+            for (int i = 0; i < _newEnemyScript.Length; i++)
+            {
+                if (_newEnemyScript[i] != null)
+                {
+                    _newEnemyScript[i].TimeModification(1.2f, 13f, 12f, 3f);
+                }
+            }
+        }   
+        
     }
 
     private void NormalTime()
@@ -110,21 +137,45 @@ public class TimeFreeze : MonoBehaviour
 
         _UIFreezeEffect.SetActive(false);
 
-        for (int i = 0; i < _enemy2Script.Length; i++)
+        if(_enemy2Script != null)
         {
-            if (_enemy2Script[i] != null)
+            for (int i = 0; i < _enemy2Script.Length; i++)
             {
-                _enemy2Script[i].BackToOgParams();
-            } 
-        }
-
-        for (int i = 0; i < _enemy1Script.Length; i++)
-        {
-            if (_enemy1Script[i] != null)
-            {
-                _enemy1Script[i].BackToOgParams();
+                if (_enemy2Script[i] != null)
+                {
+                    _enemy2Script[i].BackToOgParams();
+                }
             }
-            
+        }     
+        if(_enemy1Script != null)
+        {
+            for (int i = 0; i < _enemy1Script.Length; i++)
+            {
+                if (_enemy1Script[i] != null)
+                {
+                    _enemy1Script[i].BackToOgParams();
+                }
+            }
+        }
+        if(_newEnemyScript != null)
+        {
+            for (int i = 0; i < _newEnemyScript.Length; i++)
+            {
+                if (_newEnemyScript[i] != null)
+                {
+                    _newEnemyScript[i].BackToOgParams();
+                }
+            }
+        }
+        if(_enemy3Script != null)
+        {
+            for (int i = 0; i < _enemy3Script.Length; i++)
+            {
+                if (_enemy3Script[i] != null)
+                {
+                    _enemy3Script[i].BackToOgParams();
+                }
+            }
         }
     }
 

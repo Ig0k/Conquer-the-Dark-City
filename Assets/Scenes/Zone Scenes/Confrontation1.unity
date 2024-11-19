@@ -3319,7 +3319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mousePoint: {fileID: 471181883}
-  _player: {fileID: 7695173927375124351}
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8501,6 +8500,7 @@ MonoBehaviour:
   _bullet: {fileID: 6996412163210009648, guid: 8d1d838707a65ba4c85dccba4e4774f3, type: 3}
   _bulletScript: {fileID: 5184648691491419368, guid: 8d1d838707a65ba4c85dccba4e4774f3, type: 3}
   _upgrades: {fileID: 8216170215829476363}
+  _playerLife: {fileID: 0}
   _damage: 1
   _damage2: 2
   _destroyTime: 3
@@ -26567,8 +26567,9 @@ MonoBehaviour:
   _animator: {fileID: 840451050}
   _playerAnimations: {fileID: 0}
   _sprite: {fileID: 0}
-  _movement: {fileID: 0}
-  _camShake: {fileID: 0}
+  _movement: {fileID: 8216170215829476360}
+  _camShake:
+  - {fileID: 6969330401190586553}
   _impactClip: {fileID: 8300000, guid: 25bface6c2df3bd46b4299ab006fc8c8, type: 3}
   _audioManager: {fileID: 0}
 --- !u!114 &8216170215829476363
@@ -26642,6 +26643,8 @@ MonoBehaviour:
   _enemy1Script:
   - {fileID: 1894236911760478348}
   - {fileID: 13829618}
+  _newEnemyScript: []
+  _enemy3Script: []
   _UIFreezeEffect: {fileID: 8475957248145159568}
   _barObject: {fileID: 0}
   _bar: {fileID: 0}

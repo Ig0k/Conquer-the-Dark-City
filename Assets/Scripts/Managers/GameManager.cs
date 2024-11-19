@@ -47,7 +47,15 @@ public class GameManager : MonoBehaviour
     {
         if (_playerLife.Life <= 0)
         {
-            StartCoroutine(LoadScene(_sceneName));
+            if(SceneManager.GetActiveScene().name != "Confrontation1")
+            {
+                StartCoroutine(LoadScene(_sceneName));
+            }
+            else
+            {
+                StartCoroutine(LoadScene(_sceneName));
+                _characterData.confrontationLoosed = true;
+            }
         }
     }
 

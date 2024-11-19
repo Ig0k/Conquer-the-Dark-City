@@ -14,11 +14,12 @@ public class CharacterData : MonoBehaviour
     public bool _zone1CH2 = false, _zone2CH2 = false, _zone3CH2 = false;//Zonas completadas o no completadas
 
     public bool confrontationWinned = false;
+    public bool confrontationLoosed = false;
 
     public static int character1Level = 0;
     public static int character2Level = 0;
 
-    public static bool zone1CH1 = false;
+    public static bool zone1CH1 = false, zone1CH2, zone2CH1, zone2CH2;
 
     private void Awake()
     {
@@ -43,6 +44,9 @@ public class CharacterData : MonoBehaviour
     private void Update()
     {
         zone1CH1 = _zone1CH1;
+        zone1CH2 = _zone1CH2;
+        zone2CH1 = _zone2CH1;
+        zone2CH2 = _zone2CH2;
 
         _characterVisualization = _character;
 
