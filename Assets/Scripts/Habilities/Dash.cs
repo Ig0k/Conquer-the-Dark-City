@@ -20,23 +20,56 @@ public class Dash : MonoBehaviour
     {
         if (enabled)
         {
+            Vector2 dirToMouse = (_mousePoint.position - transform.position).normalized;
+            Vector2 dashDirection = Vector2.zero;
+
+            if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A)) // Arriba Izquierda
+            {
+                dashDirection = new Vector2(-1, 1).normalized;
+            }
+            else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D)) // Arriba Derecha
+            {
+                dashDirection = new Vector2(1, 1).normalized;
+            }
+            else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D)) // Abajo Derecha
+            {
+                dashDirection = new Vector2(1, -1).normalized;
+            }
+            else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A)) // Abajo Izquierda
+            {
+                dashDirection = new Vector2(-1, -1).normalized;
+            }
+            else if (Input.GetKey(KeyCode.W)) 
+            {
+                dashDirection = Vector2.up;
+            }
+            else if (Input.GetKey(KeyCode.S)) 
+            {
+                dashDirection = Vector2.down;
+            }
+            else if (Input.GetKey(KeyCode.A)) 
+            {
+                dashDirection = Vector2.left;
+            }
+            else if (Input.GetKey(KeyCode.D)) 
+            {
+                dashDirection = Vector2.right;
+            }
+
             if (Input.GetKeyDown(KeyCode.LeftShift) && !_onCD && !_isDashing)
             {
-                Vector2 dirToMouse = (transform.position - _mousePoint.position).normalized;
-
-                if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+                if (dashDirection != Vector2.zero)
                 {
-                    StartCoroutine(DashCoroutine(dirToMouse, _dashSpeed / 3));
+                    StartCoroutine(DashCoroutine(dashDirection, _dashSpeed));
                 }
                 else
                 {
-                    StartCoroutine(DashCoroutine(dirToMouse, _dashSpeed));
+                    StartCoroutine(DashCoroutine(Vector2.down, _dashSpeed));
                 }
             }
 
             Timer();
         }
-        
     }
 
     private IEnumerator DashCoroutine(Vector2 direction, float speed)

@@ -37011,7 +37011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mousePoint: {fileID: 471181883}
-  _dashSpeed: 20
+  _dashSpeed: 25
   _dashDuration: 0.18
   _maxCD: 2
   _currentCD: 0
