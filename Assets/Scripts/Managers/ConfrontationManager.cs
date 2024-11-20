@@ -15,12 +15,23 @@ public class ConfrontationManager : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name.Contains("Confrontation"))
+        if (SceneManager.GetActiveScene().name.Contains("Confrontation1"))
         {
             if(_enemy1 == null && _enemy2 == null && _enemy3 == null)
             {
                 _characterData.confrontationWinned = true;
                 SceneManager.LoadScene("Map");
+            }
+        }
+        else if (SceneManager.GetActiveScene().name.Contains("Confrontation2"))
+        {
+            if (_enemy1 == null && _enemy2 == null)
+            {
+                _characterData.confrontationWinned = true;
+                SceneManager.LoadScene("Map");
+
+                //UnityEngine.Cursor.lockState = CursorLockMode.None;
+                //UnityEngine.Cursor.visible = false;
             }
         }
     }

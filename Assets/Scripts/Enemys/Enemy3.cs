@@ -11,6 +11,7 @@ public class Enemy3 : MonoBehaviour
 
     [SerializeField] private NavMeshAgent _agent;
     [SerializeField] private Transform _playerTransform;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
 
     [SerializeField] private Transform[] _wayPoints;
     [SerializeField] private float _minDistanceForWps = 0.2f;
@@ -64,10 +65,11 @@ public class Enemy3 : MonoBehaviour
         _ogShootCD = _shootCD;
 
         if (_bulletScript != null) _bulletScript.SetProperties(_bulletSpeed, _bulletDestroyTime, _bulletDamage);
-
         if (_rb == null) _rb = GetComponent<Rigidbody2D>();
-
         if (_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
+        if (_spriteRenderer == null) _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        _spriteRenderer.color = Color.blue;
     }
 
     public void TimeModification(float newSpeed, float newBulletSpeed, float newBulletDestroyTime,
@@ -224,6 +226,8 @@ public class Enemy3 : MonoBehaviour
 
         if (knockbackCoroutine != null) StopCoroutine(knockbackCoroutine);
 
+        StartCoroutine(SpriteDamaged());
+
         knockbackCoroutine = StartCoroutine(Knockback(dirToPlayer, knockbackForce, knockbackDur));
 
         return _life;
@@ -236,6 +240,22 @@ public class Enemy3 : MonoBehaviour
         yield return new WaitForSeconds(knockbackDur);
 
         _rb.velocity = Vector2.zero;
+    }
+
+    private IEnumerator SpriteDamaged()
+    {
+        _spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(.08f);
+        _spriteRenderer.color = Color.blue;
+        yield return new WaitForSeconds(.08f);
+        _spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(.08f);
+        _spriteRenderer.color = Color.blue;
+        yield return new WaitForSeconds(.08f);
+        _spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(.08f);
+        _spriteRenderer.color = Color.blue;
+        yield return new WaitForSeconds(.08f);
     }
 
     public void Die() { Destroy(gameObject); }

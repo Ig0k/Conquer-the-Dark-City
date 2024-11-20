@@ -216,7 +216,7 @@ public class MapManager : MonoBehaviour
         }
         else if (!_bribedZone5 && _zone == "Zone 5")
         {
-            SceneManager.LoadScene("Confrontation1");
+            SceneManager.LoadScene("Confrontation2");
         }
     }
 }

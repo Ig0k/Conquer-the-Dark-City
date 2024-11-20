@@ -71,11 +71,8 @@ public class Enemy4 : MonoBehaviour
         _ogShootCD = _shootCD;
 
         if (_bulletScript != null) _bulletScript.SetProperties(_bulletSpeed, _bulletDestroyTime, _bulletDamage);
-
         if (_rb == null) _rb = GetComponent<Rigidbody2D>();
-
         if (_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
-
         if(_spriteRenderer == null) _spriteRenderer = GetComponent<SpriteRenderer>();
         if(_animator == null) _animator = GetComponent<Animator>();
     }
@@ -91,6 +88,8 @@ public class Enemy4 : MonoBehaviour
 
         //_audioManager.PlaySound(_impactClip, 0.35f);
         Instantiate(_bloodParticles, transform.position, transform.rotation);
+
+        StartCoroutine(SpriteDamaged());
 
         return _life;
     }
@@ -120,6 +119,22 @@ public class Enemy4 : MonoBehaviour
 
             transform.rotation = lookRotation;
         }
+    }
+
+    private IEnumerator SpriteDamaged()
+    {
+        _spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(.08f);
+        _spriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(.08f);
+        _spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(.08f);
+        _spriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(.08f);
+        _spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(.08f);
+        _spriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(.08f);
     }
 
     private IEnumerator PatrollAndShoot()

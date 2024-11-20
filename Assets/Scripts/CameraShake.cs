@@ -24,7 +24,7 @@ public class CameraShake : MonoBehaviour
             shakeIntensity = intensity;
             shakeTimer = time;
 
-            Debug.Log("Cam Shake Base Called");
+            //Debug.Log("Cam Shake Base Called");
         }   
     }
 

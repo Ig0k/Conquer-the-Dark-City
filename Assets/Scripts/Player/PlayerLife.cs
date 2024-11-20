@@ -53,7 +53,7 @@ public class PlayerLife : MonoBehaviour
         Shake(17f, 0.5f);
         _audioManager.PlaySound(_impactClip, 0.6f);
 
-        Debug.Log("Shake Call llamado");
+        //Debug.Log("Shake Call llamado");
 
         Instantiate(_bloodParticles, transform.position, transform.rotation);
 
@@ -78,7 +78,7 @@ public class PlayerLife : MonoBehaviour
             _camShake[0].ShakeCamera(shakeIntensity, shakeDuration);
         }
 
-        Debug.Log("Shake llamado");
+        //Debug.Log("Shake llamado");
     }
 
 

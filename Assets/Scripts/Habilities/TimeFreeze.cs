@@ -20,7 +20,7 @@ public class TimeFreeze : MonoBehaviour
     [SerializeField] private NewEnemy1[] _newEnemyScript;
     [SerializeField] private Enemy3[] _enemy3Script;
 
-    [SerializeField] private GameObject _UIFreezeEffect;
+    [SerializeField] private GameObject _UIFreezeEffect, _UIText;
 
     [SerializeField] private GameObject _barObject; //es el circle en realidad
     [SerializeField] private Image _bar;
@@ -29,6 +29,12 @@ public class TimeFreeze : MonoBehaviour
     {
         if(PowerManagement.canUseTimeFreeze) enabled = true;
         else enabled = false;
+    }
+
+    private void Start()
+    {
+        if (enabled) _UIText.SetActive(true);
+        else _UIText.SetActive(false);
     }
 
     private void Update()

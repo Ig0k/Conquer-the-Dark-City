@@ -17,7 +17,7 @@ public class Invisibility : MonoBehaviour
 
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
-    [SerializeField] private GameObject _UIInvisibleEffect;
+    [SerializeField] private GameObject _UIInvisibleEffect, _UIText;
 
     //[SerializeField] private Enemy2[] _enemy2Script;
     //[SerializeField] private EnemyPrototype[] _enemy1Script;
@@ -28,6 +28,12 @@ public class Invisibility : MonoBehaviour
     {
         if (PowerManagement.canUseInvisibility) enabled = true;
         else enabled = false;
+    }
+
+    private void Start()
+    {
+        if (enabled) _UIText.SetActive(true);
+        else _UIText.SetActive(false);
     }
 
     private void Update()

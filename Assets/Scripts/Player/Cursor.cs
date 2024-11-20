@@ -22,6 +22,16 @@ public class Cursor : MonoBehaviour
 
             UnityEngine.Cursor.visible = false;
         }
+        else if(SceneManager.GetActiveScene().name == "Base" ||
+            SceneManager.GetActiveScene().name == "Confrontation2")
+        {
+            UnityEngine.Cursor.lockState = CursorLockMode.None;
+            UnityEngine.Cursor.visible = false;
+
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            _mousePoint.position = mousePos;
+        }
         
     }
 }
