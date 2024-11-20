@@ -2900,7 +2900,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -1.2755337, y: 6.7390137}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2911,7 +2911,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.67, y: 6.99}
+  m_Size: {x: 7.2210674, y: 27.327084}
   m_EdgeRadius: 0
 --- !u!212 &156510920
 SpriteRenderer:
@@ -19565,7 +19565,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -3.759458, y: -0.37944412}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -19576,7 +19576,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.67, y: 6.99}
+  m_Size: {x: 12.188916, y: 22.737156}
   m_EdgeRadius: 0
 --- !u!212 &1624389081
 SpriteRenderer:
@@ -25047,7 +25047,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.9784956, y: -2.0937195}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -25058,7 +25058,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.67, y: 6.99}
+  m_Size: {x: 6.6269913, y: 23.585987}
   m_EdgeRadius: 0
 --- !u!1 &2119284137
 GameObject:
@@ -30480,6 +30480,7 @@ GameObject:
   - component: {fileID: 8979344724063642797}
   - component: {fileID: 8979344724063642798}
   - component: {fileID: 8979344724063642799}
+  - component: {fileID: 8979344724063642800}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -36997,6 +36998,24 @@ MonoBehaviour:
   _knockbackDuration: 0.2
   _damage: 1
   _distanceToKnockback: 15
+--- !u!114 &8979344724063642800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633911486753971364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb64dcf958be974fb5cbda025170a55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mousePoint: {fileID: 471181883}
+  _dashSpeed: 20
+  _dashDuration: 0.18
+  _maxCD: 2
+  _currentCD: 0
+  _onCD: 0
 --- !u!114 &8986894794778444319
 MonoBehaviour:
   m_ObjectHideFlags: 0
