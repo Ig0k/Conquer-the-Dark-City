@@ -25,4 +25,6 @@ public class MainMenuManager : MonoBehaviour
         _soundsMenu.SetActive(false);
         _mainMenu.SetActive(true);
     }
+
+
 }
