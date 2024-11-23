@@ -8,7 +8,7 @@ public class SmartAllied : MonoBehaviour
     [SerializeField] private NavMeshAgent _agent;
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private Transform[] _wps;
-    [SerializeField] private float _minDistanceFromWp = 2f;
+    [SerializeField] private float _distanceFromPlayer = 2f;
 
     //[SerializeField] private int _life = 2;
 
@@ -51,17 +51,18 @@ public class SmartAllied : MonoBehaviour
             i = 0;
         }
 
-        float playerWpsDistance = Vector2.Distance(_wps[i].position, _playerTransform.position);
+        //float playerWpsDistance = Vector2.Distance(_wps[i].position, _playerTransform.position);
+        float distanceFromPlayer = Vector2.Distance(transform.position, _playerTransform.position);
 
-        if (playerWpsDistance <= _minDistanceFromWp)
+        if (distanceFromPlayer > _distanceFromPlayer)
         {
             if (i < _wps.Length - 1)
             {
                 i++;            
             }
         }
-        if(i >= 0) _agent.SetDestination(_wps[i - 1].position);
-
+        if (i >= 0) _agent.SetDestination(_wps[i].position);
+        //if(i >= 0) _agent.SetDestination(_wps[i - 1].position);
 
         for (int i = 0; i < _enemies.Length; i++)
         {

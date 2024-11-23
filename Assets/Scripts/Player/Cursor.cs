@@ -34,7 +34,7 @@ public class Cursor : MonoBehaviour
             _mousePoint.position = mousePos;
         }
 
-        if (UnityEngine.Cursor.lockState == CursorLockMode.Confined) Debug.Log("Cursor Confined");
-        else Debug.Log("Cursor NOT confined");
+        //if (UnityEngine.Cursor.lockState == CursorLockMode.Confined) Debug.Log("Cursor Confined");
+        //else Debug.Log("Cursor NOT confined");
     }
 }

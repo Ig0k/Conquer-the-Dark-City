@@ -33,7 +33,7 @@ public class CharacterData : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Debug.Log(character1Level + " + " + character2Level);
+        //Debug.Log(character1Level + " + " + character2Level);
     }
 
     public void ActiveCharacter(int character)

@@ -18,6 +18,8 @@ public class Bullet : MonoBehaviour
         _speed = speed;
         _destroyTime = destroyTime;
         _damage = damage;
+
+        Debug.Log("4");
     }
 
 

@@ -69,6 +69,8 @@ public class EnemyPrototype : MonoBehaviour
         if(_rb == null) _rb = GetComponent<Rigidbody2D>();
         if (_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
         if (_spriteRenderer == null) _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        Debug.Log("0");
     }
 
     public void TimeModification(float newSpeed, float newBulletSpeed, float newBulletDestroyTime, 
@@ -80,6 +82,8 @@ public class EnemyPrototype : MonoBehaviour
 
         _bulletScript.SetProperties(newSpeed, newBulletDestroyTime, _bulletDamage);
         if(_agent.speed != 0) _agent.speed = newSpeed;
+
+        Debug.Log("1");
     }
 
     public void BackToOgParams()
@@ -90,6 +94,8 @@ public class EnemyPrototype : MonoBehaviour
         _shootCD = _ogShootCD;
 
         _bulletScript.SetProperties(_bulletSpeed, _bulletDestroyTime, _bulletDamage);
+
+        Debug.Log("2");
     }
 
     private void Start()

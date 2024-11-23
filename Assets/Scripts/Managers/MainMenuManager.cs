@@ -20,8 +20,8 @@ public class MainMenuManager : MonoBehaviour
         {
             UnityEngine.Cursor.lockState = CursorLockMode.Confined;
         }
-        if (UnityEngine.Cursor.lockState == CursorLockMode.Confined) Debug.Log("Cursor Confined");
-        else Debug.Log("Cursor NOT confined");
+        //if (UnityEngine.Cursor.lockState == CursorLockMode.Confined) Debug.Log("Cursor Confined");
+        //else Debug.Log("Cursor NOT confined");
     }
 
     public void ActiveSoundPreferencesMenu()
