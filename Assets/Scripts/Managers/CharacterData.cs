@@ -10,8 +10,8 @@ public class CharacterData : MonoBehaviour
     public static int _character = 1;
     [SerializeField] private int _characterVisualization = 1;
 
-    public bool _zone1CH1 = false, _zone2CH1 = false, _zone3CH1 = false;
-    public bool _zone1CH2 = false, _zone2CH2 = false, _zone3CH2 = false;//Zonas completadas o no completadas
+    public bool _zone1CH1 = false, _zone2CH1 = false, _zone3CH1 = false, _zone4CH1 = false;
+    public bool _zone1CH2 = false, _zone2CH2 = false, _zone3CH2 = false, _zone4CH2 = false;//Zonas completadas o no completadas
 
     public bool confrontationWinned = false;
     public bool confrontationLoosed = false;
@@ -82,6 +82,10 @@ public class CharacterData : MonoBehaviour
             {
                 _zone3CH1 = true;
             }
+            else if (zoneCompleted == 4)
+            {
+                _zone4CH1 = true;
+            }
         }
         else if (_character == 2)
         {
@@ -96,6 +100,10 @@ public class CharacterData : MonoBehaviour
             else if (zoneCompleted == 3)
             {
                 _zone3CH2 = true;
+            }
+            else if(zoneCompleted == 4)
+            {
+                _zone4CH2 = true;
             }
         }
     }

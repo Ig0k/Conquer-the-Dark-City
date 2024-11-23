@@ -187,6 +187,10 @@ public class MapManager : MonoBehaviour
                 SceneManager.LoadScene(_zone);
             }
         }
+        else if(_zone == "Zone 6") //DESARROLLAR SI HACE FALTA
+        {
+            SceneManager.LoadScene(_zone);
+        }
     }
 
     public void GoToBase()
@@ -218,5 +222,6 @@ public class MapManager : MonoBehaviour
         {
             SceneManager.LoadScene("Confrontation2");
         }
+
     }
 }

@@ -21,17 +21,20 @@ public class Cursor : MonoBehaviour
             _mousePoint.position = mousePos;
 
             UnityEngine.Cursor.visible = false;
+            UnityEngine.Cursor.lockState = CursorLockMode.Confined;
         }
         else if(SceneManager.GetActiveScene().name == "Base" ||
             SceneManager.GetActiveScene().name == "Confrontation2")
         {
-            UnityEngine.Cursor.lockState = CursorLockMode.None;
+            UnityEngine.Cursor.lockState = CursorLockMode.Confined;
             UnityEngine.Cursor.visible = false;
 
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             _mousePoint.position = mousePos;
         }
-        
+
+        if (UnityEngine.Cursor.lockState == CursorLockMode.Confined) Debug.Log("Cursor Confined");
+        else Debug.Log("Cursor NOT confined");
     }
 }
