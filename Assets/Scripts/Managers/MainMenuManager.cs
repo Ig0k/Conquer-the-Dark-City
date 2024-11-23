@@ -14,6 +14,16 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    private void Update()
+    {
+        if(SceneManager.GetActiveScene().name == "Main Menu")
+        {
+            UnityEngine.Cursor.lockState = CursorLockMode.Confined;
+        }
+        if (UnityEngine.Cursor.lockState == CursorLockMode.Confined) Debug.Log("Cursor Confined");
+        else Debug.Log("Cursor NOT confined");
+    }
+
     public void ActiveSoundPreferencesMenu()
     {
         _soundsMenu.SetActive(true);

@@ -62,7 +62,7 @@ public class PauseMenu : MonoBehaviour
         else
         {
             UnityEngine.Cursor.visible = true;
-            UnityEngine.Cursor.lockState = CursorLockMode.None;
+            UnityEngine.Cursor.lockState = CursorLockMode.Confined;
         }
     }
 }

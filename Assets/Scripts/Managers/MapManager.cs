@@ -41,6 +41,9 @@ public class MapManager : MonoBehaviour
         _bribedZone0View = _bribedZone0;
         _bribedZone3View = _bribedZone3;
         _bribedZone5View = _bribedZone5;
+
+        //CURSOR
+        UnityEngine.Cursor.lockState = CursorLockMode.Confined;
     }
 
     private void Start()
