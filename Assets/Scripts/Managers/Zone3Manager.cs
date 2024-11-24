@@ -13,7 +13,7 @@ public class Zone3Manager : MonoBehaviour
     {
         if (_flags[0].flagConquisted && _flags[1].flagConquisted)
         {
-            _gameManager.WinLevel(4);
+            _gameManager.WinLevel(3);
         }
     }
 }

@@ -24,8 +24,8 @@ public class PlayerWeapon : MonoBehaviour
     private bool _canShoot = true;
 
     [Header("Boost Values")]
-
-    [SerializeField] private bool _canUseBoost = false;
+    [SerializeField] private Transform _sight3Shoot, _sight3Shoot2, _sight3Shoot3;
+    [SerializeField] private bool _canUseBoost = false, _canUseTripleShoot = false;
     [SerializeField] private bool _boost = false;
     [SerializeField] private float _boostSpeed = 60f, _boostCD = 0.3f;
 
@@ -48,6 +48,7 @@ public class PlayerWeapon : MonoBehaviour
     private void Awake()
     {
         if (PowerManagement.canUseShootBoost) _canUseBoost = true;
+        if(PowerManagement.canUseTripleShoot) _canUseTripleShoot = true;
         if(_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
         if(_playerLife == null) _playerLife = FindObjectOfType<PlayerLife>();
     }
@@ -167,20 +168,43 @@ public class PlayerWeapon : MonoBehaviour
         }
         else
         {
-            _canShoot = false;
-            //_boostText.SetActive(true);
+            if (!_canUseTripleShoot)
+            {
+                _canShoot = false;
+                //_boostText.SetActive(true);
 
-            Instantiate(_bullet, transform.position, transform.rotation);
-            _audioManager.PlaySound(_shootClip, 0.7f);
+                Instantiate(_bullet, transform.position, transform.rotation);
+                _audioManager.PlaySound(_shootClip, 0.7f);
 
-            _playerLife.Shake(10f, 0.45f);
+                _playerLife.Shake(10f, 0.45f);
 
-            GameObject instanciaEfec = Instantiate(effectBullet, transform.position, transform.rotation);
-            Destroy(instanciaEfec, tiempoEfecto);
-            yield return new WaitForSeconds(_boostCD);
+                GameObject instanciaEfec = Instantiate(effectBullet, transform.position, transform.rotation);
+                Destroy(instanciaEfec, tiempoEfecto);
+                yield return new WaitForSeconds(_boostCD);
 
-            //_boostText.SetActive(false);
-            _canShoot = true;
+                //_boostText.SetActive(false);
+                _canShoot = true;
+            }
+            else
+            {
+                _canShoot = false;
+                //_boostText.SetActive(true);
+
+                Instantiate(_bullet, _sight3Shoot3.position, _sight3Shoot3.rotation);
+                Instantiate(_bullet, _sight3Shoot.position, _sight3Shoot.rotation);
+                Instantiate(_bullet, _sight3Shoot2.position, _sight3Shoot2.rotation);
+
+                _audioManager.PlaySound(_shootClip, 0.7f);
+
+                _playerLife.Shake(10f, 0.45f);
+
+                GameObject instanciaEfec = Instantiate(effectBullet, transform.position, transform.rotation);
+                Destroy(instanciaEfec, tiempoEfecto);
+                yield return new WaitForSeconds(_boostCD);
+
+                //_boostText.SetActive(false);
+                _canShoot = true;
+            }
           
         }
 

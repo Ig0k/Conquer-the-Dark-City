@@ -514,12 +514,14 @@ MonoBehaviour:
   _zone1Percentaje: 0
   _zone2Percentaje: 0
   _zone3Percentaje: 0
+  _zone6Percentaje: 0
   _zone3: {fileID: 1275306777}
   _zone5: {fileID: 858973346}
   _zone0: {fileID: 1175456593}
   _zone0Button: {fileID: 2124348497}
   _zone5Button: {fileID: 1752832397}
   zone3Button: {fileID: 1654908002}
+  _zone6Button: {fileID: 1955303931}
   _characterData: {fileID: 0}
   _winnedConfrontationUI: {fileID: 1916095880}
   _looseConfrontationUI: {fileID: 740427912}
@@ -4837,9 +4839,11 @@ MonoBehaviour:
   _zone1CH1: 0
   _zone2CH1: 0
   _zone3CH1: 0
+  _zone4CH1: 0
   _zone1CH2: 0
   _zone2CH2: 0
   _zone3CH2: 0
+  _zone4CH2: 0
   confrontationWinned: 0
   confrontationLoosed: 0
 --- !u!4 &2060242092

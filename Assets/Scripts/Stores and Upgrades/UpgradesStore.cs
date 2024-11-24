@@ -11,11 +11,15 @@ public class UpgradesStore : MonoBehaviour
     [SerializeField] private int _shootBoostPrice = 80;
     [SerializeField] private int _masiveShootPrice = 10;
     [SerializeField] private int _shieldPrice = 10;
+    [SerializeField] private int _tripleShootPrice = 30;
 
     public static bool invisibilityBought = false;
     public static bool shootBoostBought = false;
     public static bool masiveShootBought = false;
     public static bool shieldBought = false;
+    public static bool tripleShootBought = false;
+
+    [SerializeField] private GameObject _tripleShootButton;
 
     [SerializeField] private TMP_Text _moneyText;
 
@@ -85,6 +89,22 @@ public class UpgradesStore : MonoBehaviour
             Money.money -= _shootBoostPrice;
 
             _audioManager.PlaySound(_boughtClip, 10f);
+
+            _tripleShootButton.SetActive(true);
+        }
+    }
+
+    public void BuyTripleShoot()
+    {
+        if (Money.money >= _tripleShootPrice && !tripleShootBought && shootBoostBought)
+        {
+            tripleShootBought = true;
+
+            Money.money -= _tripleShootPrice;
+
+            _audioManager.PlaySound(_boughtClip, 10f);
+
+            PowerManagement.canUseTripleShoot = true;
         }
     }
 

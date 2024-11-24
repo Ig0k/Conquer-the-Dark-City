@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 public class ConfrontationManager : MonoBehaviour
 {
     [SerializeField] GameObject _enemy1, _enemy2, _enemy3;
+    [SerializeField] private GameObject[] _divisbleEnemies;
     [SerializeField] CharacterData _characterData;
+
+    [SerializeField] private int _index = 0;
 
     private void Awake()
     {
@@ -17,7 +20,7 @@ public class ConfrontationManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name.Contains("Confrontation1"))
         {
-            if(_enemy1 == null && _enemy2 == null && _enemy3 == null)
+            if (_enemy1 == null && _enemy2 == null && _enemy3 == null)
             {
                 _characterData.confrontationWinned = true;
                 SceneManager.LoadScene("Map");
@@ -32,6 +35,20 @@ public class ConfrontationManager : MonoBehaviour
 
                 //UnityEngine.Cursor.lockState = CursorLockMode.None;
                 //UnityEngine.Cursor.visible = false;
+            }
+        }
+        else if (SceneManager.GetActiveScene().name.Contains("Confrontation3"))
+        {
+            if (_index < _divisbleEnemies.Length)
+            {
+                if (_divisbleEnemies[_index].activeSelf == false)
+                {
+                    _index++;
+                }                  
+            }
+            else
+            {
+                SceneManager.LoadScene("Map");
             }
         }
     }

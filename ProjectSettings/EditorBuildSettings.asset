@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Zone Scenes/Zone 6.unity
     guid: 3a79e0936a9e9ef46bace3d99fa8e7fe
+  - enabled: 1
+    path: Assets/Scenes/Zone Scenes/Confrontation3.unity
+    guid: d7ec6e95ea06809458f07f696c4403d4
   m_configObjects: {}

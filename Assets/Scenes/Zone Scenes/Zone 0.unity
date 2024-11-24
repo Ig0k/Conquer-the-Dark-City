@@ -5955,6 +5955,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6516439963667787547, guid: 74bb46dbcf3c02940ac26b12495e89e0, type: 3}
   m_PrefabInstance: {fileID: 358141433}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &358474361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 358474362}
+  m_Layer: 7
+  m_Name: Sight for Triple Shoot (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &358474362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358474361}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.9961947, w: 0.08715588}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5446717727659263767}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 170}
 --- !u!1 &372155822
 GameObject:
   m_ObjectHideFlags: 0
@@ -11605,6 +11636,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.67, y: 6.99}
   m_EdgeRadius: 0
+--- !u!1 &898199568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 898199569}
+  m_Layer: 7
+  m_Name: Sight for Triple Shoot (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &898199569
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898199568}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.9961947, w: 0.08715588}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5446717727659263767}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -170}
 --- !u!1 &902416957
 GameObject:
   m_ObjectHideFlags: 0
@@ -14321,6 +14383,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1106318103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1106318104}
+  m_Layer: 7
+  m_Name: Sight for Triple Shoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1106318104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106318103}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5446717727659263767}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!1 &1113473098
 GameObject:
   m_ObjectHideFlags: 0
@@ -19046,7 +19139,11 @@ MonoBehaviour:
   _player: {fileID: 603116871057539018}
   _shootCD: 0.55
   _shootCD2: 0.4
+  _sight3Shoot: {fileID: 1106318104}
+  _sight3Shoot2: {fileID: 358474362}
+  _sight3Shoot3: {fileID: 898199569}
   _canUseBoost: 0
+  _canUseTripleShoot: 0
   _boost: 0
   _boostSpeed: 90
   _boostCD: 0.3
@@ -35712,7 +35809,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1106318104}
+  - {fileID: 898199569}
+  - {fileID: 358474362}
   m_Father: {fileID: 603116871057539018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5449860041175463659

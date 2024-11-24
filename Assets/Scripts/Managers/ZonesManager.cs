@@ -9,11 +9,11 @@ using UnityEngine.UI;
 
 public class ZonesManager : MonoBehaviour
 {
-    [SerializeField] private int _zone1Percentaje, _zone2Percentaje, _zone3Percentaje;
+    [SerializeField] private int _zone1Percentaje, _zone2Percentaje, _zone3Percentaje, _zone6Percentaje;
     [SerializeField] private TMP_Text _zone3, _zone5, _zone0;
 
     //[SerializeField] private Button _CH1Button, _CH2Button;
-    [SerializeField] private Image _zone0Button, _zone5Button, zone3Button;
+    [SerializeField] private Image _zone0Button, _zone5Button, zone3Button, _zone6Button;
 
     [SerializeField] private CharacterData _characterData;
 
@@ -83,6 +83,20 @@ public class ZonesManager : MonoBehaviour
             _zone2Percentaje = 100;
 
             _zone5Button.color = Color.green;
+        }
+
+        if(_characterData._zone3CH1 == true || _characterData._zone3CH2 == true)
+        {
+            _zone3Percentaje = 100;
+
+            zone3Button.color = Color.green;
+        }
+
+        if (_characterData._zone4CH1 == true || _characterData._zone4CH2 == true) //ZONE4 ES ZONE6
+        {
+            _zone6Percentaje = 100;
+
+            _zone6Button.color = Color.green;
         }
     }
 

@@ -11,6 +11,7 @@ public class PowerManagement : MonoBehaviour
     public static bool canUseInvisibility;
 
     public static bool canUseShootBoost;
+    public static bool canUseTripleShoot;
 
     public static bool canUseMasiveShoot;
     public static bool canUseShield;
@@ -43,6 +44,7 @@ public class PowerManagement : MonoBehaviour
         canUseInvisibility = false;
 
         canUseShootBoost = false;
+        canUseTripleShoot = false;
 
         _isInvisibilityVisualization = canUseInvisibility;
         _isTimeFreezeVisualization = canUseTimeFreeze;
@@ -71,6 +73,12 @@ public class PowerManagement : MonoBehaviour
         canUseShootBoost = true;
 
         _canUseShootBoostVisualization = canUseShootBoost;
+    }
+
+    public void ActiveTripleShoot(bool _canUseTripleShoot)
+    {
+        canUseTripleShoot = true;
+
     }
 
     public void ActiveInvisibility(bool _canUseInvisibility)

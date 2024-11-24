@@ -192,7 +192,14 @@ public class MapManager : MonoBehaviour
         }
         else if(_zone == "Zone 6") //DESARROLLAR SI HACE FALTA
         {
-            SceneManager.LoadScene(_zone);
+            if(chancesToConfrontation <= 4)
+            {
+                StartCoroutine(GoToConfrontation());
+            }
+            else
+            {
+                SceneManager.LoadScene(_zone);
+            }
         }
     }
 
@@ -225,6 +232,9 @@ public class MapManager : MonoBehaviour
         {
             SceneManager.LoadScene("Confrontation2");
         }
-
+        else if(_zone == "Zone 6")
+        {
+            SceneManager.LoadScene("Confrontation3");
+        }
     }
 }
