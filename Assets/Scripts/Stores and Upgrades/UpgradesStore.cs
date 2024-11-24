@@ -46,6 +46,11 @@ public class UpgradesStore : MonoBehaviour
         if(_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
     }
 
+    private void Start()
+    {
+        if(shootBoostBought) _tripleShootButton.SetActive(true);
+    }
+
     public void BuyMasiveShoot()
     {
         if (CharacterData._character == 1 && Money.money >= _masiveShootPrice && !masiveShootBought)
