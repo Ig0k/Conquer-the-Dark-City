@@ -105,6 +105,8 @@ public class EnemyPrototype : MonoBehaviour
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
 
+        _bulletScript.SetProperties(_bulletSpeed, _bulletDestroyTime, _bulletDamage);
+
         //_bulletScript.SetProperties(_bulletSpeed, _bulletDestroyTime, _bulletDamage);
     }
 
