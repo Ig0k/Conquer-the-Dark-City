@@ -14,15 +14,29 @@ public class newGrenadeWeapon : MonoBehaviour
 
     private bool _canExplode = false;
 
+    [SerializeField] private bool _isPlayer = false;
+
+    public Vector2 _enemyGrenadeDir;
+
     private void Awake()
     {
         if( _rb == null) _rb = GetComponent<Rigidbody2D>();
-        if (_grenadeThrowScript == null) _grenadeThrowScript = FindObjectOfType<newGrenade>();
+        if (_isPlayer)
+        {
+            if (_grenadeThrowScript == null) _grenadeThrowScript = FindObjectOfType<newGrenade>();
+        }
+        
     }
 
     private void Start()
     {
-        _rb.AddForce(-_grenadeThrowScript.mousePos * _grenadeForce, ForceMode2D.Impulse);
+        if (_isPlayer) _rb.AddForce(-_grenadeThrowScript.mousePos * _grenadeForce, ForceMode2D.Impulse);
+        else ThrowForEnemy(-_enemyGrenadeDir);
+    }
+
+    public void ThrowForEnemy(Vector2 pos)
+    {
+        _rb.AddForce(pos * _grenadeForce, ForceMode2D.Impulse);
     }
 
     private void Update()
@@ -43,12 +57,22 @@ public class newGrenadeWeapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       if( collision.TryGetComponent<EnemyPrototype>(out EnemyPrototype proto)
+        if (_isPlayer)
+        {
+            if (collision.TryGetComponent<EnemyPrototype>(out EnemyPrototype proto)
             || collision.TryGetComponent<Enemy2>(out Enemy2 enemy2) ||
             collision.TryGetComponent<Enemy3>(out Enemy3 enemy3) ||
             collision.TryGetComponent<NewEnemy1>(out NewEnemy1 new1))
+            {
+                _canExplode = true;
+            }
+        }
+        else
         {
-            _canExplode = true;
+            if(collision.TryGetComponent<PlayerLife>(out PlayerLife playerLife))
+            {
+                _canExplode = true;
+            }
         }
     }
 }

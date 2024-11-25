@@ -4845,6 +4845,7 @@ MonoBehaviour:
   _maxCD: 0.4
   _damage: 1
   _exploitionDuration: 4
+  _isPlayer: 1
 --- !u!61 &7266939318996528670
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -94,6 +94,7 @@ MonoBehaviour:
   _maxCD: 0.4
   _damage: 1
   _exploitionDuration: 4
+  _isPlayer: 1
 --- !u!1 &7720275867009171817
 GameObject:
   m_ObjectHideFlags: 0

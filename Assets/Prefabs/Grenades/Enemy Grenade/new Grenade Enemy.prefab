@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2102597440619803298}
   - component: {fileID: 7418548941555923534}
   m_Layer: 0
-  m_Name: new Grenade 1
+  m_Name: new Grenade Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,12 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fa08216f73cf8469f04bf6ec47acdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _grenadeForce: 5
-  _rb: {fileID: 0}
-  _explotion: {fileID: 446784732735344153, guid: df143897c4ed635499d2b53fdcdcc062, type: 3}
+  _grenadeForce: 1
+  _rb: {fileID: 2102597440619803298}
+  _explotion: {fileID: 446784732735344153, guid: f59e0257277b0514a9e793e09bb24689, type: 3}
   _destroyTime: 2
   _grenadeThrowScript: {fileID: 0}
-  _isPlayer: 1
+  _isPlayer: 0
+  _enemyGrenadeDir: {x: -1.0246696, y: -9.4344225}
 --- !u!50 &2102597440619803298
 Rigidbody2D:
   serializedVersion: 4

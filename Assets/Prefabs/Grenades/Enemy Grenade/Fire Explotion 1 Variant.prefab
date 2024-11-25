@@ -9,8 +9,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1446727395298536622, guid: 4de779ccc3d60014aa8ce0e4b1a14c85, type: 3}
+      propertyPath: _maxCD
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446727395298536622, guid: 4de779ccc3d60014aa8ce0e4b1a14c85, type: 3}
       propertyPath: _isPlayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2911193089806282609, guid: 4de779ccc3d60014aa8ce0e4b1a14c85, type: 3}
       propertyPath: m_Name
@@ -18,11 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7266939318996528670, guid: 4de779ccc3d60014aa8ce0e4b1a14c85, type: 3}
       propertyPath: m_Size.x
-      value: 3.7298017
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266939318996528670, guid: 4de779ccc3d60014aa8ce0e4b1a14c85, type: 3}
+      propertyPath: m_Size.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7266939318996528670, guid: 4de779ccc3d60014aa8ce0e4b1a14c85, type: 3}
       propertyPath: m_Offset.x
-      value: 0.73068875
+      value: 0.8158048
       objectReference: {fileID: 0}
     - target: {fileID: 8271415816079492786, guid: 4de779ccc3d60014aa8ce0e4b1a14c85, type: 3}
       propertyPath: m_LocalPosition.x
