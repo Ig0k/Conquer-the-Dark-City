@@ -7,7 +7,7 @@ public class UpgradesStore : MonoBehaviour
 {
     [Header("Store Properties")]
 
-    [SerializeField] private int _invisibilityPrice = 30;
+    //[SerializeField] private int _invisibilityPrice = 30;
     [SerializeField] private int _shootBoostPrice = 80;
     [SerializeField] private int _masiveShootPrice = 10;
     [SerializeField] private int _shieldPrice = 10;
@@ -62,17 +62,17 @@ public class UpgradesStore : MonoBehaviour
         }
     }
 
-    public void BuyInvisibility()
-    {
-        if(Money.money >= _invisibilityPrice && !invisibilityBought)
-        {
-            invisibilityBought = true;
+    //public void BuyInvisibility()
+    //{
+    //    if(Money.money >= _invisibilityPrice && !invisibilityBought)
+    //    {
+    //        invisibilityBought = true;
 
-            Money.money -= _invisibilityPrice;
+    //        Money.money -= _invisibilityPrice;
 
-            _audioManager.PlaySound(_boughtClip, 10f);
-        }
-    }
+    //        _audioManager.PlaySound(_boughtClip, 10f);
+    //    }
+    //}
 
     public void BuyShield()
     {
