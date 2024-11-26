@@ -153,6 +153,11 @@ public class MapManager : MonoBehaviour
     //    _zone0Image.sprite = _zone0Deselected;
     //}
 
+    public void GoToBoss()
+    {
+        SceneManager.LoadScene("Boss");
+    }
+
     public void GoToScene()
     {
         chancesToConfrontation = Random.Range(0, 12);

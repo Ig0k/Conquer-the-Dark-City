@@ -91,6 +91,11 @@ public class Bullet : MonoBehaviour
                 grenadeEnemy.TakeDamage(_damage);
                 Destroy(gameObject);    
             } 
+            if(hit.collider != null && hit.collider.TryGetComponent<Boss>(out Boss boss))
+            {
+                boss.TakeDamage(_damage);
+                Destroy(gameObject);
+            }
         }
 
         else
