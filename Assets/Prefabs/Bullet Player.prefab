@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 18c894c337dbf6e48b4c8cba9d3ab543, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -108,7 +108,6 @@ MonoBehaviour:
   _knockbackForce: 1.15
   _knockbackDuration: 0.1
   _isPlayer: 1
-  _particles: {fileID: 997392287999194021, guid: aa0428b9546f60646927781e49ec08a9, type: 3}
 --- !u!50 &1701334670275241876
 Rigidbody2D:
   serializedVersion: 4

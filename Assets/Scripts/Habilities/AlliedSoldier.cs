@@ -28,9 +28,9 @@ public class AlliedSoldier : MonoBehaviour
 
     private void Start()
     {
-        if(CharacterData.zone1CH1 || CharacterData.zone1CH2 
-            || CharacterData.zone2CH1 || CharacterData.zone2CH2) gameObject.SetActive(true);
-        else gameObject.SetActive(false);
+        //if(CharacterData.zone1CH1 || CharacterData.zone1CH2 
+        //    || CharacterData.zone2CH1 || CharacterData.zone2CH2) gameObject.SetActive(true);
+        //else gameObject.SetActive(false);
     }
 
     private void Update()

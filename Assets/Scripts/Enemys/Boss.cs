@@ -197,7 +197,7 @@ public class Boss : MonoBehaviour
 
         if (_currentFase == 1)
         {
-            if (_generalTimeElapsed < _secondsToSpeedUp) _agent.speed = 8;
+            if (_generalTimeElapsed < _secondsToSpeedUp) _agent.speed = 11;
             else if (_generalTimeElapsed >= _secondsToSpeedUp) _agent.speed = _newMoveSpeed;
             else if (_generalTimeElapsed >= _secondsToSpeedUp2) _agent.speed = _newMoveSpeed2;
 
@@ -271,7 +271,7 @@ public class Boss : MonoBehaviour
     {
         if (!_canFollowPlayer)
         {
-            if (_generalTimeElapsed < _secondsToSpeedUp) _agent.speed = 8;
+            if (_generalTimeElapsed < _secondsToSpeedUp) _agent.speed = 11;
             else if (_generalTimeElapsed >= _secondsToSpeedUp) _agent.speed = _newMoveSpeed;
             else if (_generalTimeElapsed >= _secondsToSpeedUp2) _agent.speed = _newMoveSpeed2;
 
@@ -293,7 +293,7 @@ public class Boss : MonoBehaviour
         }
         else
         {
-            _agent.speed = 8;
+            _agent.speed = 11;
             _agent.SetDestination(_playerTransform.position);
         }
     }

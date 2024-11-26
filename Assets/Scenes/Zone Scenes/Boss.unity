@@ -437,8 +437,8 @@ MonoBehaviour:
   _timeElapsed: 20
   _timeBetweenMeleeAttacks: 10
   _meleeTimeElapsed: 0
-  _life: 50
-  _maxLife: 50
+  _life: 75
+  _maxLife: 75
   _agent: {fileID: 0}
   _spriteRenderer: {fileID: 0}
   _audioManager: {fileID: 0}
@@ -474,16 +474,16 @@ MonoBehaviour:
   _PunchSpeed: 15
   _PunchDestroyTime: 5
   _PunchDamage: 1
-  _bulletSpeed: 15
+  _bulletSpeed: 19
   _bulletDestroyTime: 5
   _bulletDamage: 1
   _animator: {fileID: 0}
   _timeBetweenTps: 2.8
   _secondsToSpeedUp: 40
   _secondsToSpeedUp2: 80
-  _newBulletSpeed: 10
-  _newMoveSpeed: 13
-  _newBulletSpeed2: 17
+  _newBulletSpeed: 22
+  _newMoveSpeed: 17
+  _newBulletSpeed2: 24
   _newMoveSpeed2: 21
   _lifeBar: {fileID: 1316386668}
 --- !u!212 &74262314
@@ -567,7 +567,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.39999998
-  m_Speed: 12
+  m_Speed: 15
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

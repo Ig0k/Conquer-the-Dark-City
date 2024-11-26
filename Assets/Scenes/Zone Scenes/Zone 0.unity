@@ -745,7 +745,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Te has apoderado de la Zone 0. \n\n\n\n"
+  m_text: 'You''ve taken over Zone 0.
+
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4998,8 +5002,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Tu pandilla empieza a tener notoriedad.
-
+  m_text: 'Your gang is starting to gain notoriety.
 
 
 
@@ -14963,8 +14966,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\n\n Las grandes mafias y otras pandillas se fijan\r\nen lo que has
-    hecho.\n\n\n+1  Seguidor\n\n\n\n\n\n\n"
+  m_text: '
+
+
+
+    The big mafias and other gangs pay attention
+
+    to what you
+    have done.
+
+
+
+
+
+
+
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

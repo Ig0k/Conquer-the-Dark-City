@@ -24,15 +24,13 @@ public class PowerSelection : MonoBehaviour
     }
     public void ActiveInvisibility()
     {
-        if (UpgradesStore.invisibilityBought)
-        {
-            _powerManagement.ActiveInvisibility(true);
-        }
-        else
-        {
-            _powerManagement.ActiveTimeFreeze(true);
-            StartCoroutine(UnpurchasedSkill());
-        }
+        _powerManagement.ActiveInvisibility(true);
+
+        //else
+        //{
+        //    _powerManagement.ActiveTimeFreeze(true);
+        //    StartCoroutine(UnpurchasedSkill());
+        //}
     }
 
     private void Update()

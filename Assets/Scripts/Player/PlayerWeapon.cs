@@ -65,7 +65,7 @@ public class PlayerWeapon : MonoBehaviour
             //_speed = _upgrades._bulletSpeedCh1Lvl1;
             //_damage = _upgrades._bulletDamageCh1Lvl1;
 
-            _bulletScript.SetProperties(50f, _destroyTime, 2);
+            _bulletScript.SetProperties(50f, _destroyTime, 1);
             ShootCD = _shootCD;
         }
         else if (GameManager.currentCharacter == 2 && _upgrades.level == 1)
@@ -73,7 +73,7 @@ public class PlayerWeapon : MonoBehaviour
             //_speed = _upgrades._bulletSpeedCh2Lvl1;
             //_damage = _upgrades._bulletDamageCh2Lvl1;
 
-            _bulletScript.SetProperties(35, _destroyTime, 3);
+            _bulletScript.SetProperties(35, _destroyTime, 1);
             ShootCD = _shootCD;
         }
 
@@ -84,7 +84,7 @@ public class PlayerWeapon : MonoBehaviour
         }
         else if (GameManager.currentCharacter == 2 && _upgrades.level == 0)
         {
-            _bulletScript.SetProperties(27, _destroyTime, 2);
+            _bulletScript.SetProperties(27, _destroyTime, 1);
             ShootCD = _shootCD2;
         }
     }

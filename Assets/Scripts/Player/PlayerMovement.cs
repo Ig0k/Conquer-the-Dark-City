@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -42,19 +43,21 @@ public class PlayerMovement : MonoBehaviour
     {
         _Animator = GetComponent<Animator>();
 
+        if (SceneManager.GetActiveScene().name == "Base") _walkSpeed = 6f;
 
-        if(GameManager.currentCharacter == 1)
+        if (GameManager.currentCharacter == 1 && SceneManager.GetActiveScene().name != "Base")
         {
             _walkSpeed = 12;
 
             //Distintas stats segun personaje... Desarrollar qué tiene de diferente cada uno (también en otros scripts)
         }
-        else if(GameManager.currentCharacter == 2)
+        else if(GameManager.currentCharacter == 2 && SceneManager.GetActiveScene().name != "Base")
         {
             _walkSpeed = 10; //Velocidad original con que entregamos la build es 8.
 
             //Distintas stats segun personaje... Desarrollar qué tiene de diferente cada uno (también en otros scripts)
         }
+        
     }
 
     private void FixedUpdate()
