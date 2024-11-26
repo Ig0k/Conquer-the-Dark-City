@@ -41,7 +41,8 @@ public class newGrenadeExplotion : MonoBehaviour
            || collision.TryGetComponent<Enemy2>(out Enemy2 enemy2) ||
            collision.TryGetComponent<Enemy3>(out Enemy3 enemy3) ||
            collision.TryGetComponent<NewEnemy1>(out NewEnemy1 new1)
-               || collision.TryGetComponent<FireEnemy>(out FireEnemy fire))
+               || collision.TryGetComponent<FireEnemy>(out FireEnemy fire) ||
+               collision.TryGetComponent<Boss>(out Boss finalBoss))
             {
                 if (!_onCD)
                 {
@@ -64,6 +65,10 @@ public class newGrenadeExplotion : MonoBehaviour
                     if (collision.TryGetComponent<FireEnemy>(out FireEnemy enemyFire))
                     {
                         enemyFire.TakeDamage(_damage);
+                    }
+                    if(collision.TryGetComponent<Boss>(out Boss boss))
+                    {
+                        boss.TakeDamage(_damage);
                     }
 
                     _onCD = true;

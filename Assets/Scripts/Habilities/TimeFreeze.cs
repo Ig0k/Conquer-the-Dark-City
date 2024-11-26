@@ -19,6 +19,9 @@ public class TimeFreeze : MonoBehaviour
     [SerializeField] private EnemyPrototype[] _enemy1Script;
     [SerializeField] private NewEnemy1[] _newEnemyScript;
     [SerializeField] private Enemy3[] _enemy3Script;
+    //
+    [SerializeField] private FireEnemy[] _fireEnemyScript;
+    [SerializeField] private EnemyGrenade[] _grenadeEnemyScript;
 
     [SerializeField] private GameObject _UIFreezeEffect, _UIText;
 
@@ -133,6 +136,26 @@ public class TimeFreeze : MonoBehaviour
                 }
             }
         }   
+        if(_fireEnemyScript != null)
+        {
+            for (int i = 0; i < _fireEnemyScript.Length; i++)
+            {
+                if (_fireEnemyScript[i] != null)
+                {
+                    _fireEnemyScript[i].TimeModification(2f);
+                }
+            }
+        }
+        if(_grenadeEnemyScript != null)
+        {
+            for (int i = 0; i < _grenadeEnemyScript.Length; i++)
+            {
+                if(_grenadeEnemyScript != null)
+                {
+                    _grenadeEnemyScript[i].TimeModification(1.7f);
+                }
+            }
+        }
         
     }
 
@@ -180,6 +203,26 @@ public class TimeFreeze : MonoBehaviour
                 if (_enemy3Script[i] != null)
                 {
                     _enemy3Script[i].BackToOgParams();
+                }
+            }
+        }
+        if (_fireEnemyScript != null)
+        {
+            for (int i = 0; i < _fireEnemyScript.Length; i++)
+            {
+                if (_fireEnemyScript[i] != null)
+                {
+                    _fireEnemyScript[i].BackToOgParams();
+                }
+            }
+        }
+        if (_grenadeEnemyScript != null)
+        {
+            for (int i = 0; i < _grenadeEnemyScript.Length; i++)
+            {
+                if (_grenadeEnemyScript != null)
+                {
+                    _grenadeEnemyScript[i].BackToOgParams();
                 }
             }
         }

@@ -16,6 +16,9 @@ public class FireEnemy : MonoBehaviour
 
     [SerializeField] private float _rotSpeed = 2f;
 
+    private float _ogMoveSpeed = 0f;
+
+   
     public int TakeDamage(int damage)
     {
         _life -= damage;
@@ -28,12 +31,24 @@ public class FireEnemy : MonoBehaviour
         return _life;
     }
 
+    public void TimeModification(float newSpeed)
+    {       
+        if (_agent.speed != 0) _agent.speed = newSpeed;
+    }
+
+    public void BackToOgParams()
+    {
+        _agent.speed = _ogMoveSpeed;
+    }
+
     private void Awake()
     {
         _agent.updateRotation = false;
         _agent.updateUpAxis = false;
 
         if (_agent == null) _agent = GetComponent<NavMeshAgent>();
+
+        _ogMoveSpeed = _agent.speed;
     }
 
     private void Update()
@@ -72,7 +87,7 @@ public class FireEnemy : MonoBehaviour
     private void ThrowFire()
     {
         _fire.SetActive(true);
-        _agent.speed = 3f;
+        //_agent.speed = 3f;
     }
 
     //private void UnableFire()

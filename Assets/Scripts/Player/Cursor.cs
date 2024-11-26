@@ -24,7 +24,8 @@ public class Cursor : MonoBehaviour
             UnityEngine.Cursor.lockState = CursorLockMode.Confined;
         }
         else if(SceneManager.GetActiveScene().name == "Base" ||
-            SceneManager.GetActiveScene().name == "Confrontation2")
+            SceneManager.GetActiveScene().name == "Confrontation2" || 
+            SceneManager.GetActiveScene().name == "Confrontation3")
         {
             UnityEngine.Cursor.lockState = CursorLockMode.Confined;
             UnityEngine.Cursor.visible = false;

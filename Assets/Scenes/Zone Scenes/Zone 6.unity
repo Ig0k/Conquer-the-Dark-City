@@ -1606,6 +1606,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6873923962873031022, guid: 85f64bf235cb42c4a9173c1b620fb6eb, type: 3}
   m_PrefabInstance: {fileID: 106555202}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &106555204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1904043866132947908, guid: 85f64bf235cb42c4a9173c1b620fb6eb, type: 3}
+  m_PrefabInstance: {fileID: 106555202}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aab3ad78b212cc47a5ca250f2e6806b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &109196360
 GameObject:
   m_ObjectHideFlags: 0
@@ -12002,6 +12013,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6873923962873031022, guid: 85f64bf235cb42c4a9173c1b620fb6eb, type: 3}
   m_PrefabInstance: {fileID: 878327443}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &878327445 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1904043866132947908, guid: 85f64bf235cb42c4a9173c1b620fb6eb, type: 3}
+  m_PrefabInstance: {fileID: 878327443}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467036419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aab3ad78b212cc47a5ca250f2e6806b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &878529156
 GameObject:
   m_ObjectHideFlags: 0
@@ -14003,6 +14025,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85f64bf235cb42c4a9173c1b620fb6eb, type: 3}
+--- !u!114 &1001975994 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1904043866132947908, guid: 85f64bf235cb42c4a9173c1b620fb6eb, type: 3}
+  m_PrefabInstance: {fileID: 1001975993}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827655206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aab3ad78b212cc47a5ca250f2e6806b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1002940292
 GameObject:
   m_ObjectHideFlags: 0
@@ -22871,9 +22904,9 @@ MonoBehaviour:
   _player: {fileID: 603116871057539018}
   _shootCD: 0.55
   _shootCD2: 0.4
-  _sight3Shoot: {fileID: 0}
-  _sight3Shoot2: {fileID: 0}
-  _sight3Shoot3: {fileID: 0}
+  _sight3Shoot: {fileID: 6863890515972070924}
+  _sight3Shoot2: {fileID: 6727435553178867138}
+  _sight3Shoot3: {fileID: 2472339015160376424}
   _canUseBoost: 0
   _canUseTripleShoot: 0
   _boost: 0
@@ -38879,6 +38912,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.48356596, y: 0.6187275}
   m_EdgeRadius: 0
+--- !u!4 &2472339015160376424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8120239397706352576}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.9961947, w: 0.08715588}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5446717727659263767}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -170}
 --- !u!95 &2804516477112965060
 Animator:
   serializedVersion: 5
@@ -39323,7 +39371,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6863890515972070924}
+  - {fileID: 6727435553178867138}
+  - {fileID: 2472339015160376424}
   m_Father: {fileID: 603116871057539018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5449860041175463659
@@ -39483,6 +39534,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6168982964863345616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6727435553178867138}
+  m_Layer: 7
+  m_Name: Sight for Triple Shoot (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &6181308427476855189
 Transform:
   m_ObjectHideFlags: 0
@@ -39556,13 +39623,22 @@ MonoBehaviour:
   _currentTimeBetween: 0
   _canStartTimeBetween: 0
   _enemy2Script:
-  - {fileID: 0}
+  - {fileID: 4777087027518085644}
   _enemy1Script:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1719172100}
+  - {fileID: 1353843605}
+  - {fileID: 1054519061}
+  - {fileID: 586144890}
+  - {fileID: 1188737223}
   _newEnemyScript: []
-  _enemy3Script: []
+  _enemy3Script:
+  - {fileID: 3561754783233613433}
+  - {fileID: 674968967}
+  _fireEnemyScript:
+  - {fileID: 1001975994}
+  - {fileID: 878327445}
+  - {fileID: 106555204}
+  _grenadeEnemyScript: []
   _UIFreezeEffect: {fileID: 7065349676939060550}
   _UIText: {fileID: 1564924528836376787}
   _barObject: {fileID: 1326965186}
@@ -39657,6 +39733,36 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!4 &6727435553178867138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6168982964863345616}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.9961947, w: 0.08715588}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5446717727659263767}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 170}
+--- !u!4 &6863890515972070924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8433854218742193624}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5446717727659263767}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!212 &6902032575642876688
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -39916,6 +40022,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!1 &8120239397706352576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2472339015160376424}
+  m_Layer: 7
+  m_Name: Sight for Triple Shoot (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!61 &8174605154680535319
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39991,6 +40113,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8433854218742193624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6863890515972070924}
+  m_Layer: 7
+  m_Name: Sight for Triple Shoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!195 &8439860621831785981
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -40170,14 +40308,18 @@ MonoBehaviour:
   _playerLife: {fileID: 0}
   _playerMovement: {fileID: 0}
   _enemy2Script:
-  - {fileID: 0}
+  - {fileID: 4777087027518085644}
   _enemy1Script:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1719172100}
+  - {fileID: 1353843605}
+  - {fileID: 1054519061}
+  - {fileID: 586144890}
+  - {fileID: 1188737223}
   _newEnemys1Script:
   - {fileID: 0}
   _enemy3Script:
-  - {fileID: 0}
+  - {fileID: 3561754783233613433}
+  - {fileID: 674968967}
   _knockbakcForce: 2.7
   _knockbackDuration: 0.2
   _damage: 1

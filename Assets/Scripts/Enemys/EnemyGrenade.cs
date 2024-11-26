@@ -27,6 +27,8 @@ public class EnemyGrenade : MonoBehaviour
     [SerializeField] private AudioClip _impactClip;
     [SerializeField] private SoundsManager _audioManager;
 
+    private float _ogMoveSpeed;
+
     public int TakeDamage(int damage)
     {
         _life -= damage;
@@ -38,6 +40,16 @@ public class EnemyGrenade : MonoBehaviour
         StartCoroutine(SpriteDamaged());
 
         return _life;
+    }
+
+    public void TimeModification(float newSpeed)
+    {
+        if (_agent.speed != 0) _agent.speed = newSpeed;
+    }
+
+    public void BackToOgParams()
+    {
+        _agent.speed = _ogMoveSpeed;
     }
 
     private void Update()
@@ -71,6 +83,8 @@ public class EnemyGrenade : MonoBehaviour
         if(_rb == null) _rb = GetComponent<Rigidbody2D>();
         if(_spriteRenderer == null) _spriteRenderer = GetComponent<SpriteRenderer>();
         if(_audioManager == null) _audioManager = FindObjectOfType<SoundsManager>();
+
+        _ogMoveSpeed = _agent.speed;
     }
 
     private IEnumerator ThrowGrenade()

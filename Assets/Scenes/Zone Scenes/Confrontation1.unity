@@ -757,6 +757,7 @@ GameObject:
   - component: {fileID: 105131985}
   - component: {fileID: 105131984}
   - component: {fileID: 105131983}
+  - component: {fileID: 105131986}
   m_Layer: 0
   m_Name: arbol vivo (4)
   m_TagString: Untagged
@@ -866,6 +867,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &105131986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105131982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &112160708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,6 +1407,7 @@ GameObject:
   - component: {fileID: 212339768}
   - component: {fileID: 212339767}
   - component: {fileID: 212339766}
+  - component: {fileID: 212339769}
   m_Layer: 0
   m_Name: arbol vivo (1)
   m_TagString: Untagged
@@ -1499,6 +1517,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &212339769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212339765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &231151616
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,6 +1627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 234645339}
   - component: {fileID: 234645338}
+  - component: {fileID: 234645340}
   m_Layer: 0
   m_Name: arbol (2)
   m_TagString: Untagged
@@ -1667,6 +1702,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &234645340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234645337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &265834443
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,6 +2337,7 @@ GameObject:
   - component: {fileID: 374177273}
   - component: {fileID: 374177272}
   - component: {fileID: 374177271}
+  - component: {fileID: 374177274}
   m_Layer: 0
   m_Name: Valla 1
   m_TagString: Untagged
@@ -2405,6 +2457,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &374177274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374177270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &392430673
 GameObject:
   m_ObjectHideFlags: 0
@@ -3045,6 +3113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 504478027}
   - component: {fileID: 504478026}
+  - component: {fileID: 504478028}
   m_Layer: 0
   m_Name: arbol (1)
   m_TagString: Untagged
@@ -3119,6 +3188,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &504478028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504478025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4587,6 +4672,7 @@ GameObject:
   - component: {fileID: 733308980}
   - component: {fileID: 733308979}
   - component: {fileID: 733308978}
+  - component: {fileID: 733308981}
   m_Layer: 0
   m_Name: arbol vivo
   m_TagString: Untagged
@@ -4696,6 +4782,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &733308981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733308977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &744769989
 GameObject:
   m_ObjectHideFlags: 0
@@ -7068,6 +7170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1113473100}
   - component: {fileID: 1113473099}
+  - component: {fileID: 1113473101}
   m_Layer: 0
   m_Name: arbol (3)
   m_TagString: Untagged
@@ -7142,6 +7245,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1113473101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113473098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1113735197
 GameObject:
   m_ObjectHideFlags: 0
@@ -8511,7 +8630,11 @@ MonoBehaviour:
   _player: {fileID: 7695173927375124351}
   _shootCD: 0.55
   _shootCD2: 0.4
+  _sight3Shoot: {fileID: 0}
+  _sight3Shoot2: {fileID: 0}
+  _sight3Shoot3: {fileID: 0}
   _canUseBoost: 0
+  _canUseTripleShoot: 0
   _boost: 0
   _boostSpeed: 90
   _boostCD: 0.3
@@ -9198,7 +9321,9 @@ MonoBehaviour:
   _enemy1: {fileID: 394160889851022936}
   _enemy2: {fileID: 13829614}
   _enemy3: {fileID: 842621690}
+  _divisbleEnemies: []
   _characterData: {fileID: 0}
+  _index: 0
 --- !u!1 &1785441801
 GameObject:
   m_ObjectHideFlags: 0
@@ -9571,6 +9696,7 @@ GameObject:
   - component: {fileID: 1867797405}
   - component: {fileID: 1867797404}
   - component: {fileID: 1867797403}
+  - component: {fileID: 1867797406}
   m_Layer: 0
   m_Name: arbol vivo (3)
   m_TagString: Untagged
@@ -9680,6 +9806,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1867797406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867797402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1903652128
 GameObject:
   m_ObjectHideFlags: 0
@@ -9691,6 +9833,7 @@ GameObject:
   - component: {fileID: 1903652131}
   - component: {fileID: 1903652130}
   - component: {fileID: 1903652129}
+  - component: {fileID: 1903652132}
   m_Layer: 0
   m_Name: arbol vivo (2)
   m_TagString: Untagged
@@ -9800,6 +9943,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1903652132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903652128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1908276746
 GameObject:
   m_ObjectHideFlags: 0
@@ -9810,6 +9969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1908276748}
   - component: {fileID: 1908276747}
+  - component: {fileID: 1908276749}
   m_Layer: 0
   m_Name: arbol
   m_TagString: Untagged
@@ -9884,6 +10044,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1327245317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1908276749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908276746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1939966776
 GameObject:
   m_ObjectHideFlags: 0
@@ -15702,6 +15878,8 @@ GameObject:
   - component: {fileID: 8216170215829476364}
   - component: {fileID: 8216170215829476365}
   - component: {fileID: 8216170215829476366}
+  - component: {fileID: 8216170215829476368}
+  - component: {fileID: 8216170215829476367}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -26843,6 +27021,41 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 840451051}
   _UIInvisibleEffect: {fileID: 2033613500194564114}
   _UIText: {fileID: 5930468624505601544}
+--- !u!114 &8216170215829476367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278398248855385425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704405acb534c7a4eb481b06c1ef3dfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grenade: {fileID: 6730735717323058757, guid: 6ce1f8e6d62572744a688e47b6f0c3f2, type: 3}
+  _grenadesLeft: 5
+  _mousePos: {fileID: 471181883}
+  _maxCD: 3
+  mousePos: {x: 0, y: 0}
+--- !u!114 &8216170215829476368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278398248855385425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb64dcf958be974fb5cbda025170a55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mousePoint: {fileID: 471181883}
+  _dashSpeed: 25
+  _dashDuration: 0.18
+  _maxCD: 2
+  _currentCD: 0
+  _onCD: 0
 --- !u!114 &8244715956638746587
 MonoBehaviour:
   m_ObjectHideFlags: 3

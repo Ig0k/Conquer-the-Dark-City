@@ -25,6 +25,8 @@ public class MapManager : MonoBehaviour
 
     [SerializeField] private TMP_Text _moneyUI;
 
+    [SerializeField] private GameObject _bribeButton;
+
     //[Header("Button Visuals")]
     //[SerializeField] private Image _zone0Image;
     //[SerializeField] private Sprite _zone0ClickedImage, _zone0Deselected;
@@ -111,8 +113,7 @@ public class MapManager : MonoBehaviour
         {
             StartCoroutine(BribeUI());
             StopCoroutine(GoToConfrontation());
-        }
-        
+        }  
     }
 
     public void BribeZone3() //bribe == sobornar
@@ -223,6 +224,9 @@ public class MapManager : MonoBehaviour
     {
         _confrontationWarning.SetActive(true);
 
+        if(_zone == "Zone 6") _bribeButton.SetActive(false);
+        else _bribeButton.SetActive(true);
+
         yield return new WaitForSeconds(4f);
 
         if(!_bribedZone0 && _zone == "Zone 0")
@@ -238,7 +242,7 @@ public class MapManager : MonoBehaviour
             SceneManager.LoadScene("Confrontation2");
         }
         else if(_zone == "Zone 6")
-        {
+        {       
             SceneManager.LoadScene("Confrontation3");
         }
     }
