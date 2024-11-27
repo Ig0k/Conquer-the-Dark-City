@@ -19,7 +19,7 @@ public class MapManager : MonoBehaviour
     [Header("Bribe Settings")]
 
     [SerializeField] private int _moneyToBribe = 5;
-    private bool _bribedZone0 = false, _bribedZone5 = false, _bribedZone3 = false;
+    private bool _bribedZone0 = false, _bribedZone5 = false, _bribedZone3 = false, _bribedZone6 = false;
     [SerializeField] private bool _bribedZone0View = false, _bribedZone5View = false, _bribedZone3View = false;
     [SerializeField] private GameObject _bribeFeedback, _bribeText;
 
@@ -77,9 +77,9 @@ public class MapManager : MonoBehaviour
         {
             BribeZone3();
         }
-        else
+        else if(_zone == "Zone 6")
         {
-            Debug.Log(1);
+            BribeZone6();
         }
     }
 
@@ -98,6 +98,23 @@ public class MapManager : MonoBehaviour
             StopCoroutine(GoToConfrontation());
         }
         
+    }
+
+    public void BribeZone6() //bribe == sobornar
+    {
+        if (Money.money >= _moneyToBribe)
+        {
+            _bribedZone6 = true;
+            _confrontationWarning.SetActive(false);
+
+            Money.money -= _moneyToBribe;
+        }
+        if (_bribedZone6)
+        {
+            StartCoroutine(BribeUI());
+            StopCoroutine(GoToConfrontation());
+        }
+
     }
 
     public void BribeZone5() //bribe == sobornar
@@ -198,11 +215,11 @@ public class MapManager : MonoBehaviour
         }
         else if(_zone == "Zone 6") //DESARROLLAR SI HACE FALTA
         {
-            if(chancesToConfrontation <= 4)
+            if(chancesToConfrontation <= 4 && !_bribedZone6)
             {
                 StartCoroutine(GoToConfrontation());
             }
-            else
+            else if(_bribedZone6 || chancesToConfrontation > 4)
             {
                 SceneManager.LoadScene(_zone);
             }
@@ -224,8 +241,8 @@ public class MapManager : MonoBehaviour
     {
         _confrontationWarning.SetActive(true);
 
-        if(_zone == "Zone 6") _bribeButton.SetActive(false);
-        else _bribeButton.SetActive(true);
+        //if(_zone == "Zone 6") _bribeButton.SetActive(false);
+        //else _bribeButton.SetActive(true);
 
         yield return new WaitForSeconds(4f);
 
@@ -241,7 +258,7 @@ public class MapManager : MonoBehaviour
         {
             SceneManager.LoadScene("Confrontation2");
         }
-        else if(_zone == "Zone 6")
+        else if(!_bribedZone6 && _zone == "Zone 6")
         {       
             SceneManager.LoadScene("Confrontation3");
         }

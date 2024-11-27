@@ -40,6 +40,8 @@ public class PlayerWeapon : MonoBehaviour
 
     [SerializeField] private GameObject _boostText;
 
+    [SerializeField] private GameObject _pauseMenu;
+
     public float ShootCD
     {
         set { _shootCD = value; }
@@ -157,7 +159,11 @@ public class PlayerWeapon : MonoBehaviour
 
             _playerLife.Shake(7f, 0.25f);
 
-            _audioManager.PlaySound(_shootClip, 0.7f);
+            if(_pauseMenu.activeSelf == false)
+            {
+                _audioManager.PlaySound(_shootClip, 0.7f);
+            }
+            
             GameObject instanciaEfec = Instantiate(effectBullet, transform.position, transform.rotation);
             Destroy(instanciaEfec, tiempoEfecto);
 
@@ -174,7 +180,11 @@ public class PlayerWeapon : MonoBehaviour
                 //_boostText.SetActive(true);
 
                 Instantiate(_bullet, transform.position, transform.rotation);
-                _audioManager.PlaySound(_shootClip, 0.7f);
+
+                if (_pauseMenu.activeSelf == false)
+                {
+                    _audioManager.PlaySound(_shootClip, 0.7f);
+                }
 
                 _playerLife.Shake(10f, 0.45f);
 
@@ -194,7 +204,10 @@ public class PlayerWeapon : MonoBehaviour
                 Instantiate(_bullet, _sight3Shoot.position, _sight3Shoot.rotation);
                 Instantiate(_bullet, _sight3Shoot2.position, _sight3Shoot2.rotation);
 
-                _audioManager.PlaySound(_shootClip, 0.7f);
+                if (_pauseMenu.activeSelf == false)
+                {
+                    _audioManager.PlaySound(_shootClip, 0.7f);
+                }
 
                 _playerLife.Shake(10f, 0.45f);
 

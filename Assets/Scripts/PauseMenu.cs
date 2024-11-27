@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool gamePaused = false;
 
-    [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameObject _pauseMenu, _controls, _menu;
 
     private void Start()
     {
@@ -21,6 +21,9 @@ public class PauseMenu : MonoBehaviour
             if (!gamePaused)
             {
                 if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) gamePaused = true;
+
+                _controls.SetActive(false);
+                _menu.SetActive(true);
             }
             else if (gamePaused)
             {
@@ -47,8 +50,29 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 0f;
 
             UnityEngine.Cursor.visible = true;
+
         }   
     }
+
+    public void Back()
+    {
+        if(_controls.activeSelf == true)
+        {
+            _controls.SetActive(false);
+            _menu.SetActive(true);
+        }
+        //else
+        //{
+        //    _controls.SetActive(true);
+        //    _menu.SetActive(false);
+        //}
+    }
+
+    public void OpenControlls()
+    {
+        _controls.SetActive(true);
+        _menu.SetActive(false);
+;    }
 
     public void ClosePauseMenu()
     {

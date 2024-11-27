@@ -7934,6 +7934,7 @@ RectTransform:
   - {fileID: 441156876696975650}
   - {fileID: 5361844411797843216}
   - {fileID: 7360692489698732452}
+  - {fileID: 997077817}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8078,6 +8079,41 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!1 &997077816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 997077817}
+  m_Layer: 5
+  m_Name: Fake Pause Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &997077817
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997077816}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 932178252}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1014766879
 GameObject:
   m_ObjectHideFlags: 0
@@ -11036,7 +11072,11 @@ MonoBehaviour:
   _player: {fileID: 7695173927375124351}
   _shootCD: 0.55
   _shootCD2: 0.4
+  _sight3Shoot: {fileID: 0}
+  _sight3Shoot2: {fileID: 0}
+  _sight3Shoot3: {fileID: 0}
   _canUseBoost: 0
+  _canUseTripleShoot: 0
   _boost: 0
   _boostSpeed: 90
   _boostCD: 0.3
@@ -11046,6 +11086,7 @@ MonoBehaviour:
   _shootClip: {fileID: 8300000, guid: cc64e67db2e4e804a9c00b93d546b9ad, type: 3}
   _audioManager: {fileID: 0}
   _boostText: {fileID: 7793334312248921211}
+  _pauseMenu: {fileID: 997077816}
 --- !u!212 &1613981072
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11723,7 +11764,9 @@ MonoBehaviour:
   _enemy1: {fileID: 7557285299429970817}
   _enemy2: {fileID: 638395832}
   _enemy3: {fileID: 0}
+  _divisbleEnemies: []
   _characterData: {fileID: 0}
+  _index: 0
 --- !u!1 &1777641112
 GameObject:
   m_ObjectHideFlags: 0
@@ -29637,6 +29680,8 @@ MonoBehaviour:
   - {fileID: 0}
   _newEnemyScript: []
   _enemy3Script: []
+  _fireEnemyScript: []
+  _grenadeEnemyScript: []
   _UIFreezeEffect: {fileID: 8475957248145159568}
   _UIText: {fileID: 4328885742118822341}
   _barObject: {fileID: 0}

@@ -3080,6 +3080,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 598407656}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &632817454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 632817455}
+  m_Layer: 5
+  m_Name: Fake Pause Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &632817455
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632817454}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 932178252}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &657513376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4491,6 +4526,7 @@ RectTransform:
   - {fileID: 441156876696975650}
   - {fileID: 8775992151658321614}
   - {fileID: 1016275396579762428}
+  - {fileID: 632817455}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6692,6 +6728,7 @@ MonoBehaviour:
   _shootClip: {fileID: 8300000, guid: cc64e67db2e4e804a9c00b93d546b9ad, type: 3}
   _audioManager: {fileID: 0}
   _boostText: {fileID: 7793334312248921211}
+  _pauseMenu: {fileID: 632817454}
 --- !u!212 &1613981072
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24535,7 +24572,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.00000011920929, y: 0.00000008009374}
@@ -25464,6 +25501,8 @@ MonoBehaviour:
   - {fileID: 0}
   _newEnemyScript: []
   _enemy3Script: []
+  _fireEnemyScript: []
+  _grenadeEnemyScript: []
   _UIFreezeEffect: {fileID: 8475957248145159568}
   _UIText: {fileID: 8674173290983091241}
   _barObject: {fileID: 0}

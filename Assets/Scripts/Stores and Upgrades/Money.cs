@@ -6,7 +6,7 @@ public class Money : MonoBehaviour
 {
     public static Money Instance;
 
-    private static int _money = 100;
+    private static int _money = 150;
     [SerializeField] private int _moneyViewer;
 
     private void Update()
