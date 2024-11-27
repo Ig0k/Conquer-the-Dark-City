@@ -6928,7 +6928,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3622087807876343376}
+  - {fileID: 449616415173402290}
+  - {fileID: 8494692262747494142}
   m_Father: {fileID: 7695173927375124351}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &840451048
@@ -11072,9 +11075,9 @@ MonoBehaviour:
   _player: {fileID: 7695173927375124351}
   _shootCD: 0.55
   _shootCD2: 0.4
-  _sight3Shoot: {fileID: 0}
-  _sight3Shoot2: {fileID: 0}
-  _sight3Shoot3: {fileID: 0}
+  _sight3Shoot: {fileID: 3622087807876343376}
+  _sight3Shoot2: {fileID: 449616415173402290}
+  _sight3Shoot3: {fileID: 8494692262747494142}
   _canUseBoost: 0
   _canUseTripleShoot: 0
   _boost: 0
@@ -18599,6 +18602,21 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 0}
   _animator: {fileID: 0}
   _bloodParticles: {fileID: 5382232822317642130, guid: c3360f530aa8bb642b0611d60b532a78, type: 3}
+--- !u!4 &449616415173402290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080120712868047008}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.9961947, w: 0.08715588}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 840451047}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 170}
 --- !u!199 &773676948559995564
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -18716,6 +18734,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.8887253, y: 6.768141}
   m_EdgeRadius: 0
+--- !u!1 &1080120712868047008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 449616415173402290}
+  m_Layer: 7
+  m_Name: Sight for Triple Shoot (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1115576574511818274
 GameObject:
   m_ObjectHideFlags: 0
@@ -23517,6 +23551,22 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1733424196333135236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3622087807876343376}
+  m_Layer: 7
+  m_Name: Sight for Triple Shoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &1851667080584421185
 Transform:
   m_ObjectHideFlags: 3
@@ -23728,6 +23778,22 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 1115307973}
   m_Damping: 0.5
   m_MaxWindowSize: -1
+--- !u!1 &2818219905273347414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8494692262747494142}
+  m_Layer: 7
+  m_Name: Sight for Triple Shoot (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!114 &2876519909318498638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23909,6 +23975,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &3622087807876343376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733424196333135236}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 840451047}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!222 &3674799194680777351
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29835,6 +29916,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!4 &8494692262747494142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2818219905273347414}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.9961947, w: 0.08715588}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 840451047}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -170}
 --- !u!114 &8601060564568659009
 MonoBehaviour:
   m_ObjectHideFlags: 3
