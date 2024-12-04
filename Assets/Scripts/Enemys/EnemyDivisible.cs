@@ -12,6 +12,8 @@ public class EnemyDivisible : MonoBehaviour
 
     [SerializeField] private Transform[] _wayPoints;
 
+    [SerializeField] private NavMeshAgent _agent;
+
     [SerializeField] private int i = 0;
 
     [SerializeField] private GameObject[] _childs1, _childs2;
